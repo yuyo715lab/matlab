@@ -50,10 +50,10 @@ b_rho = zeros(1,N-1);
 a_rho = RHO;
 d_rho = zeros(1,N-1);
 for k = 1:N-1
-  d_rho(k) = abs(a_rho(k) - b_rho(k));
+  d_rho(k) = abs(a_rho(k) - b_rho(k)); %|V - V|
 end
 
-while max(d_rho) > 10^(-7)
+while max(d_rho) > 10^(-7) %convergence condition
   n = n + 1
   for k = 1:N-1
     e(NonRef(k)) = e(NonRef(k)) + def(2*k-1);
