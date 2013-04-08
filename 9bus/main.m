@@ -26,13 +26,17 @@ Jacobi = jacobi(N,Y,e,f,PQorPV,NonRef);
 def = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
 %============= delta.m ================
 
-VVV = zeros(1,N-1);
-n = 1
-THEATA = zeros(1,N-1);
-RHO = zeros(1,N-1);
+
+n = 1 % the number of cycle
+
+%% polar coordinate system %%
+THEATA = zeros(1,N-1); %theta
+RHO = zeros(1,N-1); %r
+
 for k = 1:N-1
   [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
 end
+%% polar coordinate system %%
 
 
 
@@ -68,9 +72,12 @@ while max(d_rho) > 10^(-7)
   def = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
   %============= delta.m ================
   
+  %% polar coordinate system %%
   for k = 1:N-1
     [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
   end
+  %% polar coordinate system %%
+  
   
   b_rho = a_rho;
   a_rho = RHO;
