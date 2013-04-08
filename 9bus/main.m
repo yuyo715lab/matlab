@@ -1,7 +1,7 @@
 %/////// 9-bus power flow calculation
 %/////// TOMOHIRO ADACHI
 %/////// 2013/04
-
+%/////// テスト for UTF8
 
 clear all
 
@@ -53,7 +53,7 @@ for k = 1:N-1
   d_rho(k) = abs(a_rho(k) - b_rho(k)); %|V - V|
 end
 
-while max(d_rho) > 10^(-7) %convergence condition
+while max(d_rho) > 10^(-7) %convergence conditiongit
   n = n + 1
   for k = 1:N-1
     e(NonRef(k)) = e(NonRef(k)) + def(2*k-1);
