@@ -31,7 +31,6 @@ n = 1
 THEATA = zeros(1,N-1);
 RHO = zeros(1,N-1);
 for k = 1:N-1
-  VVV(k) = e(NonRef(k)) + def(2*k-1) + (f(NonRef(k)) + def(2*k)) * i;
   [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
 end
 
@@ -70,8 +69,6 @@ while max(d_rho) > 10^(-7)
   %============= delta.m ================
   
   for k = 1:N-1
-    VVV(k) = e(NonRef(k)) + def(2*k-1) + (f(NonRef(k)) + def(2*k)) * ...
-	i;
     [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
   end
   
