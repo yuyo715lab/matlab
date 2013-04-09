@@ -1,8 +1,18 @@
-function [P,Q,RHO,THEATA] = main(Y)
+%/////// 9-bus power flow calculation
+%/////// TOMOHIRO ADACHI
+%/////// 2013/04
+
+
+clear all
+
 
 %============= Define.m ================
 [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ] = Define();
 %============= Define.m ================
+
+%============= admittance.m ================
+Y = admittance(N,R,Tr);
+%============= admittance.m ================
 
 %============= PandQ.m ================
 [dP,dQ,dV,P,Q,V] = PandQ(N,Y,PQ,Ps,Qs,Vs,e,f);
@@ -27,7 +37,7 @@ for k = 1:N
 end
 %------------ polar coordinate system ------------
 
-%{
+
 %/////// Display /////////
 fprintf('n = %d\n',n)
 for k = 1:N
@@ -36,7 +46,6 @@ for k = 1:N
 end
 
 %/////// Display /////////
-%}
 
 b_rho = zeros(1,N-1);
 a_rho = RHO;
@@ -77,7 +86,6 @@ while max(d_rho) > 10^(-7) %convergence conditiongit
     d_rho(k) = abs(a_rho(k) - b_rho(k));
   end
 
-%{
 %/////// Display /////////
 fprintf('n = %d\n',n)
 for k = 1:N
@@ -86,7 +94,7 @@ for k = 1:N
 end
 
 %/////// Display /////////
-%}
+
 
 
 end
