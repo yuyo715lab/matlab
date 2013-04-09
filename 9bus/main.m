@@ -1,7 +1,7 @@
 %/////// 9-bus power flow calculation
 %/////// TOMOHIRO ADACHI
 %/////// 2013/04
-%/////// テスト for UTF8
+
 
 clear all
 
@@ -29,22 +29,21 @@ def = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
 
 n = 1 % the number of cycle
 
-%% polar coordinate system %%
+%------------ polar coordinate system ------------
 THEATA = zeros(1,N-1); %theta
 RHO = zeros(1,N-1); %r
-
 for k = 1:N-1
   [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
 end
-%% polar coordinate system %%
+%------------ polar coordinate system ------------
 
 
-
+%/////// Display /////////
 THEATA
 RHO
 P
 Q
-
+%/////// Display /////////
 
 b_rho = zeros(1,N-1);
 a_rho = RHO;
@@ -72,11 +71,11 @@ while max(d_rho) > 10^(-7) %convergence conditiongit
   def = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
   %============= delta.m ================
   
-  %% polar coordinate system %%
+  %----------- polar coordinate system ---------
   for k = 1:N-1
     [THEATA(k),RHO(k)] = cart2pol(e(NonRef(k)) + def(2*k-1),(f(NonRef(k)) + def(2*k)));
   end
-  %% polar coordinate system %%
+  %----------- polar coordinate system ---------
   
   
   b_rho = a_rho;
@@ -85,11 +84,12 @@ while max(d_rho) > 10^(-7) %convergence conditiongit
     d_rho(k) = abs(a_rho(k) - b_rho(k));
   end
 
+%/////// Display /////////
 THEATA
 RHO
 P
 Q
-
+%/////// Display /////////
 
 
 

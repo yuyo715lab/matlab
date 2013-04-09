@@ -16,10 +16,7 @@ def = zeros(2*(N-1),1);
 def = inv(Jacobi) * dPQ.';
 
 
-VV = zeros(1,N-1);
-for k = 1:N-1
-  VV(k) = e(NonRef(k)) + def(2*k-1) + (f(NonRef(k)) + def(2*k))*i;
-end
+
 
 
 
