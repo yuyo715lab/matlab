@@ -2,7 +2,7 @@ function Out = admittance(N,R,Tr)
 
 Y = zeros(N,N);
 
-%%%%%%%%% Driving Point Admittance %%%%%%%%%
+%%%%%%%%% Direct admittance %%%%%%%%%
 for k = 1:N
   for m = 1:N
     if R(k,m) ~= 0
@@ -10,10 +10,10 @@ for k = 1:N
     end
   end
 end
-%%%%%%%%% Driving Point Admittance %%%%%%%%%
+%%%%%%%%% Direct admittance %%%%%%%%%
 
 
-%%%%%%%%% Transfer Admittance %%%%%%%%%
+%%%%%%%%% Transfer admittance %%%%%%%%%
 for k = 1:N
   for m = k:N
     if k ~= m
@@ -24,7 +24,7 @@ for k = 1:N
     Y(m,k) = Y(k,m);
   end
 end
-%%%%%%%%% Transfer Admittance %%%%%%%%%
+%%%%%%%%% Transfer admittance %%%%%%%%%
 
 %%%%%%%%% Off norminal turn rario %%%%%%%%%
 for k = 1:N
