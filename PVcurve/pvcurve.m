@@ -2,6 +2,9 @@
 SN = 5;
 %######### specified node #########
 
+%######### initial V #########
+ei = 1;
+%######### initial V #########
 
 %######### First PQ-proportion #########
 fprop = 0;
@@ -16,7 +19,7 @@ Plimit = 4.06;
 %######### P limit #########
 
 %============= Define.m ================
-[N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(1,SN);
+[N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(1,SN,ei);
 %============= Define.m ================
 
 CN = 0;
@@ -27,14 +30,14 @@ while -Pss * prop < Plimit
 end
 
 
-XY = zeros(2,CN);
+XY = zeros(2,2*CN);
 
 k = 1;
 prop = fprop;
 while -Pss * prop < Plimit
 
   %============= Define.m ================
-  [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(prop,SN);
+  [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(prop,SN,ei);
   %============= Define.m ================
 
   [P,Q,RHO,THEATA] = ...
@@ -45,8 +48,24 @@ while -Pss * prop < Plimit
   k = k + 1;
 end
 
-plot(XY(1,:),XY(2,:))
+ei = 0;
+prop = fprop;
+while -Pss * prop < Plimit
 
+  %============= Define.m ================
+  [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(prop,SN,ei);
+  %============= Define.m ================
+
+  [P,Q,RHO,THEATA] = ...
+      main(N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ);
+  XY(1,k) = -P(SN);
+  XY(2,k) = RHO(SN);
+  prop = prop + dprop;
+  k = k + 1;
+end
+
+%plot(XY(1,:),XY(2,:))
+scatter(XY(1,:),XY(2,:))
 
 
 

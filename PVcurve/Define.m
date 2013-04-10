@@ -1,4 +1,4 @@
-function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(prop,SN)
+function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,Pss] = Define(prop,SN,ei)
 
 
 %%%%%%%%%%% Bus Number %%%%%%%%%%%
@@ -63,6 +63,7 @@ V = zeros(1,N);
 dV = zeros(1,N);
 
 e = [1.04 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0];
+e(SN) = ei;%for pvcurve
 Vs(2) = 1.025;
 Vs(3) = 1.025;
 %%%%%%%%% Node Voltage %%%%%%%%%
@@ -76,9 +77,9 @@ PQ = zeros(1,N);
 Ps = [0 1.63 0.85 0 -1.25 -0.9 0 -1 0];
 Qs = [0 0 0 0 -0.5 -0.3 0 -0.35 0];
 
-Pss = Ps(SN);
-Ps(SN) = Ps(SN) * prop;
-Qs(SN) = Qs(SN) * prop;
+Pss = Ps(SN); %for pvcurve
+Ps(SN) = Ps(SN) * prop; %for pvcurve
+Qs(SN) = Qs(SN) * prop; %for pvcurve
 %%%%%%%%% P and Q %%%%%%%%%
 
 
