@@ -30,7 +30,7 @@ while -Pss * prop < Plimit
 end
 
 
-XY = zeros(2,2*CN);
+XY = zeros(2*CN,2);
 
 k = 1;
 prop = fprop;
@@ -42,8 +42,8 @@ while -Pss * prop < Plimit
 
   [P,Q,RHO,THEATA] = ...
       main(N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ);
-  XY(1,k) = -P(SN);
-  XY(2,k) = RHO(SN);
+  XY(k,1) = -P(SN);
+  XY(k,2) = RHO(SN);
   prop = prop + dprop;
   k = k + 1;
 end
@@ -58,14 +58,14 @@ while -Pss * prop < Plimit
 
   [P,Q,RHO,THEATA] = ...
       main(N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ);
-  XY(1,k) = -P(SN);
-  XY(2,k) = RHO(SN);
+  XY(k,1) = -P(SN);
+  XY(k,2) = RHO(SN);
   prop = prop + dprop;
   k = k + 1;
 end
 
 %plot(XY(1,:),XY(2,:))
-scatter(XY(1,:),XY(2,:))
+scatter(XY(:,1),XY(:,2))
 
 
 
