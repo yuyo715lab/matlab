@@ -1,9 +1,12 @@
+clear all
+
+
 %######### specified node #########
-SN = 5;
+SN = 8;
 %######### specified node #########
 
 %######### initial V #########
-ei = 1;
+ei = 1.0;
 %######### initial V #########
 
 %######### First PQ-proportion #########
@@ -15,7 +18,7 @@ dprop = 0.01;
 %######### Delta proportion #########
 
 %######### P limit #########
-Plimit = 4.06;
+Plimit = 4.67;
 %######### P limit #########
 
 %============= Define.m ================
