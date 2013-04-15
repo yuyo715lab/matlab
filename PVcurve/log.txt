@@ -20,6 +20,7 @@ ei = 1 -> 0
 Plimit = 4.67
 dprop = 0.01
 Vr_max = (0.62228 + 0.64827)/2 = 0.6353
+required time 2.9s
 ~~~~~~~~~
 
 
@@ -66,5 +67,5 @@ ei = 1 -> 0
 Plimit = 4.6724
 dprop = 0.0001
 Vr_max = 
-required time 4m.s
+required time 4m52.3s
 ~~~~~~~~~

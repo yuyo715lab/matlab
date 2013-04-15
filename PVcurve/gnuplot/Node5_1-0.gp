@@ -1,9 +1,8 @@
 set terminal postscript eps enhanced color
-set output "pvcurve01.eps"
-
+set output "pvcurve-N8-big01.eps"
+set xrange [4.65:4.675]
+set yrange [0.6:0.66]
 set grid
 set xlabel "Ps[p.u.]"
 set ylabel "Vr[p.u.]"
-plot "../csv/Node5_1-0.csv" using 1:2 t 'Node5',\
-     "../csv/Node6.csv" u 1:2 t 'Node6',\
-     "../csv/Node8.csv" u 1:2 t 'Node8'
+plot "../csv/Node8.csv" u 1:2 t 'Node8'
