@@ -1,5 +1,7 @@
 clear all
 
+startT = clock();
+startCpuT = cputime;
 
 %######### specified node #########
 SN = 8;
@@ -14,11 +16,11 @@ fprop = 0;
 %######### First PQ-proportion #########
 
 %######### Delta propotion #########
-dprop = 0.01;
+dprop = 0.0001;
 %######### Delta proportion #########
 
 %######### P limit #########
-Plimit = 4.67;
+Plimit = 4.6724;
 %######### P limit #########
 
 %============= Define.m ================
@@ -66,6 +68,18 @@ while -Pss * prop < Plimit
   prop = prop + dprop;
   k = k + 1;
 end
+
+
+
+
+
+ntime=cputime-startCpuT;
+nhour = floor(ntime/60/60);
+nmin = floor((ntime-nhour*3600)/60);
+nsec = ntime-nhour*3600-nmin*60;
+disp(sprintf('%s%s', 'Start time',datestr(startT,31)));
+disp(sprintf('%s%s', 'End time',datestr(clock,31)));
+disp(sprintf('%s%d%s%02d%s%04.1f%s', 'time required',nhour,'h',nmin,'m',nsec,'s'));
 
 %plot(XY(1,:),XY(2,:))
 scatter(XY(:,1),XY(:,2))

@@ -22,3 +22,49 @@ dprop = 0.01
 Vr_max = (0.62228 + 0.64827)/2 = 0.6353
 ~~~~~~~~~
 
+
+
+~~~~~~~~~
+Node 8
+ei = 1 -> 0
+Plimit = 4.672
+dprop = 0.0001
+Vr_max = 
+required time 4m36.9s
+~~~~~~~~~
+
+~~~~~~~~~
+Node 8
+ei = 1 -> 0
+Plimit = 4.6721
+dprop = 0.0001
+Vr_max = 
+required time 4m37.9s
+~~~~~~~~~
+
+~~~~~~~~~
+Node 8
+ei = 1 -> 0
+Plimit = 4.6722
+dprop = 0.0001
+Vr_max = 
+required time 4m38.9s
+~~~~~~~~~
+
+~~~~~~~~~
+Node 8
+ei = 1 -> 0
+Plimit = 4.6723
+dprop = 0.0001
+Vr_max = 
+required time 4m39.0s
+~~~~~~~~~
+
+~~~~~~~~~
+Node 8
+ei = 1 -> 0
+Plimit = 4.6724
+dprop = 0.0001
+Vr_max = 
+required time 4m.s
+~~~~~~~~~
