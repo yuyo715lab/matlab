@@ -1,0 +1,6 @@
+
+
+
+set grid
+
+plot "../csv/dydx.csv" u 1:2
