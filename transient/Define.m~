@@ -1,4 +1,4 @@
-function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ] = Define()
+%function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ] = Define()
 
 
 %%%%%%%%%%% Bus Number %%%%%%%%%%%

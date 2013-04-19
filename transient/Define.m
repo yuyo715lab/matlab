@@ -1,4 +1,4 @@
-%function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ] = Define()
+function [N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,GorL] = Define()
 
 
 %%%%%%%%%%% Bus Number %%%%%%%%%%%
@@ -77,4 +77,7 @@ Ps = [0 1.63 0.85 0 -1.25 -0.9 0 -1 0];
 Qs = [0 0 0 0 -0.5 -0.3 0 -0.35 0];
 %%%%%%%%% P and Q %%%%%%%%%
 
-
+%%%%%%%%% G or L if G-0 L-1%%%%%%%%%
+GorL = zeros(1,N);
+GorL = [0 0 0 1 1 1 1 1 1];
+%%%%%%%%% G or L %%%%%%%%%

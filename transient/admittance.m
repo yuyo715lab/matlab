@@ -1,4 +1,4 @@
-%function Out = admittance(N,R,Tr)
+function Out = admittance(N,R,Tr)
 
 Y = zeros(N,N);
 
