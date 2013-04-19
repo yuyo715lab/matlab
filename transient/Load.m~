@@ -1,0 +1,9 @@
+function Y_ = Load(N,Y,Ps,Qs,PQorPV)
+  
+  count = 0;
+  for k = 1:N
+    if Ps(k) == Qs(k) == 0 && PQorPV == 1
+      count = count + 1;
+    end
+  end
+  

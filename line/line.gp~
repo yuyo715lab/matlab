@@ -1,0 +1,11 @@
+#set terminal postscript eps enhanced color
+#set output "capa-big.eps"
+#set xrange [4:5]
+#set yrange [0.35:1]
+#set key outside
+set grid
+set xlabel "Ps[p.u.]"
+set ylabel "Vr[p.u.]"
+plot "./line-0.002.csv" u 1:2 t '-0.002[p.u.]',\
+     "../csv/capa-0.005.csv" u 1:2 t '-0.005[p.u.]',\
+     "../csv/capa-0.008.csv" u 1:2 t '-0.008[p.u.]'

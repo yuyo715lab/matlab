@@ -1,0 +1,5659 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: capa.eps
+%%Creator: gnuplot 4.6 patchlevel 0
+%%CreationDate: Wed Apr 17 21:24:29 2013
+%%DocumentFonts: (atend)
+%%BoundingBox: 50 50 410 302
+%%EndComments
+%%BeginProlog
+/gnudict 256 dict def
+gnudict begin
+%
+% The following true/false flags may be edited by hand if desired.
+% The unit line width and grayscale image gamma correction may also be changed.
+%
+/Color true def
+/Blacktext false def
+/Solid false def
+/Dashlength 1 def
+/Landscape false def
+/Level1 false def
+/Rounded false def
+/ClipToBoundingBox false def
+/SuppressPDFMark false def
+/TransparentPatterns false def
+/gnulinewidth 5.000 def
+/userlinewidth gnulinewidth def
+/Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
+%
+/vshift -46 def
+/dl1 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
+} def
+/dl2 {
+  10.0 Dashlength mul mul
+  Rounded { currentlinewidth 0.75 mul add } if
+} def
+/hpt_ 31.5 def
+/vpt_ 31.5 def
+/hpt hpt_ def
+/vpt vpt_ def
+/doclip {
+  ClipToBoundingBox {
+    newpath 50 50 moveto 410 50 lineto 410 302 lineto 50 302 lineto closepath
+    clip
+  } if
+} def
+%
+% Gnuplot Prolog Version 4.4 (August 2010)
+%
+%/SuppressPDFMark true def
+%
+/M {moveto} bind def
+/L {lineto} bind def
+/R {rmoveto} bind def
+/V {rlineto} bind def
+/N {newpath moveto} bind def
+/Z {closepath} bind def
+/C {setrgbcolor} bind def
+/f {rlineto fill} bind def
+/g {setgray} bind def
+/Gshow {show} def   % May be redefined later in the file to support UTF-8
+/vpt2 vpt 2 mul def
+/hpt2 hpt 2 mul def
+/Lshow {currentpoint stroke M 0 vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
+	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+/UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
+  /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
+/DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
+ {pop pop pop 0 setgray Solid {pop []} if 0 setdash} ifelse} def
+/BL {stroke userlinewidth 2 mul setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/AL {stroke userlinewidth 2 div setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+/UL {dup gnulinewidth mul /userlinewidth exch def
+	dup 1 lt {pop 1} if 10 mul /udl exch def} def
+/PL {stroke userlinewidth setlinewidth
+	Rounded {1 setlinejoin 1 setlinecap} if} def
+3.8 setmiterlimit
+% Default Line colors
+/LCw {1 1 1} def
+/LCb {0 0 0} def
+/LCa {0 0 0} def
+/LC0 {1 0 0} def
+/LC1 {0 1 0} def
+/LC2 {0 0 1} def
+/LC3 {1 0 1} def
+/LC4 {0 1 1} def
+/LC5 {1 1 0} def
+/LC6 {0 0 0} def
+/LC7 {1 0.3 0} def
+/LC8 {0.5 0.5 0.5} def
+% Default Line Types
+/LTw {PL [] 1 setgray} def
+/LTb {BL [] LCb DL} def
+/LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
+/LT0 {PL [] LC0 DL} def
+/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
+/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
+/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
+/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
+/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
+/Dia {stroke [] 0 setdash 2 copy vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke
+  Pnt} def
+/Pls {stroke [] 0 setdash vpt sub M 0 vpt2 V
+  currentpoint stroke M
+  hpt neg vpt neg R hpt2 0 V stroke
+ } def
+/Box {stroke [] 0 setdash 2 copy exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke
+  Pnt} def
+/Crs {stroke [] 0 setdash exch hpt sub exch vpt add M
+  hpt2 vpt2 neg V currentpoint stroke M
+  hpt2 neg 0 R hpt2 vpt2 V stroke} def
+/TriU {stroke [] 0 setdash 2 copy vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke
+  Pnt} def
+/Star {2 copy Pls Crs} def
+/BoxF {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath fill} def
+/TriUF {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath fill} def
+/TriD {stroke [] 0 setdash 2 copy vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke
+  Pnt} def
+/TriDF {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath fill} def
+/DiaF {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath fill} def
+/Pent {stroke [] 0 setdash 2 copy gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore Pnt} def
+/PentF {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath fill grestore} def
+/Circle {stroke [] 0 setdash 2 copy
+  hpt 0 360 arc stroke Pnt} def
+/CircleF {stroke [] 0 setdash hpt 0 360 arc fill} def
+/C0 {BL [] 0 setdash 2 copy moveto vpt 90 450 arc} bind def
+/C1 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C2 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C3 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C4 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C5 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc
+	2 copy moveto
+	2 copy vpt 180 270 arc closepath fill
+	vpt 0 360 arc} bind def
+/C6 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C7 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 270 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C8 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C9 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 270 450 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C10 {BL [] 0 setdash 2 copy 2 copy moveto vpt 270 360 arc closepath fill
+	2 copy moveto
+	2 copy vpt 90 180 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C11 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 180 arc closepath fill
+	2 copy moveto
+	2 copy vpt 270 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C12 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C13 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 0 90 arc closepath fill
+	2 copy moveto
+	2 copy vpt 180 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/C14 {BL [] 0 setdash 2 copy moveto
+	2 copy vpt 90 360 arc closepath fill
+	vpt 0 360 arc} bind def
+/C15 {BL [] 0 setdash 2 copy vpt 0 360 arc closepath fill
+	vpt 0 360 arc closepath} bind def
+/Rec {newpath 4 2 roll moveto 1 index 0 rlineto 0 exch rlineto
+	neg 0 rlineto closepath} bind def
+/Square {dup Rec} bind def
+/Bsquare {vpt sub exch vpt sub exch vpt2 Square} bind def
+/S0 {BL [] 0 setdash 2 copy moveto 0 vpt rlineto BL Bsquare} bind def
+/S1 {BL [] 0 setdash 2 copy vpt Square fill Bsquare} bind def
+/S2 {BL [] 0 setdash 2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S3 {BL [] 0 setdash 2 copy exch vpt sub exch vpt2 vpt Rec fill Bsquare} bind def
+/S4 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S5 {BL [] 0 setdash 2 copy 2 copy vpt Square fill
+	exch vpt sub exch vpt sub vpt Square fill Bsquare} bind def
+/S6 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S7 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt vpt2 Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S8 {BL [] 0 setdash 2 copy vpt sub vpt Square fill Bsquare} bind def
+/S9 {BL [] 0 setdash 2 copy vpt sub vpt vpt2 Rec fill Bsquare} bind def
+/S10 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt Square fill
+	Bsquare} bind def
+/S11 {BL [] 0 setdash 2 copy vpt sub vpt Square fill 2 copy exch vpt sub exch vpt2 vpt Rec fill
+	Bsquare} bind def
+/S12 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill Bsquare} bind def
+/S13 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy vpt Square fill Bsquare} bind def
+/S14 {BL [] 0 setdash 2 copy exch vpt sub exch vpt sub vpt2 vpt Rec fill
+	2 copy exch vpt sub exch vpt Square fill Bsquare} bind def
+/S15 {BL [] 0 setdash 2 copy Bsquare fill Bsquare} bind def
+/D0 {gsave translate 45 rotate 0 0 S0 stroke grestore} bind def
+/D1 {gsave translate 45 rotate 0 0 S1 stroke grestore} bind def
+/D2 {gsave translate 45 rotate 0 0 S2 stroke grestore} bind def
+/D3 {gsave translate 45 rotate 0 0 S3 stroke grestore} bind def
+/D4 {gsave translate 45 rotate 0 0 S4 stroke grestore} bind def
+/D5 {gsave translate 45 rotate 0 0 S5 stroke grestore} bind def
+/D6 {gsave translate 45 rotate 0 0 S6 stroke grestore} bind def
+/D7 {gsave translate 45 rotate 0 0 S7 stroke grestore} bind def
+/D8 {gsave translate 45 rotate 0 0 S8 stroke grestore} bind def
+/D9 {gsave translate 45 rotate 0 0 S9 stroke grestore} bind def
+/D10 {gsave translate 45 rotate 0 0 S10 stroke grestore} bind def
+/D11 {gsave translate 45 rotate 0 0 S11 stroke grestore} bind def
+/D12 {gsave translate 45 rotate 0 0 S12 stroke grestore} bind def
+/D13 {gsave translate 45 rotate 0 0 S13 stroke grestore} bind def
+/D14 {gsave translate 45 rotate 0 0 S14 stroke grestore} bind def
+/D15 {gsave translate 45 rotate 0 0 S15 stroke grestore} bind def
+/DiaE {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V closepath stroke} def
+/BoxE {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V closepath stroke} def
+/TriUE {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V closepath stroke} def
+/TriDE {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V closepath stroke} def
+/PentE {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  closepath stroke grestore} def
+/CircE {stroke [] 0 setdash 
+  hpt 0 360 arc stroke} def
+/Opaque {gsave closepath 1 setgray fill grestore 0 setgray closepath} def
+/DiaW {stroke [] 0 setdash vpt add M
+  hpt neg vpt neg V hpt vpt neg V
+  hpt vpt V hpt neg vpt V Opaque stroke} def
+/BoxW {stroke [] 0 setdash exch hpt sub exch vpt add M
+  0 vpt2 neg V hpt2 0 V 0 vpt2 V
+  hpt2 neg 0 V Opaque stroke} def
+/TriUW {stroke [] 0 setdash vpt 1.12 mul add M
+  hpt neg vpt -1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt 1.62 mul V Opaque stroke} def
+/TriDW {stroke [] 0 setdash vpt 1.12 mul sub M
+  hpt neg vpt 1.62 mul V
+  hpt 2 mul 0 V
+  hpt neg vpt -1.62 mul V Opaque stroke} def
+/PentW {stroke [] 0 setdash gsave
+  translate 0 hpt M 4 {72 rotate 0 hpt L} repeat
+  Opaque stroke grestore} def
+/CircW {stroke [] 0 setdash 
+  hpt 0 360 arc Opaque stroke} def
+/BoxFill {gsave Rec 1 setgray fill grestore} def
+/Density {
+  /Fillden exch def
+  currentrgbcolor
+  /ColB exch def /ColG exch def /ColR exch def
+  /ColR ColR Fillden mul Fillden sub 1 add def
+  /ColG ColG Fillden mul Fillden sub 1 add def
+  /ColB ColB Fillden mul Fillden sub 1 add def
+  ColR ColG ColB setrgbcolor} def
+/BoxColFill {gsave Rec PolyFill} def
+/PolyFill {gsave Density fill grestore grestore} def
+/h {rlineto rlineto rlineto gsave closepath fill grestore} bind def
+%
+% PostScript Level 1 Pattern Fill routine for rectangles
+% Usage: x y w h s a XX PatternFill
+%	x,y = lower left corner of box to be filled
+%	w,h = width and height of box
+%	  a = angle in degrees between lines and x-axis
+%	 XX = 0/1 for no/yes cross-hatch
+%
+/PatternFill {gsave /PFa [ 9 2 roll ] def
+  PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
+  PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
+  gsave 1 setgray fill grestore clip
+  currentlinewidth 0.5 mul setlinewidth
+  /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
+  0 0 M PFa 5 get rotate PFs -2 div dup translate
+  0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 M 0 PFs V} for
+  0 PFa 6 get ne {
+	0 1 PFs PFa 4 get div 1 add floor cvi
+	{PFa 4 get mul 0 2 1 roll M PFs 0 V} for
+ } if
+  stroke grestore} def
+%
+/languagelevel where
+ {pop languagelevel} {1} ifelse
+ 2 lt
+	{/InterpretLevel1 true def}
+	{/InterpretLevel1 Level1 def}
+ ifelse
+%
+% PostScript level 2 pattern fill definitions
+%
+/Level2PatternFill {
+/Tile8x8 {/PaintType 2 /PatternType 1 /TilingType 1 /BBox [0 0 8 8] /XStep 8 /YStep 8}
+	bind def
+/KeepColor {currentrgbcolor [/Pattern /DeviceRGB] setcolorspace} bind def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke} 
+>> matrix makepattern
+/Pat1 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 8 8 L 0 8 M 8 0 L stroke
+	0 4 M 4 8 L 8 4 L 4 0 L 0 4 L stroke}
+>> matrix makepattern
+/Pat2 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 0 M 0 8 L
+	8 8 L 8 0 L 0 0 L fill}
+>> matrix makepattern
+/Pat3 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 8 M 8 -4 L
+	0 12 M 12 0 L stroke}
+>> matrix makepattern
+/Pat4 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -4 0 M 8 12 L
+	0 -4 M 12 8 L stroke}
+>> matrix makepattern
+/Pat5 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 8 M 4 -4 L
+	0 12 M 8 -4 L 4 12 M 10 0 L stroke}
+>> matrix makepattern
+/Pat6 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop -2 0 M 4 12 L
+	0 -4 M 8 12 L 4 -4 M 10 8 L stroke}
+>> matrix makepattern
+/Pat7 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 8 -2 M -4 4 L
+	12 0 M -4 8 L 12 4 M 0 10 L stroke}
+>> matrix makepattern
+/Pat8 exch def
+<< Tile8x8
+ /PaintProc {0.5 setlinewidth pop 0 -2 M 12 4 L
+	-4 0 M 12 8 L -4 4 M 8 10 L stroke}
+>> matrix makepattern
+/Pat9 exch def
+/Pattern1 {PatternBgnd KeepColor Pat1 setpattern} bind def
+/Pattern2 {PatternBgnd KeepColor Pat2 setpattern} bind def
+/Pattern3 {PatternBgnd KeepColor Pat3 setpattern} bind def
+/Pattern4 {PatternBgnd KeepColor Landscape {Pat5} {Pat4} ifelse setpattern} bind def
+/Pattern5 {PatternBgnd KeepColor Landscape {Pat4} {Pat5} ifelse setpattern} bind def
+/Pattern6 {PatternBgnd KeepColor Landscape {Pat9} {Pat6} ifelse setpattern} bind def
+/Pattern7 {PatternBgnd KeepColor Landscape {Pat8} {Pat7} ifelse setpattern} bind def
+} def
+%
+%
+%End of PostScript Level 2 code
+%
+/PatternBgnd {
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+} def
+%
+% Substitute for Level 2 pattern fill codes with
+% grayscale if Level 2 support is not selected.
+%
+/Level1PatternFill {
+/Pattern1 {0.250 Density} bind def
+/Pattern2 {0.500 Density} bind def
+/Pattern3 {0.750 Density} bind def
+/Pattern4 {0.125 Density} bind def
+/Pattern5 {0.375 Density} bind def
+/Pattern6 {0.625 Density} bind def
+/Pattern7 {0.875 Density} bind def
+} def
+%
+% Now test for support of Level 2 code
+%
+Level1 {Level1PatternFill} {Level2PatternFill} ifelse
+%
+/Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
+dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
+currentdict end definefont pop
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {Gshow} {stringwidth pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get stringwidth pop -2 div
+     dup 0 R} {dup 6 get stringwidth pop -2 div 0 R 6 get
+     show 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (capa.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.6 patchlevel 0)
+  /Author (tomohiro)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Wed Apr 17 21:24:29 2013)
+  /DOCINFO pdfmark
+end
+} ifelse
+end
+%%EndProlog
+%%Page: 1 1
+gnudict begin
+gsave
+doclip
+50 50 translate
+0.050 0.050 scale
+0 setgray
+newpath
+(Helvetica) findfont 140 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 448 M
+5078 0 V
+stroke
+LTb
+1869 448 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 448 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 1185 M
+5078 0 V
+stroke
+LTb
+1869 1185 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 1185 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0.2)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 1922 M
+5078 0 V
+stroke
+LTb
+1869 1922 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 1922 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0.4)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 2659 M
+5078 0 V
+stroke
+LTb
+1869 2659 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 2659 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0.6)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 3397 M
+5078 0 V
+stroke
+LTb
+1869 3397 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 3397 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0.8)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 4134 M
+5078 0 V
+stroke
+LTb
+1869 4134 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 4134 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 1)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 4871 M
+5078 0 V
+stroke
+LTb
+1869 4871 M
+63 0 V
+5015 0 R
+-63 0 V
+stroke
+1785 4871 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 1.2)]
+] -46.7 MRshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+1869 448 M
+0 4423 V
+stroke
+LTb
+1869 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+1869 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+2377 448 M
+0 4423 V
+stroke
+LTb
+2377 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+2377 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 0.5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+2885 448 M
+0 4423 V
+stroke
+LTb
+2885 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+2885 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 1)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+3392 448 M
+0 4423 V
+stroke
+LTb
+3392 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+3392 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 1.5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+3900 448 M
+0 4423 V
+stroke
+LTb
+3900 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+3900 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 2)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+4408 448 M
+0 4423 V
+stroke
+LTb
+4408 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+4408 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 2.5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+4916 448 M
+0 4423 V
+stroke
+LTb
+4916 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+4916 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 3)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+5424 448 M
+0 4423 V
+stroke
+LTb
+5424 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+5424 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 3.5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+5931 448 M
+0 4423 V
+stroke
+LTb
+5931 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+5931 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 4)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+6439 448 M
+0 4423 V
+stroke
+LTb
+6439 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+6439 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 4.5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTa
+6947 448 M
+0 4423 V
+stroke
+LTb
+6947 448 M
+0 63 V
+0 4360 R
+0 -63 V
+stroke
+6947 308 M
+[ [(Helvetica) 140.0 0.0 true true 0 ( 5)]
+] -46.7 MCshow
+1.000 UL
+LTb
+1.000 UL
+LTb
+1869 4871 N
+0 -4423 V
+5078 0 V
+0 4423 V
+-5078 0 V
+Z stroke
+LCb setrgbcolor
+1295 2659 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Helvetica) 140.0 0.0 true true 0 (Vr[p.u.])]
+] -46.7 MCshow
+grestore
+LTb
+LCb setrgbcolor
+4408 98 M
+[ [(Helvetica) 140.0 0.0 true true 0 (Ps[p.u.])]
+] -46.7 MCshow
+LTb
+1.000 UP
+1.000 UL
+LTb
+% Begin plot #1
+1.000 UP
+1.000 UL
+LT0
+LCb setrgbcolor
+840 1078 M
+[ [(Helvetica) 140.0 0.0 true true 0 (0.1[p.u.])]
+] -46.7 MRshow
+LT0
+1869 4323 Pls
+1879 4322 Pls
+1889 4321 Pls
+1899 4320 Pls
+1910 4319 Pls
+1920 4318 Pls
+1930 4317 Pls
+1940 4317 Pls
+1950 4316 Pls
+1960 4315 Pls
+1971 4314 Pls
+1981 4313 Pls
+1991 4312 Pls
+2001 4311 Pls
+2011 4310 Pls
+2021 4309 Pls
+2031 4309 Pls
+2042 4308 Pls
+2052 4307 Pls
+2062 4306 Pls
+2072 4305 Pls
+2082 4304 Pls
+2092 4303 Pls
+2103 4302 Pls
+2113 4301 Pls
+2123 4300 Pls
+2133 4299 Pls
+2143 4299 Pls
+2153 4297 Pls
+2164 4296 Pls
+2174 4296 Pls
+2184 4295 Pls
+2194 4294 Pls
+2204 4293 Pls
+2214 4292 Pls
+2224 4291 Pls
+2235 4290 Pls
+2245 4289 Pls
+2255 4288 Pls
+2265 4287 Pls
+2275 4286 Pls
+2285 4285 Pls
+2296 4284 Pls
+2306 4283 Pls
+2316 4282 Pls
+2326 4281 Pls
+2336 4280 Pls
+2346 4279 Pls
+2356 4278 Pls
+2367 4277 Pls
+2377 4276 Pls
+2387 4275 Pls
+2397 4274 Pls
+2407 4273 Pls
+2417 4272 Pls
+2428 4271 Pls
+2438 4269 Pls
+2448 4269 Pls
+2458 4268 Pls
+2468 4267 Pls
+2478 4265 Pls
+2489 4264 Pls
+2499 4263 Pls
+2509 4262 Pls
+2519 4261 Pls
+2529 4260 Pls
+2539 4259 Pls
+2549 4258 Pls
+2560 4257 Pls
+2570 4256 Pls
+2580 4255 Pls
+2590 4254 Pls
+2600 4253 Pls
+2610 4251 Pls
+2621 4250 Pls
+2631 4249 Pls
+2641 4248 Pls
+2651 4247 Pls
+2661 4246 Pls
+2671 4244 Pls
+2681 4243 Pls
+2692 4242 Pls
+2702 4241 Pls
+2712 4240 Pls
+2722 4239 Pls
+2732 4238 Pls
+2742 4236 Pls
+2753 4235 Pls
+2763 4234 Pls
+2773 4233 Pls
+2783 4232 Pls
+2793 4231 Pls
+2803 4229 Pls
+2814 4228 Pls
+2824 4227 Pls
+2834 4226 Pls
+2844 4225 Pls
+2854 4223 Pls
+2864 4222 Pls
+2874 4221 Pls
+2885 4220 Pls
+2895 4219 Pls
+2905 4217 Pls
+2915 4216 Pls
+2925 4215 Pls
+2935 4213 Pls
+2946 4212 Pls
+2956 4211 Pls
+2966 4210 Pls
+2976 4209 Pls
+2986 4207 Pls
+2996 4206 Pls
+3006 4205 Pls
+3017 4203 Pls
+3027 4202 Pls
+3037 4201 Pls
+3047 4200 Pls
+3057 4198 Pls
+3067 4197 Pls
+3078 4196 Pls
+3088 4194 Pls
+3098 4193 Pls
+3108 4192 Pls
+3118 4191 Pls
+3128 4189 Pls
+3139 4188 Pls
+3149 4187 Pls
+3159 4185 Pls
+3169 4184 Pls
+3179 4182 Pls
+3189 4181 Pls
+3199 4180 Pls
+3210 4178 Pls
+3220 4177 Pls
+3230 4176 Pls
+3240 4174 Pls
+3250 4173 Pls
+3260 4171 Pls
+3271 4170 Pls
+3281 4169 Pls
+3291 4167 Pls
+3301 4166 Pls
+3311 4164 Pls
+3321 4163 Pls
+3331 4162 Pls
+3342 4160 Pls
+3352 4159 Pls
+3362 4157 Pls
+3372 4156 Pls
+3382 4154 Pls
+3392 4153 Pls
+3403 4152 Pls
+3413 4150 Pls
+3423 4149 Pls
+3433 4147 Pls
+3443 4146 Pls
+3453 4145 Pls
+3463 4143 Pls
+3474 4142 Pls
+3484 4140 Pls
+3494 4139 Pls
+3504 4137 Pls
+3514 4135 Pls
+3524 4134 Pls
+3535 4132 Pls
+3545 4131 Pls
+3555 4129 Pls
+3565 4128 Pls
+3575 4126 Pls
+3585 4125 Pls
+3596 4123 Pls
+3606 4122 Pls
+3616 4120 Pls
+3626 4119 Pls
+3636 4117 Pls
+3646 4115 Pls
+3656 4114 Pls
+3667 4112 Pls
+3677 4111 Pls
+3687 4109 Pls
+3697 4107 Pls
+3707 4106 Pls
+3717 4104 Pls
+3728 4103 Pls
+3738 4101 Pls
+3748 4099 Pls
+3758 4098 Pls
+3768 4096 Pls
+3778 4095 Pls
+3788 4093 Pls
+3799 4091 Pls
+3809 4090 Pls
+3819 4088 Pls
+3829 4086 Pls
+3839 4085 Pls
+3849 4083 Pls
+3860 4081 Pls
+3870 4079 Pls
+3880 4078 Pls
+3890 4076 Pls
+3900 4074 Pls
+3910 4073 Pls
+3921 4071 Pls
+3931 4069 Pls
+3941 4067 Pls
+3951 4066 Pls
+3961 4064 Pls
+3971 4062 Pls
+3981 4060 Pls
+3992 4059 Pls
+4002 4057 Pls
+4012 4055 Pls
+4022 4053 Pls
+4032 4052 Pls
+4042 4050 Pls
+4053 4048 Pls
+4063 4046 Pls
+4073 4044 Pls
+4083 4042 Pls
+4093 4041 Pls
+4103 4039 Pls
+4113 4037 Pls
+4124 4035 Pls
+4134 4033 Pls
+4144 4031 Pls
+4154 4030 Pls
+4164 4028 Pls
+4174 4026 Pls
+4185 4024 Pls
+4195 4022 Pls
+4205 4020 Pls
+4215 4018 Pls
+4225 4016 Pls
+4235 4014 Pls
+4246 4012 Pls
+4256 4010 Pls
+4266 4009 Pls
+4276 4007 Pls
+4286 4005 Pls
+4296 4003 Pls
+4306 4001 Pls
+4317 3999 Pls
+4327 3997 Pls
+4337 3995 Pls
+4347 3993 Pls
+4357 3991 Pls
+4367 3989 Pls
+4378 3987 Pls
+4388 3985 Pls
+4398 3983 Pls
+4408 3981 Pls
+4418 3978 Pls
+4428 3976 Pls
+4438 3974 Pls
+4449 3972 Pls
+4459 3970 Pls
+4469 3968 Pls
+4479 3966 Pls
+4489 3964 Pls
+4499 3962 Pls
+4510 3960 Pls
+4520 3957 Pls
+4530 3955 Pls
+4540 3953 Pls
+4550 3951 Pls
+4560 3949 Pls
+4570 3947 Pls
+4581 3944 Pls
+4591 3942 Pls
+4601 3940 Pls
+4611 3938 Pls
+4621 3936 Pls
+4631 3933 Pls
+4642 3931 Pls
+4652 3929 Pls
+4662 3927 Pls
+4672 3924 Pls
+4682 3922 Pls
+4692 3920 Pls
+4703 3917 Pls
+4713 3915 Pls
+4723 3913 Pls
+4733 3911 Pls
+4743 3908 Pls
+4753 3906 Pls
+4763 3903 Pls
+4774 3901 Pls
+4784 3899 Pls
+4794 3896 Pls
+4804 3894 Pls
+4814 3892 Pls
+4824 3889 Pls
+4835 3887 Pls
+4845 3884 Pls
+4855 3882 Pls
+4865 3879 Pls
+4875 3877 Pls
+4885 3874 Pls
+4895 3872 Pls
+4906 3869 Pls
+4916 3867 Pls
+4926 3864 Pls
+4936 3862 Pls
+4946 3859 Pls
+4956 3857 Pls
+4967 3854 Pls
+4977 3852 Pls
+4987 3849 Pls
+4997 3846 Pls
+5007 3844 Pls
+5017 3841 Pls
+5028 3839 Pls
+5038 3836 Pls
+5048 3833 Pls
+5058 3831 Pls
+5068 3828 Pls
+5078 3825 Pls
+5088 3822 Pls
+5099 3820 Pls
+5109 3817 Pls
+5119 3814 Pls
+5129 3811 Pls
+5139 3809 Pls
+5149 3806 Pls
+5160 3803 Pls
+5170 3800 Pls
+5180 3797 Pls
+5190 3795 Pls
+5200 3792 Pls
+5210 3789 Pls
+5220 3786 Pls
+5231 3783 Pls
+5241 3780 Pls
+5251 3777 Pls
+5261 3774 Pls
+5271 3771 Pls
+5281 3768 Pls
+5292 3765 Pls
+5302 3762 Pls
+5312 3759 Pls
+5322 3756 Pls
+5332 3753 Pls
+5342 3750 Pls
+5353 3747 Pls
+5363 3744 Pls
+5373 3741 Pls
+5383 3737 Pls
+5393 3734 Pls
+5403 3731 Pls
+5413 3728 Pls
+5424 3725 Pls
+5434 3721 Pls
+5444 3718 Pls
+5454 3715 Pls
+5464 3712 Pls
+5474 3708 Pls
+5485 3705 Pls
+5495 3702 Pls
+5505 3698 Pls
+5515 3695 Pls
+5525 3691 Pls
+5535 3688 Pls
+5545 3684 Pls
+5556 3681 Pls
+5566 3678 Pls
+5576 3674 Pls
+5586 3670 Pls
+5596 3667 Pls
+5606 3663 Pls
+5617 3660 Pls
+5627 3656 Pls
+5637 3652 Pls
+5647 3649 Pls
+5657 3645 Pls
+5667 3641 Pls
+5678 3637 Pls
+5688 3634 Pls
+5698 3630 Pls
+5708 3626 Pls
+5718 3622 Pls
+5728 3618 Pls
+5738 3614 Pls
+5749 3610 Pls
+5759 3606 Pls
+5769 3602 Pls
+5779 3598 Pls
+5789 3594 Pls
+5799 3590 Pls
+5810 3586 Pls
+5820 3582 Pls
+5830 3577 Pls
+5840 3573 Pls
+5850 3569 Pls
+5860 3565 Pls
+5870 3560 Pls
+5881 3556 Pls
+5891 3552 Pls
+5901 3547 Pls
+5911 3543 Pls
+5921 3538 Pls
+5931 3533 Pls
+5942 3529 Pls
+5952 3524 Pls
+5962 3519 Pls
+5972 3515 Pls
+5982 3510 Pls
+5992 3505 Pls
+6002 3500 Pls
+6013 3495 Pls
+6023 3490 Pls
+6033 3485 Pls
+6043 3480 Pls
+6053 3475 Pls
+6063 3470 Pls
+6074 3464 Pls
+6084 3459 Pls
+6094 3454 Pls
+6104 3448 Pls
+6114 3443 Pls
+6124 3437 Pls
+6135 3432 Pls
+6145 3426 Pls
+6155 3420 Pls
+6165 3414 Pls
+6175 3408 Pls
+6185 3402 Pls
+6195 3396 Pls
+6206 3390 Pls
+6216 3384 Pls
+6226 3378 Pls
+6236 3371 Pls
+6246 3365 Pls
+6256 3358 Pls
+6267 3351 Pls
+6277 3344 Pls
+6287 3337 Pls
+6297 3330 Pls
+6307 3323 Pls
+6317 3316 Pls
+6327 3308 Pls
+6338 3301 Pls
+6348 3293 Pls
+6358 3285 Pls
+6368 3277 Pls
+6378 3268 Pls
+6388 3260 Pls
+6399 3251 Pls
+6409 3242 Pls
+6419 3233 Pls
+6429 3224 Pls
+6439 3214 Pls
+6449 3204 Pls
+6460 3194 Pls
+6470 3184 Pls
+6480 3173 Pls
+6490 3161 Pls
+6500 3150 Pls
+6510 3137 Pls
+6520 3125 Pls
+6531 3111 Pls
+6541 3097 Pls
+6551 3082 Pls
+6561 3066 Pls
+6571 3049 Pls
+6581 3030 Pls
+6592 3009 Pls
+6602 2985 Pls
+6612 2958 Pls
+6622 2923 Pls
+6632 2870 Pls
+1869 448 Pls
+1879 451 Pls
+1889 453 Pls
+1899 456 Pls
+1910 459 Pls
+1920 462 Pls
+1930 464 Pls
+1940 467 Pls
+1950 470 Pls
+1960 473 Pls
+1971 475 Pls
+1981 478 Pls
+1991 481 Pls
+2001 484 Pls
+2011 486 Pls
+2021 489 Pls
+2031 492 Pls
+2042 494 Pls
+2052 497 Pls
+2062 500 Pls
+2072 503 Pls
+2082 505 Pls
+2092 508 Pls
+2103 511 Pls
+2113 514 Pls
+2123 516 Pls
+2133 519 Pls
+2143 522 Pls
+2153 524 Pls
+2164 527 Pls
+2174 530 Pls
+2184 533 Pls
+2194 535 Pls
+2204 538 Pls
+2214 541 Pls
+2224 544 Pls
+2235 546 Pls
+2245 549 Pls
+2255 552 Pls
+2265 555 Pls
+2275 557 Pls
+2285 560 Pls
+2296 563 Pls
+2306 565 Pls
+2316 568 Pls
+2326 571 Pls
+2336 574 Pls
+2346 576 Pls
+2356 579 Pls
+2367 582 Pls
+2377 585 Pls
+2387 587 Pls
+2397 590 Pls
+2407 593 Pls
+2417 596 Pls
+2428 598 Pls
+2438 601 Pls
+2448 604 Pls
+2458 607 Pls
+2468 609 Pls
+2478 612 Pls
+2489 615 Pls
+2499 618 Pls
+2509 620 Pls
+2519 623 Pls
+2529 626 Pls
+2539 629 Pls
+2549 631 Pls
+2560 634 Pls
+2570 637 Pls
+2580 640 Pls
+2590 642 Pls
+2600 645 Pls
+2610 648 Pls
+2621 651 Pls
+2631 654 Pls
+2641 656 Pls
+2651 659 Pls
+2661 662 Pls
+2671 665 Pls
+2681 667 Pls
+2692 670 Pls
+2702 673 Pls
+2712 676 Pls
+2722 679 Pls
+2732 681 Pls
+2742 684 Pls
+2753 687 Pls
+2763 690 Pls
+2773 693 Pls
+2783 695 Pls
+2793 698 Pls
+2803 701 Pls
+2814 704 Pls
+2824 707 Pls
+2834 709 Pls
+2844 712 Pls
+2854 715 Pls
+2864 718 Pls
+2874 721 Pls
+2885 723 Pls
+2895 726 Pls
+2905 729 Pls
+2915 732 Pls
+2925 735 Pls
+2935 738 Pls
+2946 740 Pls
+2956 743 Pls
+2966 746 Pls
+2976 749 Pls
+2986 752 Pls
+2996 755 Pls
+3006 757 Pls
+3017 760 Pls
+3027 763 Pls
+3037 766 Pls
+3047 769 Pls
+3057 772 Pls
+3067 775 Pls
+3078 777 Pls
+3088 780 Pls
+3098 783 Pls
+3108 786 Pls
+3118 789 Pls
+3128 792 Pls
+3139 795 Pls
+3149 797 Pls
+3159 800 Pls
+3169 803 Pls
+3179 806 Pls
+3189 809 Pls
+3199 812 Pls
+3210 815 Pls
+3220 818 Pls
+3230 821 Pls
+3240 824 Pls
+3250 826 Pls
+3260 829 Pls
+3271 832 Pls
+3281 835 Pls
+3291 838 Pls
+3301 841 Pls
+3311 844 Pls
+3321 847 Pls
+3331 850 Pls
+3342 853 Pls
+3352 856 Pls
+3362 859 Pls
+3372 862 Pls
+3382 864 Pls
+3392 867 Pls
+3403 870 Pls
+3413 873 Pls
+3423 876 Pls
+3433 879 Pls
+3443 882 Pls
+3453 885 Pls
+3463 888 Pls
+3474 891 Pls
+3484 894 Pls
+3494 897 Pls
+3504 900 Pls
+3514 903 Pls
+3524 906 Pls
+3535 909 Pls
+3545 912 Pls
+3555 915 Pls
+3565 918 Pls
+3575 921 Pls
+3585 924 Pls
+3596 927 Pls
+3606 930 Pls
+3616 933 Pls
+3626 936 Pls
+3636 939 Pls
+3646 942 Pls
+3656 945 Pls
+3667 948 Pls
+3677 951 Pls
+3687 955 Pls
+3697 958 Pls
+3707 961 Pls
+3717 964 Pls
+3728 967 Pls
+3738 970 Pls
+3748 973 Pls
+3758 976 Pls
+3768 979 Pls
+3778 982 Pls
+3788 985 Pls
+3799 988 Pls
+3809 992 Pls
+3819 995 Pls
+3829 998 Pls
+3839 1001 Pls
+3849 1004 Pls
+3860 1007 Pls
+3870 1010 Pls
+3880 1013 Pls
+3890 1017 Pls
+3900 1020 Pls
+3910 1023 Pls
+3921 1026 Pls
+3931 1029 Pls
+3941 1032 Pls
+3951 1036 Pls
+3961 1039 Pls
+3971 1042 Pls
+3981 1045 Pls
+3992 1048 Pls
+4002 1051 Pls
+4012 1055 Pls
+4022 1058 Pls
+4032 1061 Pls
+4042 1064 Pls
+4053 1068 Pls
+4063 1071 Pls
+4073 1074 Pls
+4083 1077 Pls
+4093 1080 Pls
+4103 1084 Pls
+4113 1087 Pls
+4124 1090 Pls
+4134 1094 Pls
+4144 1097 Pls
+4154 1100 Pls
+4164 1103 Pls
+4174 1107 Pls
+4185 1110 Pls
+4195 1113 Pls
+4205 1117 Pls
+4215 1120 Pls
+4225 1123 Pls
+4235 1127 Pls
+4246 1130 Pls
+4256 1133 Pls
+4266 1137 Pls
+4276 1140 Pls
+4286 1143 Pls
+4296 1147 Pls
+4306 1150 Pls
+4317 1154 Pls
+4327 1157 Pls
+4337 1160 Pls
+4347 1164 Pls
+4357 1167 Pls
+4367 1171 Pls
+4378 1174 Pls
+4388 1177 Pls
+4398 1181 Pls
+4408 1184 Pls
+4418 1188 Pls
+4428 1191 Pls
+4438 1195 Pls
+4449 1198 Pls
+4459 1202 Pls
+4469 1205 Pls
+4479 1209 Pls
+4489 1212 Pls
+4499 1216 Pls
+4510 1219 Pls
+4520 1223 Pls
+4530 1226 Pls
+4540 1230 Pls
+4550 1233 Pls
+4560 1237 Pls
+4570 1241 Pls
+4581 1244 Pls
+4591 1248 Pls
+4601 1251 Pls
+4611 1255 Pls
+4621 1259 Pls
+4631 1262 Pls
+4642 1266 Pls
+4652 1269 Pls
+4662 1273 Pls
+4672 1277 Pls
+4682 1281 Pls
+4692 1284 Pls
+4703 1288 Pls
+4713 1292 Pls
+4723 1295 Pls
+4733 1299 Pls
+4743 1303 Pls
+4753 1307 Pls
+4763 1310 Pls
+4774 1314 Pls
+4784 1318 Pls
+4794 1322 Pls
+4804 1325 Pls
+4814 1329 Pls
+4824 1333 Pls
+4835 1337 Pls
+4845 1341 Pls
+4855 1345 Pls
+4865 1348 Pls
+4875 1352 Pls
+4885 1356 Pls
+4895 1360 Pls
+4906 1364 Pls
+4916 1368 Pls
+4926 1372 Pls
+4936 1376 Pls
+4946 1380 Pls
+4956 1384 Pls
+4967 1388 Pls
+4977 1392 Pls
+4987 1396 Pls
+4997 1400 Pls
+5007 1404 Pls
+5017 1408 Pls
+5028 1412 Pls
+5038 1416 Pls
+5048 1420 Pls
+5058 1424 Pls
+5068 1428 Pls
+5078 1433 Pls
+5088 1437 Pls
+5099 1441 Pls
+5109 1445 Pls
+5119 1449 Pls
+5129 1453 Pls
+5139 1458 Pls
+5149 1462 Pls
+5160 1466 Pls
+5170 1471 Pls
+5180 1475 Pls
+5190 1479 Pls
+5200 1483 Pls
+5210 1488 Pls
+5220 1492 Pls
+5231 1497 Pls
+5241 1501 Pls
+5251 1505 Pls
+5261 1510 Pls
+5271 1514 Pls
+5281 1519 Pls
+5292 1523 Pls
+5302 1528 Pls
+5312 1532 Pls
+5322 1537 Pls
+5332 1541 Pls
+5342 1546 Pls
+5353 1551 Pls
+5363 1555 Pls
+5373 1560 Pls
+5383 1565 Pls
+5393 1569 Pls
+5403 1574 Pls
+5413 1579 Pls
+5424 1584 Pls
+5434 1588 Pls
+5444 1593 Pls
+5454 1598 Pls
+5464 1603 Pls
+5474 1608 Pls
+5485 1613 Pls
+5495 1618 Pls
+5505 1623 Pls
+5515 1628 Pls
+5525 1633 Pls
+5535 1638 Pls
+5545 1643 Pls
+5556 1648 Pls
+5566 1653 Pls
+5576 1658 Pls
+5586 1664 Pls
+5596 1669 Pls
+5606 1674 Pls
+5617 1680 Pls
+5627 1685 Pls
+5637 1690 Pls
+5647 1696 Pls
+5657 1701 Pls
+5667 1707 Pls
+5678 1712 Pls
+5688 1718 Pls
+5698 1723 Pls
+5708 1729 Pls
+5718 1735 Pls
+5728 1740 Pls
+5738 1746 Pls
+5749 1752 Pls
+5759 1758 Pls
+5769 1764 Pls
+5779 1769 Pls
+5789 1775 Pls
+5799 1781 Pls
+5810 1788 Pls
+5820 1794 Pls
+5830 1800 Pls
+5840 1806 Pls
+5850 1812 Pls
+5860 1819 Pls
+5870 1825 Pls
+5881 1831 Pls
+5891 1838 Pls
+5901 1844 Pls
+5911 1851 Pls
+5921 1858 Pls
+5931 1864 Pls
+5942 1871 Pls
+5952 1878 Pls
+5962 1885 Pls
+5972 1892 Pls
+5982 1899 Pls
+5992 1906 Pls
+6002 1913 Pls
+6013 1921 Pls
+6023 1928 Pls
+6033 1936 Pls
+6043 1943 Pls
+6053 1951 Pls
+6063 1958 Pls
+6074 1966 Pls
+6084 1974 Pls
+6094 1982 Pls
+6104 1990 Pls
+6114 1998 Pls
+6124 2007 Pls
+6135 2015 Pls
+6145 2023 Pls
+6155 2032 Pls
+6165 2041 Pls
+6175 2049 Pls
+6185 2058 Pls
+6195 2067 Pls
+6206 2077 Pls
+6216 2086 Pls
+6226 2095 Pls
+6236 2105 Pls
+6246 2115 Pls
+6256 2124 Pls
+6267 2134 Pls
+6277 2145 Pls
+6287 2155 Pls
+6297 2165 Pls
+6307 2176 Pls
+6317 2187 Pls
+6327 2198 Pls
+6338 2209 Pls
+6348 2220 Pls
+6358 2232 Pls
+6368 2243 Pls
+6378 2255 Pls
+6388 2267 Pls
+6399 2280 Pls
+6409 2292 Pls
+6419 2305 Pls
+6429 2318 Pls
+6439 2332 Pls
+6449 2345 Pls
+6460 2359 Pls
+6470 2374 Pls
+6480 2388 Pls
+6490 2403 Pls
+6500 2419 Pls
+6510 2435 Pls
+6520 2452 Pls
+6531 2469 Pls
+6541 2487 Pls
+6551 2506 Pls
+6561 2526 Pls
+6571 2547 Pls
+6581 2569 Pls
+6592 2594 Pls
+6602 2621 Pls
+6612 2652 Pls
+6622 2691 Pls
+6632 2748 Pls
+1123 1078 Pls
+% End plot #1
+% Begin plot #2
+1.000 UP
+1.000 UL
+LT1
+LCb setrgbcolor
+840 938 M
+[ [(Helvetica) 140.0 0.0 true true 0 (0.3[p.u.])]
+] -46.7 MRshow
+LT1
+1869 4379 Crs
+1879 4378 Crs
+1889 4377 Crs
+1899 4376 Crs
+1910 4375 Crs
+1920 4375 Crs
+1930 4373 Crs
+1940 4373 Crs
+1950 4372 Crs
+1960 4371 Crs
+1971 4370 Crs
+1981 4369 Crs
+1991 4368 Crs
+2001 4368 Crs
+2011 4366 Crs
+2021 4366 Crs
+2031 4365 Crs
+2042 4364 Crs
+2052 4363 Crs
+2062 4362 Crs
+2072 4361 Crs
+2082 4360 Crs
+2092 4359 Crs
+2103 4358 Crs
+2113 4357 Crs
+2123 4356 Crs
+2133 4355 Crs
+2143 4355 Crs
+2153 4354 Crs
+2164 4353 Crs
+2174 4352 Crs
+2184 4351 Crs
+2194 4350 Crs
+2204 4349 Crs
+2214 4348 Crs
+2224 4347 Crs
+2235 4346 Crs
+2245 4345 Crs
+2255 4344 Crs
+2265 4343 Crs
+2275 4342 Crs
+2285 4341 Crs
+2296 4340 Crs
+2306 4339 Crs
+2316 4338 Crs
+2326 4337 Crs
+2336 4336 Crs
+2346 4335 Crs
+2356 4334 Crs
+2367 4333 Crs
+2377 4332 Crs
+2387 4331 Crs
+2397 4330 Crs
+2407 4329 Crs
+2417 4328 Crs
+2428 4327 Crs
+2438 4325 Crs
+2448 4325 Crs
+2458 4324 Crs
+2468 4323 Crs
+2478 4321 Crs
+2489 4320 Crs
+2499 4319 Crs
+2509 4318 Crs
+2519 4317 Crs
+2529 4316 Crs
+2539 4315 Crs
+2549 4314 Crs
+2560 4313 Crs
+2570 4312 Crs
+2580 4311 Crs
+2590 4310 Crs
+2600 4309 Crs
+2610 4307 Crs
+2621 4306 Crs
+2631 4305 Crs
+2641 4304 Crs
+2651 4303 Crs
+2661 4302 Crs
+2671 4300 Crs
+2681 4299 Crs
+2692 4298 Crs
+2702 4297 Crs
+2712 4296 Crs
+2722 4295 Crs
+2732 4293 Crs
+2742 4292 Crs
+2753 4291 Crs
+2763 4290 Crs
+2773 4289 Crs
+2783 4288 Crs
+2793 4286 Crs
+2803 4285 Crs
+2814 4284 Crs
+2824 4283 Crs
+2834 4282 Crs
+2844 4281 Crs
+2854 4279 Crs
+2864 4278 Crs
+2874 4277 Crs
+2885 4276 Crs
+2895 4275 Crs
+2905 4273 Crs
+2915 4272 Crs
+2925 4271 Crs
+2935 4269 Crs
+2946 4268 Crs
+2956 4267 Crs
+2966 4266 Crs
+2976 4265 Crs
+2986 4263 Crs
+2996 4262 Crs
+3006 4261 Crs
+3017 4260 Crs
+3027 4258 Crs
+3037 4257 Crs
+3047 4255 Crs
+3057 4254 Crs
+3067 4253 Crs
+3078 4252 Crs
+3088 4250 Crs
+3098 4249 Crs
+3108 4248 Crs
+3118 4247 Crs
+3128 4245 Crs
+3139 4244 Crs
+3149 4243 Crs
+3159 4241 Crs
+3169 4240 Crs
+3179 4239 Crs
+3189 4237 Crs
+3199 4236 Crs
+3210 4234 Crs
+3220 4233 Crs
+3230 4232 Crs
+3240 4230 Crs
+3250 4229 Crs
+3260 4227 Crs
+3271 4226 Crs
+3281 4225 Crs
+3291 4223 Crs
+3301 4222 Crs
+3311 4220 Crs
+3321 4219 Crs
+3331 4218 Crs
+3342 4216 Crs
+3352 4215 Crs
+3362 4213 Crs
+3372 4212 Crs
+3382 4210 Crs
+3392 4209 Crs
+3403 4208 Crs
+3413 4206 Crs
+3423 4205 Crs
+3433 4203 Crs
+3443 4202 Crs
+3453 4200 Crs
+3463 4199 Crs
+3474 4197 Crs
+3484 4196 Crs
+3494 4194 Crs
+3504 4193 Crs
+3514 4191 Crs
+3524 4190 Crs
+3535 4188 Crs
+3545 4187 Crs
+3555 4185 Crs
+3565 4184 Crs
+3575 4182 Crs
+3585 4181 Crs
+3596 4179 Crs
+3606 4178 Crs
+3616 4176 Crs
+3626 4175 Crs
+3636 4173 Crs
+3646 4171 Crs
+3656 4170 Crs
+3667 4168 Crs
+3677 4167 Crs
+3687 4165 Crs
+3697 4164 Crs
+3707 4162 Crs
+3717 4160 Crs
+3728 4159 Crs
+3738 4157 Crs
+3748 4156 Crs
+3758 4154 Crs
+3768 4152 Crs
+3778 4150 Crs
+3788 4149 Crs
+3799 4147 Crs
+3809 4146 Crs
+3819 4144 Crs
+3829 4142 Crs
+3839 4140 Crs
+3849 4139 Crs
+3860 4137 Crs
+3870 4136 Crs
+3880 4134 Crs
+3890 4132 Crs
+3900 4130 Crs
+3910 4129 Crs
+3921 4127 Crs
+3931 4125 Crs
+3941 4124 Crs
+3951 4122 Crs
+3961 4120 Crs
+3971 4118 Crs
+3981 4117 Crs
+3992 4115 Crs
+4002 4113 Crs
+4012 4111 Crs
+4022 4110 Crs
+4032 4108 Crs
+4042 4106 Crs
+4053 4104 Crs
+4063 4102 Crs
+4073 4101 Crs
+4083 4099 Crs
+4093 4097 Crs
+4103 4095 Crs
+4113 4093 Crs
+4124 4091 Crs
+4134 4090 Crs
+4144 4088 Crs
+4154 4086 Crs
+4164 4084 Crs
+4174 4082 Crs
+4185 4080 Crs
+4195 4078 Crs
+4205 4076 Crs
+4215 4075 Crs
+4225 4073 Crs
+4235 4071 Crs
+4246 4069 Crs
+4256 4067 Crs
+4266 4065 Crs
+4276 4063 Crs
+4286 4061 Crs
+4296 4059 Crs
+4306 4057 Crs
+4317 4055 Crs
+4327 4053 Crs
+4337 4051 Crs
+4347 4049 Crs
+4357 4047 Crs
+4367 4045 Crs
+4378 4043 Crs
+4388 4041 Crs
+4398 4039 Crs
+4408 4037 Crs
+4418 4035 Crs
+4428 4033 Crs
+4438 4031 Crs
+4449 4029 Crs
+4459 4027 Crs
+4469 4025 Crs
+4479 4023 Crs
+4489 4020 Crs
+4499 4018 Crs
+4510 4016 Crs
+4520 4014 Crs
+4530 4012 Crs
+4540 4010 Crs
+4550 4008 Crs
+4560 4006 Crs
+4570 4003 Crs
+4581 4001 Crs
+4591 3999 Crs
+4601 3997 Crs
+4611 3995 Crs
+4621 3992 Crs
+4631 3990 Crs
+4642 3988 Crs
+4652 3986 Crs
+4662 3983 Crs
+4672 3981 Crs
+4682 3979 Crs
+4692 3977 Crs
+4703 3974 Crs
+4713 3972 Crs
+4723 3970 Crs
+4733 3968 Crs
+4743 3965 Crs
+4753 3963 Crs
+4763 3961 Crs
+4774 3958 Crs
+4784 3956 Crs
+4794 3954 Crs
+4804 3951 Crs
+4814 3949 Crs
+4824 3946 Crs
+4835 3944 Crs
+4845 3942 Crs
+4855 3939 Crs
+4865 3937 Crs
+4875 3934 Crs
+4885 3932 Crs
+4895 3929 Crs
+4906 3927 Crs
+4916 3924 Crs
+4926 3922 Crs
+4936 3919 Crs
+4946 3917 Crs
+4956 3914 Crs
+4967 3912 Crs
+4977 3909 Crs
+4987 3907 Crs
+4997 3904 Crs
+5007 3901 Crs
+5017 3899 Crs
+5028 3896 Crs
+5038 3894 Crs
+5048 3891 Crs
+5058 3888 Crs
+5068 3886 Crs
+5078 3883 Crs
+5088 3880 Crs
+5099 3878 Crs
+5109 3875 Crs
+5119 3872 Crs
+5129 3869 Crs
+5139 3867 Crs
+5149 3864 Crs
+5160 3861 Crs
+5170 3858 Crs
+5180 3856 Crs
+5190 3853 Crs
+5200 3850 Crs
+5210 3847 Crs
+5220 3844 Crs
+5231 3841 Crs
+5241 3838 Crs
+5251 3836 Crs
+5261 3833 Crs
+5271 3830 Crs
+5281 3827 Crs
+5292 3824 Crs
+5302 3821 Crs
+5312 3818 Crs
+5322 3815 Crs
+5332 3812 Crs
+5342 3809 Crs
+5353 3806 Crs
+5363 3803 Crs
+5373 3800 Crs
+5383 3797 Crs
+5393 3793 Crs
+5403 3790 Crs
+5413 3787 Crs
+5424 3784 Crs
+5434 3781 Crs
+5444 3778 Crs
+5454 3774 Crs
+5464 3771 Crs
+5474 3768 Crs
+5485 3765 Crs
+5495 3761 Crs
+5505 3758 Crs
+5515 3755 Crs
+5525 3751 Crs
+5535 3748 Crs
+5545 3744 Crs
+5556 3741 Crs
+5566 3738 Crs
+5576 3734 Crs
+5586 3731 Crs
+5596 3727 Crs
+5606 3724 Crs
+5617 3720 Crs
+5627 3716 Crs
+5637 3713 Crs
+5647 3709 Crs
+5657 3706 Crs
+5667 3702 Crs
+5678 3698 Crs
+5688 3695 Crs
+5698 3691 Crs
+5708 3687 Crs
+5718 3683 Crs
+5728 3679 Crs
+5738 3676 Crs
+5749 3672 Crs
+5759 3668 Crs
+5769 3664 Crs
+5779 3660 Crs
+5789 3656 Crs
+5799 3652 Crs
+5810 3648 Crs
+5820 3644 Crs
+5830 3640 Crs
+5840 3636 Crs
+5850 3631 Crs
+5860 3627 Crs
+5870 3623 Crs
+5881 3619 Crs
+5891 3614 Crs
+5901 3610 Crs
+5911 3606 Crs
+5921 3601 Crs
+5931 3597 Crs
+5942 3592 Crs
+5952 3588 Crs
+5962 3583 Crs
+5972 3579 Crs
+5982 3574 Crs
+5992 3569 Crs
+6002 3565 Crs
+6013 3560 Crs
+6023 3555 Crs
+6033 3550 Crs
+6043 3545 Crs
+6053 3540 Crs
+6063 3535 Crs
+6074 3530 Crs
+6084 3525 Crs
+6094 3520 Crs
+6104 3515 Crs
+6114 3510 Crs
+6124 3504 Crs
+6135 3499 Crs
+6145 3493 Crs
+6155 3488 Crs
+6165 3482 Crs
+6175 3477 Crs
+6185 3471 Crs
+6195 3465 Crs
+6206 3459 Crs
+6216 3453 Crs
+6226 3447 Crs
+6236 3441 Crs
+6246 3435 Crs
+6256 3429 Crs
+6267 3422 Crs
+6277 3416 Crs
+6287 3409 Crs
+6297 3403 Crs
+6307 3396 Crs
+6317 3389 Crs
+6327 3382 Crs
+6338 3375 Crs
+6348 3368 Crs
+6358 3361 Crs
+6368 3353 Crs
+6378 3345 Crs
+6388 3338 Crs
+6399 3330 Crs
+6409 3322 Crs
+6419 3313 Crs
+6429 3305 Crs
+6439 3296 Crs
+6449 3287 Crs
+6460 3278 Crs
+6470 3269 Crs
+6480 3259 Crs
+6490 3249 Crs
+6500 3239 Crs
+6510 3229 Crs
+6520 3218 Crs
+6531 3207 Crs
+6541 3195 Crs
+6551 3183 Crs
+6561 3170 Crs
+6571 3157 Crs
+6581 3143 Crs
+6592 3128 Crs
+6602 3112 Crs
+6612 3095 Crs
+6622 3077 Crs
+6632 3057 Crs
+6642 3034 Crs
+6652 3008 Crs
+6663 2975 Crs
+6673 2930 Crs
+1869 448 Crs
+1879 451 Crs
+1889 453 Crs
+1899 456 Crs
+1910 459 Crs
+1920 462 Crs
+1930 464 Crs
+1940 467 Crs
+1950 470 Crs
+1960 473 Crs
+1971 475 Crs
+1981 478 Crs
+1991 481 Crs
+2001 484 Crs
+2011 486 Crs
+2021 489 Crs
+2031 492 Crs
+2042 494 Crs
+2052 497 Crs
+2062 500 Crs
+2072 503 Crs
+2082 505 Crs
+2092 508 Crs
+2103 511 Crs
+2113 514 Crs
+2123 516 Crs
+2133 519 Crs
+2143 522 Crs
+2153 524 Crs
+2164 527 Crs
+2174 530 Crs
+2184 533 Crs
+2194 535 Crs
+2204 538 Crs
+2214 541 Crs
+2224 544 Crs
+2235 546 Crs
+2245 549 Crs
+2255 552 Crs
+2265 555 Crs
+2275 557 Crs
+2285 560 Crs
+2296 563 Crs
+2306 565 Crs
+2316 568 Crs
+2326 571 Crs
+2336 574 Crs
+2346 576 Crs
+2356 579 Crs
+2367 582 Crs
+2377 585 Crs
+2387 587 Crs
+2397 590 Crs
+2407 593 Crs
+2417 596 Crs
+2428 598 Crs
+2438 601 Crs
+2448 604 Crs
+2458 607 Crs
+2468 609 Crs
+2478 612 Crs
+2489 615 Crs
+2499 618 Crs
+2509 620 Crs
+2519 623 Crs
+2529 626 Crs
+2539 629 Crs
+2549 631 Crs
+2560 634 Crs
+2570 637 Crs
+2580 640 Crs
+2590 642 Crs
+2600 645 Crs
+2610 648 Crs
+2621 651 Crs
+2631 654 Crs
+2641 656 Crs
+2651 659 Crs
+2661 662 Crs
+2671 665 Crs
+2681 667 Crs
+2692 670 Crs
+2702 673 Crs
+2712 676 Crs
+2722 679 Crs
+2732 681 Crs
+2742 684 Crs
+2753 687 Crs
+2763 690 Crs
+2773 692 Crs
+2783 695 Crs
+2793 698 Crs
+2803 701 Crs
+2814 704 Crs
+2824 706 Crs
+2834 709 Crs
+2844 712 Crs
+2854 715 Crs
+2864 718 Crs
+2874 721 Crs
+2885 723 Crs
+2895 726 Crs
+2905 729 Crs
+2915 732 Crs
+2925 735 Crs
+2935 737 Crs
+2946 740 Crs
+2956 743 Crs
+2966 746 Crs
+2976 749 Crs
+2986 752 Crs
+2996 754 Crs
+3006 757 Crs
+3017 760 Crs
+3027 763 Crs
+3037 766 Crs
+3047 769 Crs
+3057 772 Crs
+3067 774 Crs
+3078 777 Crs
+3088 780 Crs
+3098 783 Crs
+3108 786 Crs
+3118 789 Crs
+3128 792 Crs
+3139 794 Crs
+3149 797 Crs
+3159 800 Crs
+3169 803 Crs
+3179 806 Crs
+3189 809 Crs
+3199 812 Crs
+3210 815 Crs
+3220 818 Crs
+3230 820 Crs
+3240 823 Crs
+3250 826 Crs
+3260 829 Crs
+3271 832 Crs
+3281 835 Crs
+3291 838 Crs
+3301 841 Crs
+3311 844 Crs
+3321 847 Crs
+3331 849 Crs
+3342 852 Crs
+3352 855 Crs
+3362 858 Crs
+3372 861 Crs
+3382 864 Crs
+3392 867 Crs
+3403 870 Crs
+3413 873 Crs
+3423 876 Crs
+3433 879 Crs
+3443 882 Crs
+3453 885 Crs
+3463 888 Crs
+3474 891 Crs
+3484 894 Crs
+3494 897 Crs
+3504 900 Crs
+3514 903 Crs
+3524 906 Crs
+3535 909 Crs
+3545 912 Crs
+3555 915 Crs
+3565 918 Crs
+3575 921 Crs
+3585 924 Crs
+3596 927 Crs
+3606 930 Crs
+3616 933 Crs
+3626 936 Crs
+3636 939 Crs
+3646 942 Crs
+3656 945 Crs
+3667 948 Crs
+3677 951 Crs
+3687 954 Crs
+3697 957 Crs
+3707 960 Crs
+3717 963 Crs
+3728 966 Crs
+3738 969 Crs
+3748 972 Crs
+3758 975 Crs
+3768 979 Crs
+3778 982 Crs
+3788 985 Crs
+3799 988 Crs
+3809 991 Crs
+3819 994 Crs
+3829 997 Crs
+3839 1000 Crs
+3849 1003 Crs
+3860 1007 Crs
+3870 1010 Crs
+3880 1013 Crs
+3890 1016 Crs
+3900 1019 Crs
+3910 1022 Crs
+3921 1025 Crs
+3931 1028 Crs
+3941 1032 Crs
+3951 1035 Crs
+3961 1038 Crs
+3971 1041 Crs
+3981 1044 Crs
+3992 1048 Crs
+4002 1051 Crs
+4012 1054 Crs
+4022 1057 Crs
+4032 1060 Crs
+4042 1064 Crs
+4053 1067 Crs
+4063 1070 Crs
+4073 1073 Crs
+4083 1076 Crs
+4093 1080 Crs
+4103 1083 Crs
+4113 1086 Crs
+4124 1089 Crs
+4134 1093 Crs
+4144 1096 Crs
+4154 1099 Crs
+4164 1102 Crs
+4174 1106 Crs
+4185 1109 Crs
+4195 1112 Crs
+4205 1116 Crs
+4215 1119 Crs
+4225 1122 Crs
+4235 1126 Crs
+4246 1129 Crs
+4256 1132 Crs
+4266 1136 Crs
+4276 1139 Crs
+4286 1142 Crs
+4296 1146 Crs
+4306 1149 Crs
+4317 1152 Crs
+4327 1156 Crs
+4337 1159 Crs
+4347 1163 Crs
+4357 1166 Crs
+4367 1169 Crs
+4378 1173 Crs
+4388 1176 Crs
+4398 1180 Crs
+4408 1183 Crs
+4418 1187 Crs
+4428 1190 Crs
+4438 1193 Crs
+4449 1197 Crs
+4459 1200 Crs
+4469 1204 Crs
+4479 1207 Crs
+4489 1211 Crs
+4499 1214 Crs
+4510 1218 Crs
+4520 1221 Crs
+4530 1225 Crs
+4540 1228 Crs
+4550 1232 Crs
+4560 1236 Crs
+4570 1239 Crs
+4581 1243 Crs
+4591 1246 Crs
+4601 1250 Crs
+4611 1253 Crs
+4621 1257 Crs
+4631 1261 Crs
+4642 1264 Crs
+4652 1268 Crs
+4662 1272 Crs
+4672 1275 Crs
+4682 1279 Crs
+4692 1282 Crs
+4703 1286 Crs
+4713 1290 Crs
+4723 1294 Crs
+4733 1297 Crs
+4743 1301 Crs
+4753 1305 Crs
+4763 1308 Crs
+4774 1312 Crs
+4784 1316 Crs
+4794 1320 Crs
+4804 1323 Crs
+4814 1327 Crs
+4824 1331 Crs
+4835 1335 Crs
+4845 1339 Crs
+4855 1343 Crs
+4865 1346 Crs
+4875 1350 Crs
+4885 1354 Crs
+4895 1358 Crs
+4906 1362 Crs
+4916 1366 Crs
+4926 1370 Crs
+4936 1374 Crs
+4946 1377 Crs
+4956 1381 Crs
+4967 1385 Crs
+4977 1389 Crs
+4987 1393 Crs
+4997 1397 Crs
+5007 1401 Crs
+5017 1405 Crs
+5028 1409 Crs
+5038 1414 Crs
+5048 1418 Crs
+5058 1422 Crs
+5068 1426 Crs
+5078 1430 Crs
+5088 1434 Crs
+5099 1438 Crs
+5109 1442 Crs
+5119 1446 Crs
+5129 1451 Crs
+5139 1455 Crs
+5149 1459 Crs
+5160 1463 Crs
+5170 1468 Crs
+5180 1472 Crs
+5190 1476 Crs
+5200 1480 Crs
+5210 1485 Crs
+5220 1489 Crs
+5231 1493 Crs
+5241 1498 Crs
+5251 1502 Crs
+5261 1506 Crs
+5271 1511 Crs
+5281 1515 Crs
+5292 1520 Crs
+5302 1524 Crs
+5312 1529 Crs
+5322 1533 Crs
+5332 1538 Crs
+5342 1542 Crs
+5353 1547 Crs
+5363 1552 Crs
+5373 1556 Crs
+5383 1561 Crs
+5393 1565 Crs
+5403 1570 Crs
+5413 1575 Crs
+5424 1580 Crs
+5434 1584 Crs
+5444 1589 Crs
+5454 1594 Crs
+5464 1599 Crs
+5474 1604 Crs
+5485 1608 Crs
+5495 1613 Crs
+5505 1618 Crs
+5515 1623 Crs
+5525 1628 Crs
+5535 1633 Crs
+5545 1638 Crs
+5556 1643 Crs
+5566 1648 Crs
+5576 1653 Crs
+5586 1659 Crs
+5596 1664 Crs
+5606 1669 Crs
+5617 1674 Crs
+5627 1680 Crs
+5637 1685 Crs
+5647 1690 Crs
+5657 1696 Crs
+5667 1701 Crs
+5678 1706 Crs
+5688 1712 Crs
+5698 1717 Crs
+5708 1723 Crs
+5718 1728 Crs
+5728 1734 Crs
+5738 1740 Crs
+5749 1746 Crs
+5759 1751 Crs
+5769 1757 Crs
+5779 1763 Crs
+5789 1769 Crs
+5799 1775 Crs
+5810 1781 Crs
+5820 1787 Crs
+5830 1793 Crs
+5840 1799 Crs
+5850 1805 Crs
+5860 1811 Crs
+5870 1818 Crs
+5881 1824 Crs
+5891 1830 Crs
+5901 1837 Crs
+5911 1843 Crs
+5921 1850 Crs
+5931 1856 Crs
+5942 1863 Crs
+5952 1870 Crs
+5962 1876 Crs
+5972 1883 Crs
+5982 1890 Crs
+5992 1897 Crs
+6002 1904 Crs
+6013 1911 Crs
+6023 1919 Crs
+6033 1926 Crs
+6043 1933 Crs
+6053 1941 Crs
+6063 1948 Crs
+6074 1956 Crs
+6084 1964 Crs
+6094 1972 Crs
+6104 1979 Crs
+6114 1987 Crs
+6124 1995 Crs
+6135 2004 Crs
+6145 2012 Crs
+6155 2020 Crs
+6165 2029 Crs
+6175 2037 Crs
+6185 2046 Crs
+6195 2055 Crs
+6206 2064 Crs
+6216 2073 Crs
+6226 2082 Crs
+6236 2092 Crs
+6246 2101 Crs
+6256 2111 Crs
+6267 2120 Crs
+6277 2130 Crs
+6287 2140 Crs
+6297 2150 Crs
+6307 2161 Crs
+6317 2171 Crs
+6327 2182 Crs
+6338 2193 Crs
+6348 2204 Crs
+6358 2215 Crs
+6368 2226 Crs
+6378 2237 Crs
+6388 2249 Crs
+6399 2261 Crs
+6409 2273 Crs
+6419 2285 Crs
+6429 2298 Crs
+6439 2310 Crs
+6449 2323 Crs
+6460 2336 Crs
+6470 2350 Crs
+6480 2363 Crs
+6490 2377 Crs
+6500 2391 Crs
+6510 2406 Crs
+6520 2421 Crs
+6531 2436 Crs
+6541 2452 Crs
+6551 2468 Crs
+6561 2485 Crs
+6571 2502 Crs
+6581 2520 Crs
+6592 2539 Crs
+6602 2558 Crs
+6612 2579 Crs
+6622 2601 Crs
+6632 2625 Crs
+6642 2652 Crs
+6652 2682 Crs
+6663 2718 Crs
+6673 2766 Crs
+1123 938 Crs
+% End plot #2
+% Begin plot #3
+1.000 UP
+1.000 UL
+LT2
+LCb setrgbcolor
+840 798 M
+[ [(Helvetica) 140.0 0.0 true true 0 (0.5[p.u.])]
+] -46.7 MRshow
+LT2
+1869 4436 Star
+1879 4436 Star
+1889 4435 Star
+1899 4434 Star
+1910 4433 Star
+1920 4432 Star
+1930 4431 Star
+1940 4431 Star
+1950 4430 Star
+1960 4429 Star
+1971 4428 Star
+1981 4427 Star
+1991 4426 Star
+2001 4425 Star
+2011 4424 Star
+2021 4424 Star
+2031 4422 Star
+2042 4422 Star
+2052 4421 Star
+2062 4420 Star
+2072 4419 Star
+2082 4418 Star
+2092 4417 Star
+2103 4416 Star
+2113 4415 Star
+2123 4414 Star
+2133 4413 Star
+2143 4412 Star
+2153 4411 Star
+2164 4410 Star
+2174 4410 Star
+2184 4408 Star
+2194 4408 Star
+2204 4407 Star
+2214 4405 Star
+2224 4405 Star
+2235 4404 Star
+2245 4403 Star
+2255 4402 Star
+2265 4401 Star
+2275 4400 Star
+2285 4399 Star
+2296 4398 Star
+2306 4397 Star
+2316 4396 Star
+2326 4395 Star
+2336 4394 Star
+2346 4393 Star
+2356 4391 Star
+2367 4391 Star
+2377 4390 Star
+2387 4389 Star
+2397 4387 Star
+2407 4386 Star
+2417 4386 Star
+2428 4384 Star
+2438 4383 Star
+2448 4382 Star
+2458 4381 Star
+2468 4380 Star
+2478 4379 Star
+2489 4378 Star
+2499 4377 Star
+2509 4376 Star
+2519 4375 Star
+2529 4374 Star
+2539 4373 Star
+2549 4372 Star
+2560 4370 Star
+2570 4369 Star
+2580 4368 Star
+2590 4367 Star
+2600 4366 Star
+2610 4365 Star
+2621 4364 Star
+2631 4363 Star
+2641 4362 Star
+2651 4361 Star
+2661 4359 Star
+2671 4358 Star
+2681 4357 Star
+2692 4356 Star
+2702 4355 Star
+2712 4354 Star
+2722 4352 Star
+2732 4351 Star
+2742 4350 Star
+2753 4349 Star
+2763 4348 Star
+2773 4347 Star
+2783 4345 Star
+2793 4344 Star
+2803 4343 Star
+2814 4342 Star
+2824 4341 Star
+2834 4340 Star
+2844 4338 Star
+2854 4337 Star
+2864 4336 Star
+2874 4334 Star
+2885 4333 Star
+2895 4332 Star
+2905 4331 Star
+2915 4330 Star
+2925 4328 Star
+2935 4327 Star
+2946 4326 Star
+2956 4325 Star
+2966 4323 Star
+2976 4322 Star
+2986 4321 Star
+2996 4320 Star
+3006 4318 Star
+3017 4317 Star
+3027 4316 Star
+3037 4314 Star
+3047 4313 Star
+3057 4312 Star
+3067 4310 Star
+3078 4309 Star
+3088 4308 Star
+3098 4307 Star
+3108 4305 Star
+3118 4304 Star
+3128 4303 Star
+3139 4301 Star
+3149 4300 Star
+3159 4299 Star
+3169 4297 Star
+3179 4296 Star
+3189 4295 Star
+3199 4293 Star
+3210 4292 Star
+3220 4290 Star
+3230 4289 Star
+3240 4288 Star
+3250 4286 Star
+3260 4285 Star
+3271 4283 Star
+3281 4282 Star
+3291 4281 Star
+3301 4279 Star
+3311 4278 Star
+3321 4276 Star
+3331 4275 Star
+3342 4274 Star
+3352 4272 Star
+3362 4271 Star
+3372 4269 Star
+3382 4268 Star
+3392 4267 Star
+3403 4265 Star
+3413 4264 Star
+3423 4262 Star
+3433 4261 Star
+3443 4260 Star
+3453 4258 Star
+3463 4257 Star
+3474 4255 Star
+3484 4254 Star
+3494 4252 Star
+3504 4251 Star
+3514 4249 Star
+3524 4247 Star
+3535 4246 Star
+3545 4244 Star
+3555 4243 Star
+3565 4241 Star
+3575 4240 Star
+3585 4239 Star
+3596 4237 Star
+3606 4235 Star
+3616 4234 Star
+3626 4232 Star
+3636 4231 Star
+3646 4229 Star
+3656 4227 Star
+3667 4226 Star
+3677 4224 Star
+3687 4223 Star
+3697 4221 Star
+3707 4220 Star
+3717 4218 Star
+3728 4216 Star
+3738 4215 Star
+3748 4213 Star
+3758 4212 Star
+3768 4210 Star
+3778 4208 Star
+3788 4206 Star
+3799 4205 Star
+3809 4203 Star
+3819 4202 Star
+3829 4200 Star
+3839 4198 Star
+3849 4196 Star
+3860 4195 Star
+3870 4193 Star
+3880 4192 Star
+3890 4190 Star
+3900 4188 Star
+3910 4187 Star
+3921 4185 Star
+3931 4183 Star
+3941 4181 Star
+3951 4180 Star
+3961 4178 Star
+3971 4176 Star
+3981 4174 Star
+3992 4173 Star
+4002 4171 Star
+4012 4169 Star
+4022 4167 Star
+4032 4166 Star
+4042 4164 Star
+4053 4162 Star
+4063 4160 Star
+4073 4159 Star
+4083 4157 Star
+4093 4155 Star
+4103 4153 Star
+4113 4151 Star
+4124 4149 Star
+4134 4147 Star
+4144 4146 Star
+4154 4144 Star
+4164 4142 Star
+4174 4140 Star
+4185 4138 Star
+4195 4136 Star
+4205 4134 Star
+4215 4132 Star
+4225 4131 Star
+4235 4129 Star
+4246 4127 Star
+4256 4125 Star
+4266 4123 Star
+4276 4121 Star
+4286 4119 Star
+4296 4117 Star
+4306 4115 Star
+4317 4113 Star
+4327 4111 Star
+4337 4109 Star
+4347 4107 Star
+4357 4105 Star
+4367 4103 Star
+4378 4101 Star
+4388 4099 Star
+4398 4097 Star
+4408 4095 Star
+4418 4093 Star
+4428 4091 Star
+4438 4089 Star
+4449 4087 Star
+4459 4085 Star
+4469 4083 Star
+4479 4081 Star
+4489 4079 Star
+4499 4077 Star
+4510 4074 Star
+4520 4072 Star
+4530 4070 Star
+4540 4068 Star
+4550 4066 Star
+4560 4064 Star
+4570 4062 Star
+4581 4060 Star
+4591 4057 Star
+4601 4055 Star
+4611 4053 Star
+4621 4051 Star
+4631 4049 Star
+4642 4046 Star
+4652 4044 Star
+4662 4042 Star
+4672 4040 Star
+4682 4037 Star
+4692 4035 Star
+4703 4033 Star
+4713 4031 Star
+4723 4028 Star
+4733 4026 Star
+4743 4024 Star
+4753 4022 Star
+4763 4019 Star
+4774 4017 Star
+4784 4015 Star
+4794 4012 Star
+4804 4010 Star
+4814 4007 Star
+4824 4005 Star
+4835 4003 Star
+4845 4000 Star
+4855 3998 Star
+4865 3996 Star
+4875 3993 Star
+4885 3991 Star
+4895 3988 Star
+4906 3986 Star
+4916 3983 Star
+4926 3981 Star
+4936 3978 Star
+4946 3976 Star
+4956 3973 Star
+4967 3971 Star
+4977 3968 Star
+4987 3966 Star
+4997 3963 Star
+5007 3961 Star
+5017 3958 Star
+5028 3955 Star
+5038 3953 Star
+5048 3950 Star
+5058 3948 Star
+5068 3945 Star
+5078 3942 Star
+5088 3940 Star
+5099 3937 Star
+5109 3934 Star
+5119 3932 Star
+5129 3929 Star
+5139 3926 Star
+5149 3924 Star
+5160 3921 Star
+5170 3918 Star
+5180 3915 Star
+5190 3912 Star
+5200 3910 Star
+5210 3907 Star
+5220 3904 Star
+5231 3901 Star
+5241 3898 Star
+5251 3896 Star
+5261 3893 Star
+5271 3890 Star
+5281 3887 Star
+5292 3884 Star
+5302 3881 Star
+5312 3878 Star
+5322 3875 Star
+5332 3872 Star
+5342 3869 Star
+5353 3866 Star
+5363 3863 Star
+5373 3860 Star
+5383 3857 Star
+5393 3854 Star
+5403 3851 Star
+5413 3848 Star
+5424 3845 Star
+5434 3841 Star
+5444 3838 Star
+5454 3835 Star
+5464 3832 Star
+5474 3829 Star
+5485 3826 Star
+5495 3822 Star
+5505 3819 Star
+5515 3816 Star
+5525 3812 Star
+5535 3809 Star
+5545 3806 Star
+5556 3802 Star
+5566 3799 Star
+5576 3796 Star
+5586 3792 Star
+5596 3789 Star
+5606 3785 Star
+5617 3782 Star
+5627 3778 Star
+5637 3775 Star
+5647 3771 Star
+5657 3768 Star
+5667 3764 Star
+5678 3761 Star
+5688 3757 Star
+5698 3753 Star
+5708 3750 Star
+5718 3746 Star
+5728 3742 Star
+5738 3738 Star
+5749 3735 Star
+5759 3731 Star
+5769 3727 Star
+5779 3723 Star
+5789 3719 Star
+5799 3715 Star
+5810 3711 Star
+5820 3707 Star
+5830 3703 Star
+5840 3699 Star
+5850 3695 Star
+5860 3691 Star
+5870 3687 Star
+5881 3683 Star
+5891 3679 Star
+5901 3675 Star
+5911 3670 Star
+5921 3666 Star
+5931 3662 Star
+5942 3657 Star
+5952 3653 Star
+5962 3648 Star
+5972 3644 Star
+5982 3640 Star
+5992 3635 Star
+6002 3630 Star
+6013 3626 Star
+6023 3621 Star
+6033 3616 Star
+6043 3612 Star
+6053 3607 Star
+6063 3602 Star
+6074 3597 Star
+6084 3592 Star
+6094 3587 Star
+6104 3582 Star
+6114 3577 Star
+6124 3572 Star
+6135 3567 Star
+6145 3562 Star
+6155 3556 Star
+6165 3551 Star
+6175 3546 Star
+6185 3540 Star
+6195 3535 Star
+6206 3529 Star
+6216 3523 Star
+6226 3518 Star
+6236 3512 Star
+6246 3506 Star
+6256 3500 Star
+6267 3494 Star
+6277 3488 Star
+6287 3482 Star
+6297 3475 Star
+6307 3469 Star
+6317 3463 Star
+6327 3456 Star
+6338 3449 Star
+6348 3443 Star
+6358 3436 Star
+6368 3429 Star
+6378 3422 Star
+6388 3414 Star
+6399 3407 Star
+6409 3400 Star
+6419 3392 Star
+6429 3384 Star
+6439 3376 Star
+6449 3368 Star
+6460 3360 Star
+6470 3352 Star
+6480 3343 Star
+6490 3334 Star
+6500 3325 Star
+6510 3316 Star
+6520 3306 Star
+6531 3296 Star
+6541 3286 Star
+6551 3276 Star
+6561 3265 Star
+6571 3254 Star
+6581 3242 Star
+6592 3230 Star
+6602 3218 Star
+6612 3204 Star
+6622 3191 Star
+6632 3176 Star
+6642 3160 Star
+6652 3144 Star
+6663 3126 Star
+6673 3106 Star
+6683 3084 Star
+6693 3059 Star
+6703 3029 Star
+6713 2990 Star
+1869 448 Star
+1879 451 Star
+1889 453 Star
+1899 456 Star
+1910 459 Star
+1920 462 Star
+1930 464 Star
+1940 467 Star
+1950 470 Star
+1960 473 Star
+1971 475 Star
+1981 478 Star
+1991 481 Star
+2001 484 Star
+2011 486 Star
+2021 489 Star
+2031 492 Star
+2042 494 Star
+2052 497 Star
+2062 500 Star
+2072 503 Star
+2082 505 Star
+2092 508 Star
+2103 511 Star
+2113 514 Star
+2123 516 Star
+2133 519 Star
+2143 522 Star
+2153 524 Star
+2164 527 Star
+2174 530 Star
+2184 533 Star
+2194 535 Star
+2204 538 Star
+2214 541 Star
+2224 544 Star
+2235 546 Star
+2245 549 Star
+2255 552 Star
+2265 554 Star
+2275 557 Star
+2285 560 Star
+2296 563 Star
+2306 565 Star
+2316 568 Star
+2326 571 Star
+2336 574 Star
+2346 576 Star
+2356 579 Star
+2367 582 Star
+2377 585 Star
+2387 587 Star
+2397 590 Star
+2407 593 Star
+2417 596 Star
+2428 598 Star
+2438 601 Star
+2448 604 Star
+2458 607 Star
+2468 609 Star
+2478 612 Star
+2489 615 Star
+2499 618 Star
+2509 620 Star
+2519 623 Star
+2529 626 Star
+2539 629 Star
+2549 631 Star
+2560 634 Star
+2570 637 Star
+2580 640 Star
+2590 642 Star
+2600 645 Star
+2610 648 Star
+2621 651 Star
+2631 653 Star
+2641 656 Star
+2651 659 Star
+2661 662 Star
+2671 665 Star
+2681 667 Star
+2692 670 Star
+2702 673 Star
+2712 676 Star
+2722 678 Star
+2732 681 Star
+2742 684 Star
+2753 687 Star
+2763 690 Star
+2773 692 Star
+2783 695 Star
+2793 698 Star
+2803 701 Star
+2814 704 Star
+2824 706 Star
+2834 709 Star
+2844 712 Star
+2854 715 Star
+2864 718 Star
+2874 720 Star
+2885 723 Star
+2895 726 Star
+2905 729 Star
+2915 732 Star
+2925 734 Star
+2935 737 Star
+2946 740 Star
+2956 743 Star
+2966 746 Star
+2976 749 Star
+2986 751 Star
+2996 754 Star
+3006 757 Star
+3017 760 Star
+3027 763 Star
+3037 766 Star
+3047 768 Star
+3057 771 Star
+3067 774 Star
+3078 777 Star
+3088 780 Star
+3098 783 Star
+3108 786 Star
+3118 788 Star
+3128 791 Star
+3139 794 Star
+3149 797 Star
+3159 800 Star
+3169 803 Star
+3179 806 Star
+3189 809 Star
+3199 811 Star
+3210 814 Star
+3220 817 Star
+3230 820 Star
+3240 823 Star
+3250 826 Star
+3260 829 Star
+3271 832 Star
+3281 835 Star
+3291 838 Star
+3301 841 Star
+3311 843 Star
+3321 846 Star
+3331 849 Star
+3342 852 Star
+3352 855 Star
+3362 858 Star
+3372 861 Star
+3382 864 Star
+3392 867 Star
+3403 870 Star
+3413 873 Star
+3423 876 Star
+3433 879 Star
+3443 882 Star
+3453 885 Star
+3463 887 Star
+3474 890 Star
+3484 893 Star
+3494 896 Star
+3504 899 Star
+3514 902 Star
+3524 905 Star
+3535 908 Star
+3545 911 Star
+3555 914 Star
+3565 917 Star
+3575 920 Star
+3585 923 Star
+3596 926 Star
+3606 929 Star
+3616 932 Star
+3626 935 Star
+3636 938 Star
+3646 941 Star
+3656 944 Star
+3667 948 Star
+3677 951 Star
+3687 954 Star
+3697 957 Star
+3707 960 Star
+3717 963 Star
+3728 966 Star
+3738 969 Star
+3748 972 Star
+3758 975 Star
+3768 978 Star
+3778 981 Star
+3788 984 Star
+3799 987 Star
+3809 990 Star
+3819 994 Star
+3829 997 Star
+3839 1000 Star
+3849 1003 Star
+3860 1006 Star
+3870 1009 Star
+3880 1012 Star
+3890 1015 Star
+3900 1018 Star
+3910 1022 Star
+3921 1025 Star
+3931 1028 Star
+3941 1031 Star
+3951 1034 Star
+3961 1037 Star
+3971 1040 Star
+3981 1044 Star
+3992 1047 Star
+4002 1050 Star
+4012 1053 Star
+4022 1056 Star
+4032 1060 Star
+4042 1063 Star
+4053 1066 Star
+4063 1069 Star
+4073 1072 Star
+4083 1076 Star
+4093 1079 Star
+4103 1082 Star
+4113 1085 Star
+4124 1089 Star
+4134 1092 Star
+4144 1095 Star
+4154 1098 Star
+4164 1102 Star
+4174 1105 Star
+4185 1108 Star
+4195 1111 Star
+4205 1115 Star
+4215 1118 Star
+4225 1121 Star
+4235 1125 Star
+4246 1128 Star
+4256 1131 Star
+4266 1135 Star
+4276 1138 Star
+4286 1141 Star
+4296 1145 Star
+4306 1148 Star
+4317 1151 Star
+4327 1155 Star
+4337 1158 Star
+4347 1161 Star
+4357 1165 Star
+4367 1168 Star
+4378 1172 Star
+4388 1175 Star
+4398 1178 Star
+4408 1182 Star
+4418 1185 Star
+4428 1189 Star
+4438 1192 Star
+4449 1196 Star
+4459 1199 Star
+4469 1203 Star
+4479 1206 Star
+4489 1210 Star
+4499 1213 Star
+4510 1216 Star
+4520 1220 Star
+4530 1223 Star
+4540 1227 Star
+4550 1231 Star
+4560 1234 Star
+4570 1238 Star
+4581 1241 Star
+4591 1245 Star
+4601 1248 Star
+4611 1252 Star
+4621 1255 Star
+4631 1259 Star
+4642 1263 Star
+4652 1266 Star
+4662 1270 Star
+4672 1274 Star
+4682 1277 Star
+4692 1281 Star
+4703 1284 Star
+4713 1288 Star
+4723 1292 Star
+4733 1295 Star
+4743 1299 Star
+4753 1303 Star
+4763 1307 Star
+4774 1310 Star
+4784 1314 Star
+4794 1318 Star
+4804 1322 Star
+4814 1325 Star
+4824 1329 Star
+4835 1333 Star
+4845 1337 Star
+4855 1340 Star
+4865 1344 Star
+4875 1348 Star
+4885 1352 Star
+4895 1356 Star
+4906 1360 Star
+4916 1364 Star
+4926 1367 Star
+4936 1371 Star
+4946 1375 Star
+4956 1379 Star
+4967 1383 Star
+4977 1387 Star
+4987 1391 Star
+4997 1395 Star
+5007 1399 Star
+5017 1403 Star
+5028 1407 Star
+5038 1411 Star
+5048 1415 Star
+5058 1419 Star
+5068 1423 Star
+5078 1427 Star
+5088 1431 Star
+5099 1435 Star
+5109 1440 Star
+5119 1444 Star
+5129 1448 Star
+5139 1452 Star
+5149 1456 Star
+5160 1460 Star
+5170 1465 Star
+5180 1469 Star
+5190 1473 Star
+5200 1477 Star
+5210 1482 Star
+5220 1486 Star
+5231 1490 Star
+5241 1494 Star
+5251 1499 Star
+5261 1503 Star
+5271 1508 Star
+5281 1512 Star
+5292 1516 Star
+5302 1521 Star
+5312 1525 Star
+5322 1530 Star
+5332 1534 Star
+5342 1539 Star
+5353 1543 Star
+5363 1548 Star
+5373 1552 Star
+5383 1557 Star
+5393 1562 Star
+5403 1566 Star
+5413 1571 Star
+5424 1576 Star
+5434 1580 Star
+5444 1585 Star
+5454 1590 Star
+5464 1594 Star
+5474 1599 Star
+5485 1604 Star
+5495 1609 Star
+5505 1614 Star
+5515 1619 Star
+5525 1624 Star
+5535 1629 Star
+5545 1634 Star
+5556 1639 Star
+5566 1644 Star
+5576 1649 Star
+5586 1654 Star
+5596 1659 Star
+5606 1664 Star
+5617 1669 Star
+5627 1674 Star
+5637 1680 Star
+5647 1685 Star
+5657 1690 Star
+5667 1695 Star
+5678 1701 Star
+5688 1706 Star
+5698 1712 Star
+5708 1717 Star
+5718 1723 Star
+5728 1728 Star
+5738 1734 Star
+5749 1739 Star
+5759 1745 Star
+5769 1751 Star
+5779 1757 Star
+5789 1762 Star
+5799 1768 Star
+5810 1774 Star
+5820 1780 Star
+5830 1786 Star
+5840 1792 Star
+5850 1798 Star
+5860 1804 Star
+5870 1810 Star
+5881 1817 Star
+5891 1823 Star
+5901 1829 Star
+5911 1836 Star
+5921 1842 Star
+5931 1848 Star
+5942 1855 Star
+5952 1862 Star
+5962 1868 Star
+5972 1875 Star
+5982 1882 Star
+5992 1889 Star
+6002 1896 Star
+6013 1903 Star
+6023 1910 Star
+6033 1917 Star
+6043 1924 Star
+6053 1932 Star
+6063 1939 Star
+6074 1947 Star
+6084 1954 Star
+6094 1962 Star
+6104 1970 Star
+6114 1977 Star
+6124 1985 Star
+6135 1993 Star
+6145 2002 Star
+6155 2010 Star
+6165 2018 Star
+6175 2027 Star
+6185 2035 Star
+6195 2044 Star
+6206 2053 Star
+6216 2062 Star
+6226 2071 Star
+6236 2080 Star
+6246 2089 Star
+6256 2098 Star
+6267 2108 Star
+6277 2118 Star
+6287 2128 Star
+6297 2138 Star
+6307 2148 Star
+6317 2158 Star
+6327 2168 Star
+6338 2179 Star
+6348 2190 Star
+6358 2201 Star
+6368 2212 Star
+6378 2223 Star
+6388 2234 Star
+6399 2246 Star
+6409 2257 Star
+6419 2269 Star
+6429 2281 Star
+6439 2293 Star
+6449 2306 Star
+6460 2318 Star
+6470 2331 Star
+6480 2344 Star
+6490 2357 Star
+6500 2371 Star
+6510 2384 Star
+6520 2398 Star
+6531 2412 Star
+6541 2427 Star
+6551 2442 Star
+6561 2457 Star
+6571 2472 Star
+6581 2488 Star
+6592 2504 Star
+6602 2521 Star
+6612 2538 Star
+6622 2556 Star
+6632 2574 Star
+6642 2594 Star
+6652 2614 Star
+6663 2636 Star
+6673 2660 Star
+6683 2685 Star
+6693 2714 Star
+6703 2748 Star
+6713 2791 Star
+1123 798 Star
+% End plot #3
+% Begin plot #4
+1.000 UP
+1.000 UL
+LT3
+LCb setrgbcolor
+840 658 M
+[ [(Helvetica) 140.0 0.0 true true 0 (0.8[p.u.])]
+] -46.7 MRshow
+LT3
+1869 4527 Box
+1879 4526 Box
+1889 4525 Box
+1899 4524 Box
+1910 4523 Box
+1920 4522 Box
+1930 4522 Box
+1940 4520 Box
+1950 4520 Box
+1960 4519 Box
+1971 4518 Box
+1981 4517 Box
+1991 4516 Box
+2001 4515 Box
+2011 4514 Box
+2021 4513 Box
+2031 4512 Box
+2042 4512 Box
+2052 4511 Box
+2062 4510 Box
+2072 4509 Box
+2082 4508 Box
+2092 4507 Box
+2103 4506 Box
+2113 4505 Box
+2123 4504 Box
+2133 4503 Box
+2143 4502 Box
+2153 4501 Box
+2164 4500 Box
+2174 4499 Box
+2184 4498 Box
+2194 4497 Box
+2204 4497 Box
+2214 4495 Box
+2224 4494 Box
+2235 4494 Box
+2245 4492 Box
+2255 4491 Box
+2265 4491 Box
+2275 4490 Box
+2285 4488 Box
+2296 4487 Box
+2306 4487 Box
+2316 4485 Box
+2326 4484 Box
+2336 4483 Box
+2346 4483 Box
+2356 4481 Box
+2367 4480 Box
+2377 4479 Box
+2387 4478 Box
+2397 4477 Box
+2407 4476 Box
+2417 4475 Box
+2428 4474 Box
+2438 4473 Box
+2448 4472 Box
+2458 4471 Box
+2468 4470 Box
+2478 4469 Box
+2489 4468 Box
+2499 4467 Box
+2509 4466 Box
+2519 4464 Box
+2529 4463 Box
+2539 4462 Box
+2549 4461 Box
+2560 4460 Box
+2570 4459 Box
+2580 4458 Box
+2590 4457 Box
+2600 4456 Box
+2610 4455 Box
+2621 4453 Box
+2631 4452 Box
+2641 4451 Box
+2651 4450 Box
+2661 4449 Box
+2671 4447 Box
+2681 4446 Box
+2692 4445 Box
+2702 4444 Box
+2712 4443 Box
+2722 4442 Box
+2732 4441 Box
+2742 4439 Box
+2753 4438 Box
+2763 4437 Box
+2773 4436 Box
+2783 4435 Box
+2793 4433 Box
+2803 4432 Box
+2814 4431 Box
+2824 4430 Box
+2834 4429 Box
+2844 4428 Box
+2854 4426 Box
+2864 4425 Box
+2874 4424 Box
+2885 4423 Box
+2895 4422 Box
+2905 4420 Box
+2915 4419 Box
+2925 4418 Box
+2935 4417 Box
+2946 4415 Box
+2956 4414 Box
+2966 4413 Box
+2976 4412 Box
+2986 4410 Box
+2996 4409 Box
+3006 4408 Box
+3017 4407 Box
+3027 4405 Box
+3037 4404 Box
+3047 4403 Box
+3057 4401 Box
+3067 4400 Box
+3078 4399 Box
+3088 4397 Box
+3098 4396 Box
+3108 4395 Box
+3118 4393 Box
+3128 4392 Box
+3139 4391 Box
+3149 4390 Box
+3159 4388 Box
+3169 4387 Box
+3179 4386 Box
+3189 4384 Box
+3199 4383 Box
+3210 4382 Box
+3220 4380 Box
+3230 4379 Box
+3240 4377 Box
+3250 4376 Box
+3260 4375 Box
+3271 4373 Box
+3281 4372 Box
+3291 4370 Box
+3301 4369 Box
+3311 4368 Box
+3321 4366 Box
+3331 4365 Box
+3342 4363 Box
+3352 4362 Box
+3362 4361 Box
+3372 4359 Box
+3382 4358 Box
+3392 4356 Box
+3403 4355 Box
+3413 4353 Box
+3423 4352 Box
+3433 4350 Box
+3443 4349 Box
+3453 4347 Box
+3463 4346 Box
+3474 4344 Box
+3484 4343 Box
+3494 4341 Box
+3504 4340 Box
+3514 4338 Box
+3524 4337 Box
+3535 4335 Box
+3545 4334 Box
+3555 4332 Box
+3565 4331 Box
+3575 4330 Box
+3585 4328 Box
+3596 4326 Box
+3606 4325 Box
+3616 4323 Box
+3626 4322 Box
+3636 4320 Box
+3646 4318 Box
+3656 4317 Box
+3667 4316 Box
+3677 4314 Box
+3687 4312 Box
+3697 4311 Box
+3707 4309 Box
+3717 4307 Box
+3728 4306 Box
+3738 4304 Box
+3748 4303 Box
+3758 4301 Box
+3768 4299 Box
+3778 4298 Box
+3788 4296 Box
+3799 4295 Box
+3809 4293 Box
+3819 4291 Box
+3829 4290 Box
+3839 4288 Box
+3849 4286 Box
+3860 4285 Box
+3870 4283 Box
+3880 4281 Box
+3890 4279 Box
+3900 4278 Box
+3910 4276 Box
+3921 4275 Box
+3931 4273 Box
+3941 4271 Box
+3951 4269 Box
+3961 4268 Box
+3971 4266 Box
+3981 4264 Box
+3992 4262 Box
+4002 4261 Box
+4012 4259 Box
+4022 4257 Box
+4032 4255 Box
+4042 4254 Box
+4053 4252 Box
+4063 4250 Box
+4073 4248 Box
+4083 4246 Box
+4093 4245 Box
+4103 4243 Box
+4113 4241 Box
+4124 4239 Box
+4134 4237 Box
+4144 4236 Box
+4154 4234 Box
+4164 4232 Box
+4174 4230 Box
+4185 4228 Box
+4195 4226 Box
+4205 4225 Box
+4215 4222 Box
+4225 4220 Box
+4235 4219 Box
+4246 4217 Box
+4256 4215 Box
+4266 4213 Box
+4276 4211 Box
+4286 4209 Box
+4296 4207 Box
+4306 4205 Box
+4317 4203 Box
+4327 4201 Box
+4337 4199 Box
+4347 4197 Box
+4357 4195 Box
+4367 4194 Box
+4378 4191 Box
+4388 4189 Box
+4398 4187 Box
+4408 4185 Box
+4418 4184 Box
+4428 4181 Box
+4438 4180 Box
+4449 4177 Box
+4459 4175 Box
+4469 4173 Box
+4479 4171 Box
+4489 4169 Box
+4499 4167 Box
+4510 4165 Box
+4520 4163 Box
+4530 4161 Box
+4540 4159 Box
+4550 4157 Box
+4560 4154 Box
+4570 4152 Box
+4581 4150 Box
+4591 4148 Box
+4601 4146 Box
+4611 4144 Box
+4621 4142 Box
+4631 4139 Box
+4642 4137 Box
+4652 4135 Box
+4662 4133 Box
+4672 4131 Box
+4682 4128 Box
+4692 4126 Box
+4703 4124 Box
+4713 4122 Box
+4723 4119 Box
+4733 4117 Box
+4743 4115 Box
+4753 4113 Box
+4763 4110 Box
+4774 4108 Box
+4784 4106 Box
+4794 4103 Box
+4804 4101 Box
+4814 4099 Box
+4824 4096 Box
+4835 4094 Box
+4845 4092 Box
+4855 4089 Box
+4865 4087 Box
+4875 4084 Box
+4885 4082 Box
+4895 4080 Box
+4906 4077 Box
+4916 4075 Box
+4926 4072 Box
+4936 4070 Box
+4946 4067 Box
+4956 4065 Box
+4967 4062 Box
+4977 4060 Box
+4987 4057 Box
+4997 4055 Box
+5007 4052 Box
+5017 4050 Box
+5028 4047 Box
+5038 4045 Box
+5048 4042 Box
+5058 4040 Box
+5068 4037 Box
+5078 4034 Box
+5088 4032 Box
+5099 4029 Box
+5109 4027 Box
+5119 4024 Box
+5129 4021 Box
+5139 4019 Box
+5149 4016 Box
+5160 4013 Box
+5170 4011 Box
+5180 4008 Box
+5190 4005 Box
+5200 4002 Box
+5210 4000 Box
+5220 3997 Box
+5231 3994 Box
+5241 3991 Box
+5251 3988 Box
+5261 3986 Box
+5271 3983 Box
+5281 3980 Box
+5292 3977 Box
+5302 3974 Box
+5312 3971 Box
+5322 3968 Box
+5332 3965 Box
+5342 3963 Box
+5353 3960 Box
+5363 3957 Box
+5373 3954 Box
+5383 3951 Box
+5393 3948 Box
+5403 3945 Box
+5413 3942 Box
+5424 3939 Box
+5434 3935 Box
+5444 3932 Box
+5454 3929 Box
+5464 3926 Box
+5474 3923 Box
+5485 3920 Box
+5495 3917 Box
+5505 3913 Box
+5515 3910 Box
+5525 3907 Box
+5535 3904 Box
+5545 3901 Box
+5556 3897 Box
+5566 3894 Box
+5576 3891 Box
+5586 3887 Box
+5596 3884 Box
+5606 3881 Box
+5617 3877 Box
+5627 3874 Box
+5637 3870 Box
+5647 3867 Box
+5657 3864 Box
+5667 3860 Box
+5678 3857 Box
+5688 3853 Box
+5698 3849 Box
+5708 3846 Box
+5718 3842 Box
+5728 3839 Box
+5738 3835 Box
+5749 3831 Box
+5759 3828 Box
+5769 3824 Box
+5779 3820 Box
+5789 3817 Box
+5799 3813 Box
+5810 3809 Box
+5820 3805 Box
+5830 3801 Box
+5840 3797 Box
+5850 3793 Box
+5860 3789 Box
+5870 3785 Box
+5881 3782 Box
+5891 3777 Box
+5901 3773 Box
+5911 3769 Box
+5921 3765 Box
+5931 3761 Box
+5942 3757 Box
+5952 3753 Box
+5962 3748 Box
+5972 3744 Box
+5982 3740 Box
+5992 3736 Box
+6002 3731 Box
+6013 3727 Box
+6023 3722 Box
+6033 3718 Box
+6043 3713 Box
+6053 3709 Box
+6063 3704 Box
+6074 3699 Box
+6084 3695 Box
+6094 3690 Box
+6104 3685 Box
+6114 3680 Box
+6124 3676 Box
+6135 3671 Box
+6145 3666 Box
+6155 3661 Box
+6165 3656 Box
+6175 3651 Box
+6185 3645 Box
+6195 3640 Box
+6206 3635 Box
+6216 3630 Box
+6226 3624 Box
+6236 3619 Box
+6246 3613 Box
+6256 3608 Box
+6267 3602 Box
+6277 3597 Box
+6287 3591 Box
+6297 3585 Box
+6307 3579 Box
+6317 3573 Box
+6327 3567 Box
+6338 3561 Box
+6348 3555 Box
+6358 3549 Box
+6368 3542 Box
+6378 3536 Box
+6388 3529 Box
+6399 3523 Box
+6409 3516 Box
+6419 3509 Box
+6429 3502 Box
+6439 3495 Box
+6449 3488 Box
+6460 3480 Box
+6470 3473 Box
+6480 3465 Box
+6490 3458 Box
+6500 3450 Box
+6510 3442 Box
+6520 3433 Box
+6531 3425 Box
+6541 3416 Box
+6551 3408 Box
+6561 3399 Box
+6571 3389 Box
+6581 3380 Box
+6592 3370 Box
+6602 3360 Box
+6612 3350 Box
+6622 3339 Box
+6632 3328 Box
+6642 3317 Box
+6652 3305 Box
+6663 3292 Box
+6673 3279 Box
+6683 3266 Box
+6693 3252 Box
+6703 3236 Box
+6713 3220 Box
+6724 3203 Box
+6734 3184 Box
+6744 3163 Box
+6754 3140 Box
+6764 3113 Box
+6774 3079 Box
+6785 3028 Box
+1869 448 Box
+1879 451 Box
+1889 453 Box
+1899 456 Box
+1910 459 Box
+1920 462 Box
+1930 464 Box
+1940 467 Box
+1950 470 Box
+1960 473 Box
+1971 475 Box
+1981 478 Box
+1991 481 Box
+2001 484 Box
+2011 486 Box
+2021 489 Box
+2031 492 Box
+2042 494 Box
+2052 497 Box
+2062 500 Box
+2072 503 Box
+2082 505 Box
+2092 508 Box
+2103 511 Box
+2113 514 Box
+2123 516 Box
+2133 519 Box
+2143 522 Box
+2153 524 Box
+2164 527 Box
+2174 530 Box
+2184 533 Box
+2194 535 Box
+2204 538 Box
+2214 541 Box
+2224 544 Box
+2235 546 Box
+2245 549 Box
+2255 552 Box
+2265 554 Box
+2275 557 Box
+2285 560 Box
+2296 563 Box
+2306 565 Box
+2316 568 Box
+2326 571 Box
+2336 574 Box
+2346 576 Box
+2356 579 Box
+2367 582 Box
+2377 585 Box
+2387 587 Box
+2397 590 Box
+2407 593 Box
+2417 596 Box
+2428 598 Box
+2438 601 Box
+2448 604 Box
+2458 607 Box
+2468 609 Box
+2478 612 Box
+2489 615 Box
+2499 618 Box
+2509 620 Box
+2519 623 Box
+2529 626 Box
+2539 629 Box
+2549 631 Box
+2560 634 Box
+2570 637 Box
+2580 640 Box
+2590 642 Box
+2600 645 Box
+2610 648 Box
+2621 651 Box
+2631 653 Box
+2641 656 Box
+2651 659 Box
+2661 662 Box
+2671 664 Box
+2681 667 Box
+2692 670 Box
+2702 673 Box
+2712 676 Box
+2722 678 Box
+2732 681 Box
+2742 684 Box
+2753 687 Box
+2763 689 Box
+2773 692 Box
+2783 695 Box
+2793 698 Box
+2803 701 Box
+2814 703 Box
+2824 706 Box
+2834 709 Box
+2844 712 Box
+2854 715 Box
+2864 717 Box
+2874 720 Box
+2885 723 Box
+2895 726 Box
+2905 729 Box
+2915 731 Box
+2925 734 Box
+2935 737 Box
+2946 740 Box
+2956 743 Box
+2966 746 Box
+2976 748 Box
+2986 751 Box
+2996 754 Box
+3006 757 Box
+3017 760 Box
+3027 763 Box
+3037 765 Box
+3047 768 Box
+3057 771 Box
+3067 774 Box
+3078 777 Box
+3088 780 Box
+3098 783 Box
+3108 785 Box
+3118 788 Box
+3128 791 Box
+3139 794 Box
+3149 797 Box
+3159 800 Box
+3169 803 Box
+3179 805 Box
+3189 808 Box
+3199 811 Box
+3210 814 Box
+3220 817 Box
+3230 820 Box
+3240 823 Box
+3250 826 Box
+3260 828 Box
+3271 831 Box
+3281 834 Box
+3291 837 Box
+3301 840 Box
+3311 843 Box
+3321 846 Box
+3331 849 Box
+3342 852 Box
+3352 855 Box
+3362 858 Box
+3372 861 Box
+3382 863 Box
+3392 866 Box
+3403 869 Box
+3413 872 Box
+3423 875 Box
+3433 878 Box
+3443 881 Box
+3453 884 Box
+3463 887 Box
+3474 890 Box
+3484 893 Box
+3494 896 Box
+3504 899 Box
+3514 902 Box
+3524 905 Box
+3535 908 Box
+3545 911 Box
+3555 914 Box
+3565 917 Box
+3575 920 Box
+3585 923 Box
+3596 926 Box
+3606 929 Box
+3616 932 Box
+3626 935 Box
+3636 938 Box
+3646 941 Box
+3656 944 Box
+3667 947 Box
+3677 950 Box
+3687 953 Box
+3697 956 Box
+3707 959 Box
+3717 962 Box
+3728 965 Box
+3738 968 Box
+3748 971 Box
+3758 974 Box
+3768 977 Box
+3778 980 Box
+3788 983 Box
+3799 987 Box
+3809 990 Box
+3819 993 Box
+3829 996 Box
+3839 999 Box
+3849 1002 Box
+3860 1005 Box
+3870 1008 Box
+3880 1011 Box
+3890 1014 Box
+3900 1017 Box
+3910 1021 Box
+3921 1024 Box
+3931 1027 Box
+3941 1030 Box
+3951 1033 Box
+3961 1036 Box
+3971 1039 Box
+3981 1043 Box
+3992 1046 Box
+4002 1049 Box
+4012 1052 Box
+4022 1055 Box
+4032 1058 Box
+4042 1062 Box
+4053 1065 Box
+4063 1068 Box
+4073 1071 Box
+4083 1074 Box
+4093 1078 Box
+4103 1081 Box
+4113 1084 Box
+4124 1087 Box
+4134 1091 Box
+4144 1094 Box
+4154 1097 Box
+4164 1100 Box
+4174 1104 Box
+4185 1107 Box
+4195 1110 Box
+4205 1113 Box
+4215 1117 Box
+4225 1120 Box
+4235 1123 Box
+4246 1127 Box
+4256 1130 Box
+4266 1133 Box
+4276 1136 Box
+4286 1140 Box
+4296 1143 Box
+4306 1146 Box
+4317 1150 Box
+4327 1153 Box
+4337 1156 Box
+4347 1160 Box
+4357 1163 Box
+4367 1167 Box
+4378 1170 Box
+4388 1173 Box
+4398 1177 Box
+4408 1180 Box
+4418 1184 Box
+4428 1187 Box
+4438 1190 Box
+4449 1194 Box
+4459 1197 Box
+4469 1201 Box
+4479 1204 Box
+4489 1208 Box
+4499 1211 Box
+4510 1215 Box
+4520 1218 Box
+4530 1221 Box
+4540 1225 Box
+4550 1228 Box
+4560 1232 Box
+4570 1236 Box
+4581 1239 Box
+4591 1243 Box
+4601 1246 Box
+4611 1250 Box
+4621 1253 Box
+4631 1257 Box
+4642 1260 Box
+4652 1264 Box
+4662 1268 Box
+4672 1271 Box
+4682 1275 Box
+4692 1278 Box
+4703 1282 Box
+4713 1286 Box
+4723 1289 Box
+4733 1293 Box
+4743 1297 Box
+4753 1300 Box
+4763 1304 Box
+4774 1308 Box
+4784 1311 Box
+4794 1315 Box
+4804 1319 Box
+4814 1322 Box
+4824 1326 Box
+4835 1330 Box
+4845 1334 Box
+4855 1338 Box
+4865 1341 Box
+4875 1345 Box
+4885 1349 Box
+4895 1353 Box
+4906 1357 Box
+4916 1360 Box
+4926 1364 Box
+4936 1368 Box
+4946 1372 Box
+4956 1376 Box
+4967 1380 Box
+4977 1384 Box
+4987 1388 Box
+4997 1391 Box
+5007 1395 Box
+5017 1399 Box
+5028 1403 Box
+5038 1407 Box
+5048 1411 Box
+5058 1415 Box
+5068 1419 Box
+5078 1423 Box
+5088 1427 Box
+5099 1431 Box
+5109 1436 Box
+5119 1440 Box
+5129 1444 Box
+5139 1448 Box
+5149 1452 Box
+5160 1456 Box
+5170 1460 Box
+5180 1464 Box
+5190 1469 Box
+5200 1473 Box
+5210 1477 Box
+5220 1481 Box
+5231 1486 Box
+5241 1490 Box
+5251 1494 Box
+5261 1498 Box
+5271 1503 Box
+5281 1507 Box
+5292 1511 Box
+5302 1516 Box
+5312 1520 Box
+5322 1525 Box
+5332 1529 Box
+5342 1533 Box
+5353 1538 Box
+5363 1542 Box
+5373 1547 Box
+5383 1551 Box
+5393 1556 Box
+5403 1561 Box
+5413 1565 Box
+5424 1570 Box
+5434 1574 Box
+5444 1579 Box
+5454 1584 Box
+5464 1588 Box
+5474 1593 Box
+5485 1598 Box
+5495 1603 Box
+5505 1607 Box
+5515 1612 Box
+5525 1617 Box
+5535 1622 Box
+5545 1627 Box
+5556 1632 Box
+5566 1637 Box
+5576 1642 Box
+5586 1647 Box
+5596 1652 Box
+5606 1657 Box
+5617 1662 Box
+5627 1667 Box
+5637 1672 Box
+5647 1677 Box
+5657 1682 Box
+5667 1688 Box
+5678 1693 Box
+5688 1698 Box
+5698 1704 Box
+5708 1709 Box
+5718 1714 Box
+5728 1720 Box
+5738 1725 Box
+5749 1731 Box
+5759 1736 Box
+5769 1742 Box
+5779 1748 Box
+5789 1753 Box
+5799 1759 Box
+5810 1765 Box
+5820 1770 Box
+5830 1776 Box
+5840 1782 Box
+5850 1788 Box
+5860 1794 Box
+5870 1800 Box
+5881 1806 Box
+5891 1812 Box
+5901 1819 Box
+5911 1825 Box
+5921 1831 Box
+5931 1837 Box
+5942 1844 Box
+5952 1850 Box
+5962 1857 Box
+5972 1863 Box
+5982 1870 Box
+5992 1877 Box
+6002 1884 Box
+6013 1891 Box
+6023 1897 Box
+6033 1904 Box
+6043 1912 Box
+6053 1919 Box
+6063 1926 Box
+6074 1933 Box
+6084 1941 Box
+6094 1948 Box
+6104 1956 Box
+6114 1964 Box
+6124 1971 Box
+6135 1979 Box
+6145 1987 Box
+6155 1995 Box
+6165 2003 Box
+6175 2012 Box
+6185 2020 Box
+6195 2029 Box
+6206 2037 Box
+6216 2046 Box
+6226 2055 Box
+6236 2064 Box
+6246 2073 Box
+6256 2083 Box
+6267 2092 Box
+6277 2102 Box
+6287 2111 Box
+6297 2121 Box
+6307 2131 Box
+6317 2142 Box
+6327 2152 Box
+6338 2163 Box
+6348 2173 Box
+6358 2184 Box
+6368 2195 Box
+6378 2206 Box
+6388 2217 Box
+6399 2229 Box
+6409 2241 Box
+6419 2252 Box
+6429 2264 Box
+6439 2276 Box
+6449 2288 Box
+6460 2301 Box
+6470 2313 Box
+6480 2326 Box
+6490 2339 Box
+6500 2351 Box
+6510 2364 Box
+6520 2378 Box
+6531 2391 Box
+6541 2404 Box
+6551 2418 Box
+6561 2432 Box
+6571 2446 Box
+6581 2460 Box
+6592 2474 Box
+6602 2489 Box
+6612 2503 Box
+6622 2518 Box
+6632 2534 Box
+6642 2549 Box
+6652 2565 Box
+6663 2582 Box
+6673 2599 Box
+6683 2616 Box
+6693 2634 Box
+6703 2653 Box
+6713 2673 Box
+6724 2694 Box
+6734 2717 Box
+6744 2741 Box
+6754 2768 Box
+6764 2799 Box
+6774 2837 Box
+6785 2890 Box
+1123 658 Box
+% End plot #4
+% Begin plot #5
+1.000 UP
+1.000 UL
+LT4
+LCb setrgbcolor
+840 518 M
+[ [(Helvetica) 140.0 0.0 true true 0 (1.1[p.u.])]
+] -46.7 MRshow
+LT4
+1869 4621 BoxF
+1879 4620 BoxF
+1889 4619 BoxF
+1899 4618 BoxF
+1910 4617 BoxF
+1920 4616 BoxF
+1930 4616 BoxF
+1940 4614 BoxF
+1950 4614 BoxF
+1960 4613 BoxF
+1971 4612 BoxF
+1981 4611 BoxF
+1991 4610 BoxF
+2001 4609 BoxF
+2011 4608 BoxF
+2021 4607 BoxF
+2031 4606 BoxF
+2042 4606 BoxF
+2052 4605 BoxF
+2062 4604 BoxF
+2072 4603 BoxF
+2082 4602 BoxF
+2092 4601 BoxF
+2103 4600 BoxF
+2113 4599 BoxF
+2123 4598 BoxF
+2133 4597 BoxF
+2143 4596 BoxF
+2153 4595 BoxF
+2164 4594 BoxF
+2174 4593 BoxF
+2184 4592 BoxF
+2194 4591 BoxF
+2204 4590 BoxF
+2214 4589 BoxF
+2224 4588 BoxF
+2235 4587 BoxF
+2245 4586 BoxF
+2255 4585 BoxF
+2265 4584 BoxF
+2275 4584 BoxF
+2285 4582 BoxF
+2296 4581 BoxF
+2306 4580 BoxF
+2316 4579 BoxF
+2326 4578 BoxF
+2336 4577 BoxF
+2346 4576 BoxF
+2356 4575 BoxF
+2367 4574 BoxF
+2377 4573 BoxF
+2387 4572 BoxF
+2397 4571 BoxF
+2407 4570 BoxF
+2417 4569 BoxF
+2428 4568 BoxF
+2438 4567 BoxF
+2448 4566 BoxF
+2458 4565 BoxF
+2468 4564 BoxF
+2478 4562 BoxF
+2489 4561 BoxF
+2499 4560 BoxF
+2509 4559 BoxF
+2519 4558 BoxF
+2529 4557 BoxF
+2539 4556 BoxF
+2549 4555 BoxF
+2560 4554 BoxF
+2570 4553 BoxF
+2580 4551 BoxF
+2590 4550 BoxF
+2600 4549 BoxF
+2610 4548 BoxF
+2621 4547 BoxF
+2631 4546 BoxF
+2641 4545 BoxF
+2651 4544 BoxF
+2661 4543 BoxF
+2671 4541 BoxF
+2681 4540 BoxF
+2692 4539 BoxF
+2702 4538 BoxF
+2712 4537 BoxF
+2722 4536 BoxF
+2732 4534 BoxF
+2742 4533 BoxF
+2753 4532 BoxF
+2763 4531 BoxF
+2773 4530 BoxF
+2783 4529 BoxF
+2793 4527 BoxF
+2803 4526 BoxF
+2814 4525 BoxF
+2824 4524 BoxF
+2834 4522 BoxF
+2844 4521 BoxF
+2854 4520 BoxF
+2864 4519 BoxF
+2874 4518 BoxF
+2885 4516 BoxF
+2895 4515 BoxF
+2905 4514 BoxF
+2915 4513 BoxF
+2925 4511 BoxF
+2935 4510 BoxF
+2946 4509 BoxF
+2956 4508 BoxF
+2966 4506 BoxF
+2976 4505 BoxF
+2986 4504 BoxF
+2996 4502 BoxF
+3006 4501 BoxF
+3017 4500 BoxF
+3027 4499 BoxF
+3037 4498 BoxF
+3047 4496 BoxF
+3057 4495 BoxF
+3067 4494 BoxF
+3078 4492 BoxF
+3088 4491 BoxF
+3098 4490 BoxF
+3108 4488 BoxF
+3118 4487 BoxF
+3128 4486 BoxF
+3139 4484 BoxF
+3149 4483 BoxF
+3159 4482 BoxF
+3169 4480 BoxF
+3179 4479 BoxF
+3189 4478 BoxF
+3199 4476 BoxF
+3210 4475 BoxF
+3220 4474 BoxF
+3230 4472 BoxF
+3240 4471 BoxF
+3250 4469 BoxF
+3260 4468 BoxF
+3271 4467 BoxF
+3281 4465 BoxF
+3291 4464 BoxF
+3301 4463 BoxF
+3311 4461 BoxF
+3321 4460 BoxF
+3331 4458 BoxF
+3342 4457 BoxF
+3352 4455 BoxF
+3362 4454 BoxF
+3372 4453 BoxF
+3382 4451 BoxF
+3392 4450 BoxF
+3403 4448 BoxF
+3413 4447 BoxF
+3423 4445 BoxF
+3433 4444 BoxF
+3443 4442 BoxF
+3453 4441 BoxF
+3463 4439 BoxF
+3474 4438 BoxF
+3484 4436 BoxF
+3494 4435 BoxF
+3504 4433 BoxF
+3514 4432 BoxF
+3524 4431 BoxF
+3535 4429 BoxF
+3545 4428 BoxF
+3555 4426 BoxF
+3565 4425 BoxF
+3575 4423 BoxF
+3585 4421 BoxF
+3596 4420 BoxF
+3606 4418 BoxF
+3616 4417 BoxF
+3626 4415 BoxF
+3636 4414 BoxF
+3646 4412 BoxF
+3656 4411 BoxF
+3667 4409 BoxF
+3677 4407 BoxF
+3687 4406 BoxF
+3697 4404 BoxF
+3707 4403 BoxF
+3717 4401 BoxF
+3728 4400 BoxF
+3738 4398 BoxF
+3748 4396 BoxF
+3758 4395 BoxF
+3768 4393 BoxF
+3778 4391 BoxF
+3788 4390 BoxF
+3799 4388 BoxF
+3809 4387 BoxF
+3819 4385 BoxF
+3829 4383 BoxF
+3839 4382 BoxF
+3849 4380 BoxF
+3860 4378 BoxF
+3870 4377 BoxF
+3880 4375 BoxF
+3890 4373 BoxF
+3900 4372 BoxF
+3910 4370 BoxF
+3921 4368 BoxF
+3931 4366 BoxF
+3941 4365 BoxF
+3951 4363 BoxF
+3961 4361 BoxF
+3971 4360 BoxF
+3981 4358 BoxF
+3992 4356 BoxF
+4002 4354 BoxF
+4012 4353 BoxF
+4022 4351 BoxF
+4032 4349 BoxF
+4042 4347 BoxF
+4053 4345 BoxF
+4063 4344 BoxF
+4073 4342 BoxF
+4083 4340 BoxF
+4093 4338 BoxF
+4103 4337 BoxF
+4113 4335 BoxF
+4124 4333 BoxF
+4134 4331 BoxF
+4144 4329 BoxF
+4154 4328 BoxF
+4164 4326 BoxF
+4174 4324 BoxF
+4185 4322 BoxF
+4195 4320 BoxF
+4205 4318 BoxF
+4215 4316 BoxF
+4225 4314 BoxF
+4235 4313 BoxF
+4246 4311 BoxF
+4256 4309 BoxF
+4266 4307 BoxF
+4276 4305 BoxF
+4286 4303 BoxF
+4296 4301 BoxF
+4306 4299 BoxF
+4317 4297 BoxF
+4327 4295 BoxF
+4337 4293 BoxF
+4347 4292 BoxF
+4357 4290 BoxF
+4367 4288 BoxF
+4378 4286 BoxF
+4388 4283 BoxF
+4398 4282 BoxF
+4408 4280 BoxF
+4418 4278 BoxF
+4428 4276 BoxF
+4438 4274 BoxF
+4449 4272 BoxF
+4459 4269 BoxF
+4469 4268 BoxF
+4479 4265 BoxF
+4489 4264 BoxF
+4499 4261 BoxF
+4510 4259 BoxF
+4520 4257 BoxF
+4530 4255 BoxF
+4540 4253 BoxF
+4550 4251 BoxF
+4560 4249 BoxF
+4570 4247 BoxF
+4581 4245 BoxF
+4591 4243 BoxF
+4601 4240 BoxF
+4611 4238 BoxF
+4621 4236 BoxF
+4631 4234 BoxF
+4642 4232 BoxF
+4652 4230 BoxF
+4662 4227 BoxF
+4672 4225 BoxF
+4682 4223 BoxF
+4692 4221 BoxF
+4703 4219 BoxF
+4713 4216 BoxF
+4723 4214 BoxF
+4733 4212 BoxF
+4743 4210 BoxF
+4753 4208 BoxF
+4763 4205 BoxF
+4774 4203 BoxF
+4784 4201 BoxF
+4794 4198 BoxF
+4804 4196 BoxF
+4814 4194 BoxF
+4824 4191 BoxF
+4835 4189 BoxF
+4845 4187 BoxF
+4855 4184 BoxF
+4865 4182 BoxF
+4875 4180 BoxF
+4885 4177 BoxF
+4895 4175 BoxF
+4906 4173 BoxF
+4916 4170 BoxF
+4926 4168 BoxF
+4936 4165 BoxF
+4946 4163 BoxF
+4956 4160 BoxF
+4967 4158 BoxF
+4977 4156 BoxF
+4987 4153 BoxF
+4997 4150 BoxF
+5007 4148 BoxF
+5017 4146 BoxF
+5028 4143 BoxF
+5038 4140 BoxF
+5048 4138 BoxF
+5058 4135 BoxF
+5068 4133 BoxF
+5078 4130 BoxF
+5088 4128 BoxF
+5099 4125 BoxF
+5109 4123 BoxF
+5119 4120 BoxF
+5129 4117 BoxF
+5139 4115 BoxF
+5149 4112 BoxF
+5160 4109 BoxF
+5170 4107 BoxF
+5180 4104 BoxF
+5190 4101 BoxF
+5200 4099 BoxF
+5210 4096 BoxF
+5220 4093 BoxF
+5231 4091 BoxF
+5241 4088 BoxF
+5251 4085 BoxF
+5261 4082 BoxF
+5271 4080 BoxF
+5281 4077 BoxF
+5292 4074 BoxF
+5302 4071 BoxF
+5312 4068 BoxF
+5322 4065 BoxF
+5332 4063 BoxF
+5342 4060 BoxF
+5353 4057 BoxF
+5363 4054 BoxF
+5373 4051 BoxF
+5383 4048 BoxF
+5393 4045 BoxF
+5403 4042 BoxF
+5413 4039 BoxF
+5424 4036 BoxF
+5434 4033 BoxF
+5444 4030 BoxF
+5454 4027 BoxF
+5464 4024 BoxF
+5474 4021 BoxF
+5485 4018 BoxF
+5495 4015 BoxF
+5505 4012 BoxF
+5515 4009 BoxF
+5525 4005 BoxF
+5535 4002 BoxF
+5545 3999 BoxF
+5556 3996 BoxF
+5566 3993 BoxF
+5576 3989 BoxF
+5586 3986 BoxF
+5596 3983 BoxF
+5606 3980 BoxF
+5617 3976 BoxF
+5627 3973 BoxF
+5637 3970 BoxF
+5647 3966 BoxF
+5657 3963 BoxF
+5667 3960 BoxF
+5678 3956 BoxF
+5688 3953 BoxF
+5698 3949 BoxF
+5708 3946 BoxF
+5718 3942 BoxF
+5728 3939 BoxF
+5738 3935 BoxF
+5749 3932 BoxF
+5759 3928 BoxF
+5769 3924 BoxF
+5779 3921 BoxF
+5789 3917 BoxF
+5799 3914 BoxF
+5810 3910 BoxF
+5820 3906 BoxF
+5830 3902 BoxF
+5840 3899 BoxF
+5850 3895 BoxF
+5860 3891 BoxF
+5870 3887 BoxF
+5881 3883 BoxF
+5891 3879 BoxF
+5901 3876 BoxF
+5911 3872 BoxF
+5921 3868 BoxF
+5931 3864 BoxF
+5942 3860 BoxF
+5952 3856 BoxF
+5962 3851 BoxF
+5972 3847 BoxF
+5982 3843 BoxF
+5992 3839 BoxF
+6002 3835 BoxF
+6013 3831 BoxF
+6023 3826 BoxF
+6033 3822 BoxF
+6043 3818 BoxF
+6053 3813 BoxF
+6063 3809 BoxF
+6074 3805 BoxF
+6084 3800 BoxF
+6094 3796 BoxF
+6104 3791 BoxF
+6114 3786 BoxF
+6124 3782 BoxF
+6135 3777 BoxF
+6145 3772 BoxF
+6155 3768 BoxF
+6165 3763 BoxF
+6175 3758 BoxF
+6185 3753 BoxF
+6195 3748 BoxF
+6206 3743 BoxF
+6216 3738 BoxF
+6226 3733 BoxF
+6236 3728 BoxF
+6246 3723 BoxF
+6256 3718 BoxF
+6267 3713 BoxF
+6277 3707 BoxF
+6287 3702 BoxF
+6297 3696 BoxF
+6307 3691 BoxF
+6317 3685 BoxF
+6327 3680 BoxF
+6338 3674 BoxF
+6348 3668 BoxF
+6358 3662 BoxF
+6368 3657 BoxF
+6378 3651 BoxF
+6388 3645 BoxF
+6399 3638 BoxF
+6409 3632 BoxF
+6419 3626 BoxF
+6429 3620 BoxF
+6439 3613 BoxF
+6449 3607 BoxF
+6460 3600 BoxF
+6470 3593 BoxF
+6480 3586 BoxF
+6490 3579 BoxF
+6500 3572 BoxF
+6510 3565 BoxF
+6520 3558 BoxF
+6531 3550 BoxF
+6541 3543 BoxF
+6551 3535 BoxF
+6561 3527 BoxF
+6571 3519 BoxF
+6581 3511 BoxF
+6592 3503 BoxF
+6602 3494 BoxF
+6612 3485 BoxF
+6622 3476 BoxF
+6632 3467 BoxF
+6642 3458 BoxF
+6652 3448 BoxF
+6663 3438 BoxF
+6673 3428 BoxF
+6683 3417 BoxF
+6693 3407 BoxF
+6703 3395 BoxF
+6713 3384 BoxF
+6724 3371 BoxF
+6734 3359 BoxF
+6744 3346 BoxF
+6754 3332 BoxF
+6764 3317 BoxF
+6774 3301 BoxF
+6785 3284 BoxF
+6795 3266 BoxF
+6805 3247 BoxF
+6815 3225 BoxF
+6825 3199 BoxF
+6835 3169 BoxF
+6845 3130 BoxF
+1869 448 BoxF
+1879 451 BoxF
+1889 453 BoxF
+1899 456 BoxF
+1910 459 BoxF
+1920 462 BoxF
+1930 464 BoxF
+1940 467 BoxF
+1950 470 BoxF
+1960 473 BoxF
+1971 475 BoxF
+1981 478 BoxF
+1991 481 BoxF
+2001 484 BoxF
+2011 486 BoxF
+2021 489 BoxF
+2031 492 BoxF
+2042 494 BoxF
+2052 497 BoxF
+2062 500 BoxF
+2072 503 BoxF
+2082 505 BoxF
+2092 508 BoxF
+2103 511 BoxF
+2113 514 BoxF
+2123 516 BoxF
+2133 519 BoxF
+2143 522 BoxF
+2153 524 BoxF
+2164 527 BoxF
+2174 530 BoxF
+2184 533 BoxF
+2194 535 BoxF
+2204 538 BoxF
+2214 541 BoxF
+2224 544 BoxF
+2235 546 BoxF
+2245 549 BoxF
+2255 552 BoxF
+2265 554 BoxF
+2275 557 BoxF
+2285 560 BoxF
+2296 563 BoxF
+2306 565 BoxF
+2316 568 BoxF
+2326 571 BoxF
+2336 574 BoxF
+2346 576 BoxF
+2356 579 BoxF
+2367 582 BoxF
+2377 585 BoxF
+2387 587 BoxF
+2397 590 BoxF
+2407 593 BoxF
+2417 595 BoxF
+2428 598 BoxF
+2438 601 BoxF
+2448 604 BoxF
+2458 606 BoxF
+2468 609 BoxF
+2478 612 BoxF
+2489 615 BoxF
+2499 617 BoxF
+2509 620 BoxF
+2519 623 BoxF
+2529 626 BoxF
+2539 628 BoxF
+2549 631 BoxF
+2560 634 BoxF
+2570 637 BoxF
+2580 639 BoxF
+2590 642 BoxF
+2600 645 BoxF
+2610 648 BoxF
+2621 651 BoxF
+2631 653 BoxF
+2641 656 BoxF
+2651 659 BoxF
+2661 662 BoxF
+2671 664 BoxF
+2681 667 BoxF
+2692 670 BoxF
+2702 673 BoxF
+2712 675 BoxF
+2722 678 BoxF
+2732 681 BoxF
+2742 684 BoxF
+2753 687 BoxF
+2763 689 BoxF
+2773 692 BoxF
+2783 695 BoxF
+2793 698 BoxF
+2803 700 BoxF
+2814 703 BoxF
+2824 706 BoxF
+2834 709 BoxF
+2844 712 BoxF
+2854 714 BoxF
+2864 717 BoxF
+2874 720 BoxF
+2885 723 BoxF
+2895 726 BoxF
+2905 728 BoxF
+2915 731 BoxF
+2925 734 BoxF
+2935 737 BoxF
+2946 740 BoxF
+2956 743 BoxF
+2966 745 BoxF
+2976 748 BoxF
+2986 751 BoxF
+2996 754 BoxF
+3006 757 BoxF
+3017 760 BoxF
+3027 762 BoxF
+3037 765 BoxF
+3047 768 BoxF
+3057 771 BoxF
+3067 774 BoxF
+3078 777 BoxF
+3088 779 BoxF
+3098 782 BoxF
+3108 785 BoxF
+3118 788 BoxF
+3128 791 BoxF
+3139 794 BoxF
+3149 797 BoxF
+3159 799 BoxF
+3169 802 BoxF
+3179 805 BoxF
+3189 808 BoxF
+3199 811 BoxF
+3210 814 BoxF
+3220 817 BoxF
+3230 819 BoxF
+3240 822 BoxF
+3250 825 BoxF
+3260 828 BoxF
+3271 831 BoxF
+3281 834 BoxF
+3291 837 BoxF
+3301 840 BoxF
+3311 843 BoxF
+3321 846 BoxF
+3331 848 BoxF
+3342 851 BoxF
+3352 854 BoxF
+3362 857 BoxF
+3372 860 BoxF
+3382 863 BoxF
+3392 866 BoxF
+3403 869 BoxF
+3413 872 BoxF
+3423 875 BoxF
+3433 878 BoxF
+3443 881 BoxF
+3453 884 BoxF
+3463 887 BoxF
+3474 889 BoxF
+3484 892 BoxF
+3494 895 BoxF
+3504 898 BoxF
+3514 901 BoxF
+3524 904 BoxF
+3535 907 BoxF
+3545 910 BoxF
+3555 913 BoxF
+3565 916 BoxF
+3575 919 BoxF
+3585 922 BoxF
+3596 925 BoxF
+3606 928 BoxF
+3616 931 BoxF
+3626 934 BoxF
+3636 937 BoxF
+3646 940 BoxF
+3656 943 BoxF
+3667 946 BoxF
+3677 949 BoxF
+3687 952 BoxF
+3697 955 BoxF
+3707 958 BoxF
+3717 961 BoxF
+3728 964 BoxF
+3738 967 BoxF
+3748 970 BoxF
+3758 973 BoxF
+3768 977 BoxF
+3778 980 BoxF
+3788 983 BoxF
+3799 986 BoxF
+3809 989 BoxF
+3819 992 BoxF
+3829 995 BoxF
+3839 998 BoxF
+3849 1001 BoxF
+3860 1004 BoxF
+3870 1007 BoxF
+3880 1010 BoxF
+3890 1013 BoxF
+3900 1017 BoxF
+3910 1020 BoxF
+3921 1023 BoxF
+3931 1026 BoxF
+3941 1029 BoxF
+3951 1032 BoxF
+3961 1035 BoxF
+3971 1038 BoxF
+3981 1042 BoxF
+3992 1045 BoxF
+4002 1048 BoxF
+4012 1051 BoxF
+4022 1054 BoxF
+4032 1057 BoxF
+4042 1061 BoxF
+4053 1064 BoxF
+4063 1067 BoxF
+4073 1070 BoxF
+4083 1073 BoxF
+4093 1077 BoxF
+4103 1080 BoxF
+4113 1083 BoxF
+4124 1086 BoxF
+4134 1089 BoxF
+4144 1093 BoxF
+4154 1096 BoxF
+4164 1099 BoxF
+4174 1102 BoxF
+4185 1106 BoxF
+4195 1109 BoxF
+4205 1112 BoxF
+4215 1115 BoxF
+4225 1119 BoxF
+4235 1122 BoxF
+4246 1125 BoxF
+4256 1128 BoxF
+4266 1132 BoxF
+4276 1135 BoxF
+4286 1138 BoxF
+4296 1142 BoxF
+4306 1145 BoxF
+4317 1148 BoxF
+4327 1152 BoxF
+4337 1155 BoxF
+4347 1158 BoxF
+4357 1162 BoxF
+4367 1165 BoxF
+4378 1168 BoxF
+4388 1172 BoxF
+4398 1175 BoxF
+4408 1178 BoxF
+4418 1182 BoxF
+4428 1185 BoxF
+4438 1189 BoxF
+4449 1192 BoxF
+4459 1195 BoxF
+4469 1199 BoxF
+4479 1202 BoxF
+4489 1206 BoxF
+4499 1209 BoxF
+4510 1213 BoxF
+4520 1216 BoxF
+4530 1219 BoxF
+4540 1223 BoxF
+4550 1226 BoxF
+4560 1230 BoxF
+4570 1233 BoxF
+4581 1237 BoxF
+4591 1240 BoxF
+4601 1244 BoxF
+4611 1247 BoxF
+4621 1251 BoxF
+4631 1255 BoxF
+4642 1258 BoxF
+4652 1262 BoxF
+4662 1265 BoxF
+4672 1269 BoxF
+4682 1272 BoxF
+4692 1276 BoxF
+4703 1280 BoxF
+4713 1283 BoxF
+4723 1287 BoxF
+4733 1290 BoxF
+4743 1294 BoxF
+4753 1298 BoxF
+4763 1301 BoxF
+4774 1305 BoxF
+4784 1309 BoxF
+4794 1312 BoxF
+4804 1316 BoxF
+4814 1320 BoxF
+4824 1323 BoxF
+4835 1327 BoxF
+4845 1331 BoxF
+4855 1335 BoxF
+4865 1338 BoxF
+4875 1342 BoxF
+4885 1346 BoxF
+4895 1350 BoxF
+4906 1353 BoxF
+4916 1357 BoxF
+4926 1361 BoxF
+4936 1365 BoxF
+4946 1369 BoxF
+4956 1373 BoxF
+4967 1376 BoxF
+4977 1380 BoxF
+4987 1384 BoxF
+4997 1388 BoxF
+5007 1392 BoxF
+5017 1396 BoxF
+5028 1400 BoxF
+5038 1404 BoxF
+5048 1408 BoxF
+5058 1412 BoxF
+5068 1416 BoxF
+5078 1420 BoxF
+5088 1424 BoxF
+5099 1428 BoxF
+5109 1432 BoxF
+5119 1436 BoxF
+5129 1440 BoxF
+5139 1444 BoxF
+5149 1448 BoxF
+5160 1452 BoxF
+5170 1456 BoxF
+5180 1460 BoxF
+5190 1464 BoxF
+5200 1469 BoxF
+5210 1473 BoxF
+5220 1477 BoxF
+5231 1481 BoxF
+5241 1485 BoxF
+5251 1490 BoxF
+5261 1494 BoxF
+5271 1498 BoxF
+5281 1502 BoxF
+5292 1507 BoxF
+5302 1511 BoxF
+5312 1515 BoxF
+5322 1520 BoxF
+5332 1524 BoxF
+5342 1528 BoxF
+5353 1533 BoxF
+5363 1537 BoxF
+5373 1542 BoxF
+5383 1546 BoxF
+5393 1551 BoxF
+5403 1555 BoxF
+5413 1560 BoxF
+5424 1564 BoxF
+5434 1569 BoxF
+5444 1573 BoxF
+5454 1578 BoxF
+5464 1583 BoxF
+5474 1587 BoxF
+5485 1592 BoxF
+5495 1597 BoxF
+5505 1601 BoxF
+5515 1606 BoxF
+5525 1611 BoxF
+5535 1616 BoxF
+5545 1620 BoxF
+5556 1625 BoxF
+5566 1630 BoxF
+5576 1635 BoxF
+5586 1640 BoxF
+5596 1645 BoxF
+5606 1650 BoxF
+5617 1655 BoxF
+5627 1660 BoxF
+5637 1665 BoxF
+5647 1670 BoxF
+5657 1675 BoxF
+5667 1680 BoxF
+5678 1685 BoxF
+5688 1691 BoxF
+5698 1696 BoxF
+5708 1701 BoxF
+5718 1706 BoxF
+5728 1712 BoxF
+5738 1717 BoxF
+5749 1722 BoxF
+5759 1728 BoxF
+5769 1733 BoxF
+5779 1739 BoxF
+5789 1745 BoxF
+5799 1750 BoxF
+5810 1756 BoxF
+5820 1761 BoxF
+5830 1767 BoxF
+5840 1773 BoxF
+5850 1779 BoxF
+5860 1785 BoxF
+5870 1791 BoxF
+5881 1797 BoxF
+5891 1803 BoxF
+5901 1809 BoxF
+5911 1815 BoxF
+5921 1821 BoxF
+5931 1827 BoxF
+5942 1834 BoxF
+5952 1840 BoxF
+5962 1846 BoxF
+5972 1853 BoxF
+5982 1859 BoxF
+5992 1866 BoxF
+6002 1873 BoxF
+6013 1879 BoxF
+6023 1886 BoxF
+6033 1893 BoxF
+6043 1900 BoxF
+6053 1907 BoxF
+6063 1914 BoxF
+6074 1921 BoxF
+6084 1929 BoxF
+6094 1936 BoxF
+6104 1944 BoxF
+6114 1951 BoxF
+6124 1959 BoxF
+6135 1967 BoxF
+6145 1975 BoxF
+6155 1983 BoxF
+6165 1991 BoxF
+6175 1999 BoxF
+6185 2007 BoxF
+6195 2016 BoxF
+6206 2024 BoxF
+6216 2033 BoxF
+6226 2042 BoxF
+6236 2051 BoxF
+6246 2061 BoxF
+6256 2070 BoxF
+6267 2079 BoxF
+6277 2089 BoxF
+6287 2099 BoxF
+6297 2109 BoxF
+6307 2120 BoxF
+6317 2130 BoxF
+6327 2141 BoxF
+6338 2152 BoxF
+6348 2163 BoxF
+6358 2174 BoxF
+6368 2186 BoxF
+6378 2197 BoxF
+6388 2209 BoxF
+6399 2221 BoxF
+6409 2234 BoxF
+6419 2246 BoxF
+6429 2259 BoxF
+6439 2271 BoxF
+6449 2284 BoxF
+6460 2297 BoxF
+6470 2310 BoxF
+6480 2323 BoxF
+6490 2337 BoxF
+6500 2350 BoxF
+6510 2363 BoxF
+6520 2376 BoxF
+6531 2390 BoxF
+6541 2403 BoxF
+6551 2416 BoxF
+6561 2429 BoxF
+6571 2443 BoxF
+6581 2456 BoxF
+6592 2469 BoxF
+6602 2483 BoxF
+6612 2496 BoxF
+6622 2510 BoxF
+6632 2523 BoxF
+6642 2537 BoxF
+6652 2551 BoxF
+6663 2565 BoxF
+6673 2579 BoxF
+6683 2594 BoxF
+6693 2608 BoxF
+6703 2623 BoxF
+6713 2639 BoxF
+6724 2654 BoxF
+6734 2671 BoxF
+6744 2687 BoxF
+6754 2705 BoxF
+6764 2723 BoxF
+6774 2742 BoxF
+6785 2762 BoxF
+6795 2783 BoxF
+6805 2806 BoxF
+6815 2831 BoxF
+6825 2859 BoxF
+6835 2892 BoxF
+6845 2935 BoxF
+1123 518 BoxF
+% End plot #5
+1.000 UL
+LTb
+1869 4871 N
+0 -4423 V
+5078 0 V
+0 4423 V
+-5078 0 V
+Z stroke
+1.000 UP
+1.000 UL
+LTb
+stroke
+grestore
+end
+showpage
+%%Trailer
+%%DocumentFonts: Helvetica

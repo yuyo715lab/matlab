@@ -16,11 +16,11 @@ fprop = 0;
 %######### First PQ-proportion #########
 
 %######### Delta propotion #########
-dprop = 0.0001;
+dprop = 0.01;
 %######### Delta proportion #########
 
 %######### P limit #########
-Plimit = 4.6724;
+Plimit = 4.9;
 %######### P limit #########
 
 %============= Define.m ================

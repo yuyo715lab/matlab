@@ -1,0 +1,12 @@
+#set terminal postscript eps enhanced color
+#set output "pvcurve-N8-big01.eps"
+#set xrange [0:5]
+#set yrange [0.6:0.66]
+set grid
+set xlabel "Ps[p.u.]"
+set ylabel "Vr[p.u.]"
+plot "../csv/capa-0.1.csv" u 1:2 t '0.1',\
+     "../csv/capa-0.3.csv" u 1:2 t '0.1',\
+     "../csv/capa-0.5.csv" u 1:2 t '0.1',\
+     "../csv/capa-0.8.csv" u 1:2 t '0.1',\
+     "../csv/capa-1.1.csv" u 1:2 t '0.1'
