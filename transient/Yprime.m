@@ -1,10 +1,6 @@
-%function Y_ = Load(N,Y,Ps,Qs,PQorPV)
+function [Yprime,numG,numL] = Yprime(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL)
 
-clear all
 
-%--------- power flow calculation ---------
-[N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = main();
-%--------- power flow calculation ---------
 
 
 %--------- constant impedance load ---------
@@ -32,6 +28,9 @@ for k = 1:numel(load_node)
 end
 %--------- constant impedance load ---------
 
+
+
+
 Lnode = find(GorL);
 Gnode = find(GorL == 0);
 numG = numel(Gnode);
@@ -58,7 +57,7 @@ for k = 1:numL
 end
 
 Ycont = zeros(numG);
-Ycont = Ynn - Ynr*inv(Yrr)*Yrn
+Ycont = Ynn - Ynr*inv(Yrr)*Yrn;
 
 Yprime = zeros(2*numG);
 
@@ -69,4 +68,5 @@ for k = 1:numG
   end
 end
 
-Yprime
+%Yprime
+

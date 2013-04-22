@@ -69,4 +69,17 @@ for k = 1:numG
   end
 end
 
-Yprime
+%Yprime
+
+Vdq = zeros(numG*2,1);
+for k = 1:N
+  if GorL(k) == 0
+    Vdq(2*k-1) = RHO(k) * cos(THEATA(k));
+    Vdq(2*k) = RHO(k) * sin(THEATA(k));
+  end
+end
+
+%Vdq
+
+Idq = zeros(numG*2,1);
+Idq = Yprime * Vdq;

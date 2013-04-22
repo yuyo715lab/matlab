@@ -1,103 +1,32 @@
-%/////// transient analysis
-%/////// TOMOHIRO ADACHI
-%/////// 2013/04
+
+clear all
 
 
 
-function [N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = main();
-  
-%============= Define.m ================
-[N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,GorL] = Define();
-%============= Define.m ================
 
-%============= admittance.m ================
-Y = admittance(N,R,Tr);
-%============= admittance.m ================
+%--------- power flow calculation ---------
+[N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = PowerCalc();
+%--------- power flow calculation ---------
 
-%============= PandQ.m ================
-[dP,dQ,dV,P,Q,V] = PandQ(N,Y,PQ,Ps,Qs,Vs,e,f);
-%============= PandQ.m ================
-
-%============= jacobi.m ================
-Jacobi = jacobi(N,Y,e,f,PQorPV,NonRef);
-%============= jacobi.m ================
-
-%============= delta.m ================
-defful = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
-%============= delta.m ================
-
-
-n = 1; % the number of cycle
-
-%------------ polar coordinate system ------------
-THEATA = zeros(1,N); %theta
-RHO = zeros(1,N); %r
-for k = 1:N
-  [THEATA(k),RHO(k)] = cart2pol(e(k) + defful(2*k-1),(f(k) + defful(2*k)));
-end
-%------------ polar coordinate system ------------
-
-
-%/////// Display /////////
-fprintf('n = %d\n',n)
-for k = 1:N
-  fprintf('(NODE %d) RHO = %f THEATA = %f P = %f Q = %f\n',k, ...
-      RHO(k),THEATA(k),P(k),Q(k)) 
-end
-
-%/////// Display /////////
-
-b_rho = zeros(1,N-1);
-a_rho = RHO;
-d_rho = zeros(1,N-1);
-for k = 1:N-1
-  d_rho(k) = abs(a_rho(k) - b_rho(k)); %|V - V|
-end
-
-while max(d_rho) > 10^(-7) %convergence conditiongit
-  n = n + 1;
-  for k = 1:N-1
-    e(NonRef(k)) = e(NonRef(k)) + defful(2*NonRef(k)-1);
-    f(NonRef(k)) = f(NonRef(k)) + defful(2*NonRef(k));
-  end
-  
-  %============= PandQ.m ================
-  [dP,dQ,dV,P,Q,V] = PandQ(N,Y,PQ,Ps,Qs,Vs,e,f);
-  %============= PandQ.m ================
-  
-  %============= jacobi.m ================
-  Jacobi = jacobi(N,Y,e,f,PQorPV,NonRef);
-  %============= jacobi.m ================
-  
-  %============= delta.m ================
-  defful = delta(N,PQorPV,NonRef,dP,dQ,dV,Jacobi,e,f);
-  %============= delta.m ================
-  
-  %----------- polar coordinate system ---------
-  for k = 1:N
-    [THEATA(k),RHO(k)] = cart2pol(e(k) + defful(2*k-1),(f(k) + defful(2*k)));
-  end
-  %----------- polar coordinate system ---------
-  
-  
-  b_rho = a_rho;
-  a_rho = RHO;
-  for k = 1:N-1
-    d_rho(k) = abs(a_rho(k) - b_rho(k));
-  end
-
-  %/////// Display /////////
-  fprintf('n = %d\n',n)
-  for k = 1:N
-    fprintf('(NODE %d) RHO = %f THEATA = %f P = %f Q = %f\n',k, ...
-	RHO(k),THEATA(k),P(k),Q(k)) 
-  end
-
-  %/////// Display /////////
+%--------- Yprime ---------
+[Yprime,numG,numL] = Yprime(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL);
+%--------- Yprime ---------
 
 
 
-end
+%--------- YprimeEF ---------
+EarthFault = 5;
+[YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault);
+%--------- YprimeEF ---------
 
+Glabel = zeros(1,numG);
+Glabel = find(GorL == 0);
 
+%--------- eqipment constant ---------
+[xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,R,Kg,Tg,Ka,Ta,D,H] ...
+      = equipment(numG);
+%--------- eqipment constant ---------
 
+%--------- state ---------
+[Idq,Edq] = state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,R,xq);
+%--------- state ---------

@@ -1,10 +1,6 @@
-%function Y_ = Load(N,Y,Ps,Qs,PQorPV)
+function [YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault)
 
-clear all
 
-%--------- power flow calculation ---------
-[N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = main();
-%--------- power flow calculation ---------
 
 
 %--------- constant impedance load ---------
@@ -32,6 +28,9 @@ for k = 1:numel(load_node)
 end
 %--------- constant impedance load ---------
 
+Y_(EarthFault,EarthFault) = (10^10)*(1+i);
+
+
 Lnode = find(GorL);
 Gnode = find(GorL == 0);
 numG = numel(Gnode);
@@ -58,15 +57,16 @@ for k = 1:numL
 end
 
 Ycont = zeros(numG);
-Ycont = Ynn - Ynr*inv(Yrr)*Yrn
+Ycont = Ynn - Ynr*inv(Yrr)*Yrn;
 
-Yprime = zeros(2*numG);
+YprimeEF = zeros(2*numG);
 
 for k = 1:numG
   for m = 1:numG
-    Yprime(2*k-1:2*k,2*m-1:2*m) = [real(Ycont(k,m)) ...
+    YprimeEF(2*k-1:2*k,2*m-1:2*m) = [real(Ycont(k,m)) ...
 	  -imag(Ycont(k,m));imag(Ycont(k,m)) real(Ycont(k,m))];
   end
 end
 
-Yprime
+%YprimeEF
+

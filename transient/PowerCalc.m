@@ -1,13 +1,13 @@
-%/////// 9-bus power flow calculation
+%/////// transient analysis
 %/////// TOMOHIRO ADACHI
 %/////// 2013/04
 
 
-clear all
 
-
+function [N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = PowerCalc();
+  
 %============= Define.m ================
-[N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ] = Define();
+[N,Ref,PQorPV,NonRef,R,Tr,e,f,Vs,V,dV,Ps,Qs,PQ,GorL] = Define();
 %============= Define.m ================
 
 %============= admittance.m ================
@@ -37,7 +37,7 @@ for k = 1:N
 end
 %------------ polar coordinate system ------------
 
-
+%{
 %/////// Display /////////
 fprintf('n = %d\n',n)
 for k = 1:N
@@ -46,6 +46,7 @@ for k = 1:N
 end
 
 %/////// Display /////////
+%}
 
 b_rho = zeros(1,N-1);
 a_rho = RHO;
@@ -85,19 +86,22 @@ while max(d_rho) > 10^(-7) %convergence conditiongit
   for k = 1:N-1
     d_rho(k) = abs(a_rho(k) - b_rho(k));
   end
+  
+  
+%{
+    %/////// Display /////////
+  fprintf('n = %d\n',n)
+  for k = 1:N
+    fprintf('(NODE %d) RHO = %f THEATA = %f P = %f Q = %f\n',k, ...
+	RHO(k),THEATA(k),P(k),Q(k)) 
+  end
 
-%/////// Display /////////
-fprintf('n = %d\n',n)
-for k = 1:N
-  fprintf('(NODE %d) RHO = %f THEATA = %f P = %f Q = %f\n',k, ...
-      RHO(k),THEATA(k),P(k),Q(k)) 
+  %/////// Display /////////
+  %}
+
+
+
 end
 
-%/////// Display /////////
 
 
-
-end
-
-
-    
