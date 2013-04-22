@@ -23,10 +23,14 @@ Glabel = zeros(1,numG);
 Glabel = find(GorL == 0);
 
 %--------- eqipment constant ---------
-[xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,R,Kg,Tg,Ka,Ta,D,H] ...
+[xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H] ...
       = equipment(numG);
 %--------- eqipment constant ---------
 
 %--------- state ---------
-[Idq,Edq] = state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,R,xq);
+[Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0] = state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg);
 %--------- state ---------
+
+%--------- Yg ---------
+[Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,YprimeEF);
+%--------- Yg ---------

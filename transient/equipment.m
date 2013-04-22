@@ -1,4 +1,4 @@
-function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,R,Kg,Tg,Ka,Ta,D,H] ...
+function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H] ...
       = equipment(numG)
   
   xd = zeros(1,numG);
@@ -12,7 +12,7 @@ function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,R,Kg,Tg,Ka,Ta,D,H] ...
   Tdd = zeros(1,numG);
   Tq = zeros(1,numG);
   Tqq = zeros(1,numG);
-  R = zeros(1,numG);
+  Rg = zeros(1,numG);
   Kg = zeros(1,numG);
   Tg = zeros(1,numG);
   Ka = zeros(1,numG);
