@@ -1,4 +1,4 @@
-function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H] ...
+function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H,Kd,Kq] ...
       = equipment(numG)
   
   xd = zeros(1,numG);
@@ -26,3 +26,11 @@ function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H] ...
   xq = [1.548 1.590 1.160];
   xqq = [0.918 0.380 0.250];
   xqqq = [0.248 0.171 0.134];
+  xl = [0.204 0.102 0.078];
+  
+  Kd = zeros(1,numG);
+  Kq = zeros(1,numG);
+  Kd = ones(1,numG) + ((xdd - xl) .* (xddd - xl)) ./ ((xdd - xddd) .* ...
+      (xd - xl));
+  Kq = ones(1,numG) + ((xqq - xl) .* (xqqq - xl)) ./ ((xqq - xqqq) .* ...
+      (xq - xl));

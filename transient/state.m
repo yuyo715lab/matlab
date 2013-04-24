@@ -1,4 +1,5 @@
-function [Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0] = state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg)
+function [Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
+  state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd)
 
   
 %--------- Id Iq ---------
@@ -44,3 +45,34 @@ for k = 1:numG
   ef0(k) = vq(k) + xd(k)*id(k) + Rg(k)*iq(k);
 end
 %--------- ef0 ---------
+
+%--------- Pe ---------
+Pe = zeros(1,numG);
+Pe = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
+%--------- Pe ---------
+
+
+%--------- eq eqq ed edd --------
+eq = zeros(1,numG);
+eqq = zeros(1,numG);
+ed = zeros(1,numG);
+edd = zeros(1,numG);
+eq = vq + xdd .* id + Rg .* iq;
+eqq = 1 ./ Kd .* (eq - (xdd - xl) .* id);
+ed = (xq - xqq) .* iq;
+edd = 1 ./ Kq .* (xq - xl) .* iq;
+%--------- eq eqq ed edd ---------
+
+%--------- egd egq Egd Egq ---------
+egd = zeros(1,numG);
+egq = zeros(1,numG);
+Egd = zeros(1,numG);
+Egq = zeros(1,numG);
+egd = Kq .* (xqq - xqqq) ./ (xqq - xl) .* edd + (xqqq - xl) ./ (xqq - ...
+    xl) .* ed;
+egq = Kd .* (xdd - xddd) ./ (xdd - xl) .* eqq + (xddd - xl) ./ (xdd - ...
+    xl) .* eq;
+Egd = egd .* sin(deltaEq) + egq .* cos(deltaEq);
+Egq = -egd .* cos(deltaEq) + egq .* sin(deltaEq);
+%--------- egd egd Egd Egd ---------
+

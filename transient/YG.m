@@ -11,5 +11,5 @@ for k = 1:numG
 end
 
 Yg = zeros(2*numG);
-Yg = inv(eye(2*numG) + YprimeEF*Zprime)*YprimeEF
+Yg = inv(eye(2*numG) + YprimeEF*Zprime)*YprimeEF;
     
