@@ -1,0 +1,7 @@
+function [out] = RKw(x)
+  
+  
+  
+  
+  out = x^2;
+  

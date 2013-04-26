@@ -1,0 +1,3 @@
+function [dPm] = RK_Pm(Pm,w,numG,TG,KG,w0)
+  dPm = zeros(1,numG);
+  dPm = -1./TG .* (Pm(n,:) + KG ./ w0 .* w(n,:) - (Pm(1,:) + KG));

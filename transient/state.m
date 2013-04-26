@@ -1,5 +1,5 @@
 function [Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
-  state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd)
+  state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max)
 
   
 %--------- Id Iq ---------
@@ -47,8 +47,9 @@ end
 %--------- ef0 ---------
 
 %--------- Pe ---------
-Pe = zeros(1,numG);
-Pe = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
+Pe = zeros(max,numG);
+Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
+
 %--------- Pe ---------
 
 

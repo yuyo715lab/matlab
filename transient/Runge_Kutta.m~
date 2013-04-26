@@ -1,0 +1,15 @@
+%function [] = Runge-Kutta();
+
+
+%t(n+1) = t(n) + dt;
+
+
+
+dt = 0.01;
+
+k1 = RK-w(x(n));
+k2 = RK-w(x(n) + dt/2 * k1);
+k3 = RK-w(x(n) + dt/2 * k2);
+k4 = RK-w(x(n) + dt * k3);
+
+%x(n+1) = x(n) + dt/6 * (RK-W1 + 2*RK-W2 + 2*RK-W3 + RK-W4);

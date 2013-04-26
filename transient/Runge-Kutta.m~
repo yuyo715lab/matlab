@@ -1,0 +1,7 @@
+t(n+1) = t(n) + dt;
+
+F1 = f(x(n));
+F2 = f(x(n) + dt/2 * F1);
+F3 = f(x(n) + dt/2 * F2);
+F4 = f(x(n) + dt * F3);
+x(n+1) = x(n) + dt/6 * (F1 + 2*F2 + 2*F3 + F4);
