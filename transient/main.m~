@@ -2,7 +2,7 @@
 clear all
 
 
-
+max = 200;
 
 %--------- power flow calculation ---------
 [N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = PowerCalc();
@@ -23,13 +23,13 @@ Glabel = zeros(1,numG);
 Glabel = find(GorL == 0);
 
 %--------- eqipment constant ---------
-[xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,Kg,Tg,Ka,Ta,D,H,Kd,Kq] ...
+[xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,KG,TG,KA,TA,D,H,Kd,Kq] ...
       = equipment(numG);
 %--------- eqipment constant ---------
 
 %--------- state ---------
 [Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
-    state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd);
+    state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
 %--------- state ---------
 
 %--------- Yg ---------
@@ -55,5 +55,8 @@ end
 %--------- id iq ---------
 
 %--------- Pe ---------
-Pe = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
+Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
+
+
+Runge_Kutta(P,numG,Pe,H,D,TG,KG,Td,xd,xdd,xddd,xl,id,Kd);
