@@ -59,4 +59,4 @@ Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
 
-Runge_Kutta(P,numG,Pe,H,D,TG,KG,Td,xd,xdd,xddd,xl,id,Kd);
+Runge_Kutta(P,numG,Pe,H,D,TG,KG,Td,xd,xdd,xddd,xl,id,Kd,Kd,Kq);
