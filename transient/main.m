@@ -28,9 +28,10 @@ Glabel = find(GorL == 0);
 %--------- eqipment constant ---------
 
 %--------- state ---------
-[Idq,Vdq,Edq,deltaEq,id,iq,vd,vq,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
+[Idq,Vdq,Edq,deltaEq,id,iq,vd0,vq0,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
     state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
 %--------- state ---------
+
 
 %--------- Yg ---------
 [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,YprimeEF);
@@ -60,4 +61,4 @@ Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 
 
 Runge_Kutta(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
-	 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd);
+	 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg);
