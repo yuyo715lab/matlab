@@ -1,0 +1,1 @@
+plot "../csv/delta2_delta1.csv" using 1:($2)/pi*180
