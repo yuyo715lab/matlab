@@ -1,9 +1,8 @@
-
 clear all
 
-
+for EarthFault = 1:9
 max = 3000;
-EarthFaultTime = 20;
+
 
 %--------- power flow calculation ---------
 [N,Ps,Qs,PQorPV,P,Q,RHO,THEATA,Y,GorL] = PowerCalc();
@@ -16,7 +15,7 @@ EarthFaultTime = 20;
 
 
 %--------- YprimeEF ---------
-EarthFault = 5;
+%for EarthFault = 1:9
 [YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault);
 %--------- YprimeEF ---------
 
@@ -61,6 +60,20 @@ Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
 
-Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
-	 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-	 Rg,Glabel,EarthFaultTime);
+for EarthFaultTime = 20:55
+	[delta] = Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
+		 Rg,Glabel,EarthFaultTime);
+	if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 < 0.1 &&...
+			 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 < 0.1
+		check(EarthFaultTime-19,1) = EarthFaultTime;
+		check(EarthFaultTime-19,EarthFault+1)= 0;
+	else							
+		check(EarthFaultTime-19,1)= EarthFaultTime;
+		check(EarthFaultTime-19,EarthFault+1)= 1;
+	end							
+%	EarthFaultTime				
+end
+check
+clear all
+end

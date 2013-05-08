@@ -1,4 +1,4 @@
-function [] =Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+function [delta] =Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq_state,eqq_state,ed_state,edd_state,vd0,vq0,Yg,YprimeEF,...
 		 max,Yprime,Rg,Glabel,EarthFaultTime);
 
@@ -116,14 +116,17 @@ function [] =Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,
 		vq(n+1,:) = RK_vq(delta(n+1,:),Yg,RK_EGDQ(numG,delta(n+1,:),egd(n+1,:),egq(n+1,:)),numG,YprimeEF);
 		Pe(n+1,:) = RK_Pe(egd(n+1,:),id(n+1,:),egq(n+1,:),iq(n+1,:),w0,xddd,xqqq,w(n+1,:));
 
-
-		% $$$ 		delta_for_plot(n,1) = dt*(n-1);	 
-		% $$$ 		delta_for_plot(n,2) = delta(n,2) - delta(n,1);
-		% $$$ 		delta_for_plot(n,3) = delta(n,3) - delta(n,1);
-		% $$$ 		w_for_plot(n,1) = dt*(n-1);
-		% $$$ 		w_for_plot(n,2) = w(n,1)/2/pi;
-		% $$$ 		w_for_plot(n,3) = w(n,2)/2/pi;
-		% $$$ 		w_for_plot(n,4) = w(n,3)/2/pi;
+		if EarthFaultTime == 45
+			delta_for_plot(n,1) = dt*(n-1);	 
+			delta_for_plot(n,2) = (delta(n,2) - delta(n,1))/pi*180;
+			delta_for_plot(n,3) = (delta(n,3) - delta(n,1))/pi*180;
+		end
+% $$$ if EarthFaultTime == 100
+% $$$ 				w_for_plot(n,1) = dt*(n-1);
+% $$$ 				w_for_plot(n,2) = w(n,1)/2/pi;
+% $$$ 				w_for_plot(n,3) = w(n,2)/2/pi;
+% $$$ 				w_for_plot(n,4) = w(n,3)/2/pi;
+% $$$ 			end
 		% $$$ 		v_for_plot(n,1) = dt*(n-1);
 		% $$$ 		v_for_plot(n,2) = sqrt(vd(n,1)^2+vq(n,1)^2);
 		% $$$ 		v_for_plot(n,3) = sqrt(vd(n,2)^2+vq(n,2)^2);
@@ -132,12 +135,16 @@ function [] =Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,
 	end
 	%//////////////// for loop ////////////////////
 	%/////////////////////////////////////////////
-% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,2))
+% $$$ 	if EarthFaultTime == 45
+% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,2))
+% $$$ 		hold all
+% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,3))
+% $$$ 	end
 % $$$ 	hold all
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
 % $$$ 	hold all
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
-	csvwrite('v123.csv',v_for_plot);
+%	csvwrite('v123.csv',v_for_plot);
 end
 
 
