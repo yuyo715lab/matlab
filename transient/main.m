@@ -1,6 +1,6 @@
 clear all
 
-for EarthFault = 1:9
+%for EarthFault = 1:9
 max = 3000;
 
 
@@ -15,7 +15,7 @@ max = 3000;
 
 
 %--------- YprimeEF ---------
-%for EarthFault = 1:9
+EarthFault = 5;
 [YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault);
 %--------- YprimeEF ---------
 
@@ -59,21 +59,32 @@ end
 Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
-
-for EarthFaultTime = 20:55
-	[delta] = Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+%eft_min = 17;
+%eft_max = 45;
+delta_for_plot = zeros(max,6);
+w_for_plot = zeros(max,6);
+v_for_plot = zeros(max,6);
+for k = 40:50
+	EarthFaultTime = k;
+	[delta_for_plot,w_for_plot,v_for_plot] =...
+		 Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-		 Rg,Glabel,EarthFaultTime);
-	if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 < 0.1 &&...
-			 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 < 0.1
-		check(EarthFaultTime-19,1) = EarthFaultTime;
-		check(EarthFaultTime-19,EarthFault+1)= 0;
-	else							
-		check(EarthFaultTime-19,1)= EarthFaultTime;
-		check(EarthFaultTime-19,EarthFault+1)= 1;
-	end							
+		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot);
+% $$$ 	if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 < 0.1 &&...
+% $$$ 			 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 < 0.1
+% $$$ %		check(EarthFaultTime-19,1) = EarthFaultTime;
+% $$$ %		check(EarthFaultTime-19,EarthFault+1)= 0;
+% $$$ 	else							
+		%		check(EarthFaultTime-19,1)= EarthFaultTime;
+		%		check(EarthFaultTime-19,EarthFault+1)= 1;
+% $$$ 		if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 > 0.1 ||...
+% $$$ 				 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 > 0.1
+% $$$ 			EarthFault
+% $$$ 			EarthFaultTime
+% $$$ 			break
+% $$$ 		end							
 %	EarthFaultTime				
 end
-check
-clear all
-end
+%check
+%clear all
+%end
