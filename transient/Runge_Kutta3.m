@@ -1,6 +1,6 @@
 function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
     xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq_state,eqq_state,ed_state,edd_state,vd0,vq0,Yg,YprimeEF,...
-    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime);
+    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime)
 
 f = 50; % frequency
 w0 = 2*pi*f; % angular velocity
@@ -8,15 +8,18 @@ w0 = 2*pi*f; % angular velocity
 %$$$$$$$$$ initialization $$$$$$$$$
 w = zeros(max,numG);
 Pm = zeros(max,numG);
+Pm0 = zeros(1,numG);
 eq = zeros(max,numG);
 ef = zeros(max,numG);
 eqq = zeros(max,numG);
-eqqq = zeros(max,numG);
+%eqqq = zeros(max,numG);
 ed = zeros(max,numG);
 edd = zeros(max,numG);
-eddd = zeros(max,numG);
+%eddd = zeros(max,numG);
 V = zeros(max,numG);
 delta = zeros(max,numG);
+egd = zeros(max,numG);
+egq = zeros(max,numG);
 %$$$$$$$$$ initialization $$$$$$$$$
 
 %((((((((( initial value )))))))))
@@ -53,38 +56,40 @@ for n = 1:max-1
   Pm_k = zeros(5,numG);
   dt_k_tmp = [0;dt/2;dt/2;dt];
   dt_k = dt_k_tmp*ones(1,3);
-  id_atk = zeros(5,numG);
-  iq_atk = zeros(5,numG);
-  vd_atk = zeros(5,numG);
-  vq_atk = zeros(5,numG);
+  idqvdq_atk = zeros(20,numG);
+%  id_atk = zeros(5,numG);
+%  iq_atk = zeros(5,numG);
+%  vd_atk = zeros(5,numG);
+%  vq_atk = zeros(5,numG);
   for k = 1:4
     rk_egdatk = ...
 	RK_egd(Kq,xqq,xqqq,xl,edd(n,:)+dt_k(k,:).*edd_k(k,:),ed(n,:)+dt_k(k,:).*ed_k(k,:));
     rk_egqatk = RK_egq(Kd,xdd,xddd,xl,eqq(n,:)+dt_k(k,:).*eqq_k(k,:),eq(n,:)+dt_k(k,:).*eq_k(k,:));
     rk_egdqatk = RK_EGDQ(numG,delta(n,:)+dt_k(k,:).*delta_k(k,:),...
 	rk_egdatk,rk_egqatk);
-    idqvdq_atk(k+1,:,1) = RK_id(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
-	rk_egdqatk,numG); 
-    idqvdq_atk(k+1,:,2) = RK_iq(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
+[id_atk iq_atk] = RK_idq(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
 	rk_egdqatk,numG);
-    idqvdq_atk(k+1,:,3) = RK_vd(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
+[vd_atk vq_atk] = RK_vdq(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
 	rk_egdqatk,numG,YprimeEF);
-    idqvdq_atk(k+1,:,4) = RK_vq(delta(n,:)+dt_k(k,:).*delta_k(k,:),Yg,...
-	rk_egdqatk,numG,YprimeEF);
+%[vd_atk vq_atk] = RK_vdq(rk_egqatk,rk_egdatk,w0,xqqq,xddd,iq_atk,id_atk,Rg);
+    idqvdq_atk(k+1,:) = id_atk;
+	 idqvdq_atk(5+k+1,:) = iq_atk;
+    idqvdq_atk(10+k+1,:) = vd_atk;
+    idqvdq_atk(15+k+1,:) = vq_atk;
     delta_k(k+1,:) = RK_delta(w(n,:)+dt_k(k,:).*delta_k(k,:),dt,f,n);
     w_k(k+1,:) = RK_w(w(n,:)+dt_k(k,:).*w_k(k,:),dt,n,f,H,Pm(n,:)+dt_k(k,:).*Pm_k(k,:),...
-	RK_Pe(rk_egdatk,idqvdq_atk(k+1,:,1),rk_egqatk,idqvdq_atk(k+1,:,2),w0,xddd,xqqq,w(n,:)+dt_k(k,:).*w_k(k,:)),D,numG);
+	RK_Pe(rk_egdatk,idqvdq_atk(k+1,:),rk_egqatk,idqvdq_atk(5+k+1,:),w0,xddd,xqqq,w(n,:)+dt_k(k,:).*w_k(k,:)),D,numG);
     eq_k(k+1,:) = RK_eq(numG,Td,ef(n,:)+dt_k(k,:).*ef_k(k,:),xd,xdd,xddd,xl,Kd,...
 	eqq(n,:)+dt_k(k,:).*eqq_k(k,:),...
-	eq(n,:)+dt_k(k,:).*eq_k(k,:),w(n,:)+dt_k(k,:).*w_k(k,:),idqvdq_atk(k+1,:,1),n,w0);
+	eq(n,:)+dt_k(k,:).*eq_k(k,:),w(n,:)+dt_k(k,:).*w_k(k,:),idqvdq_atk(k+1,:),n,w0);
     eqq_k(k+1,:) =RK_eqq(numG,Tdd,Kd,eq(n,:)+dt_k(k,:).*eq_k(k,:),eqq(n,:)+dt_k(k,:).*eqq_k(k,:),...
-	w(n,:)+dt_k(k,:).*w_k(k,:),xdd,xl,idqvdq_atk(k+1,:,1),n,w0);
+	w(n,:)+dt_k(k,:).*w_k(k,:),xdd,xl,idqvdq_atk(k+1,:),n,w0);
     ed_k(k+1,:) = RK_ed(numG,Tq,xq,xqq,xqqq,xl,Kq,edd(n,:)+dt_k(k,:).*edd_k(k,:),...
 	w(n,:)+dt_k(k,:).*w_k(k,:),...
-	idqvdq_atk(k+1,:,2),n,ed(n,:)+dt_k(k,:).*ed_k(k,:),w0);
+	idqvdq_atk(5+k+1,:),n,ed(n,:)+dt_k(k,:).*ed_k(k,:),w0);
     edd_k(k+1,:)=RK_edd(numG,Tqq,Kq,edd(n,:)+dt_k(k,:).*edd_k(k,:),ed(n,:)+dt_k(k,:).*ed_k(k,:),...
-	w(n,:)+dt_k(k,:).*w_k(k,:),xqq,xl,idqvdq_atk(k+1,:,2),n,w0);
-    ef_k(k+1,:) = RK_ef(TA,KA,idqvdq_atk(k+1,:,3),idqvdq_atk(k+1,:,4),ef0,V,n,ef(n,:)+dt_k(k,:).*ef_k(k,:));
+	w(n,:)+dt_k(k,:).*w_k(k,:),xqq,xl,idqvdq_atk(5+k+1,:),n,w0);
+    ef_k(k+1,:) = RK_ef(TA,KA,idqvdq_atk(10+k+1,:),idqvdq_atk(15+k+1,:),ef0,V,n,ef(n,:)+dt_k(k,:).*ef_k(k,:));
     Pm_k(k+1,:)=RK_Pm(Pm(n,:)+dt_k(k,:).*Pm_k(k,:),w(n,:)+dt_k(k,:).*w_k(k,:),numG,TG,KG,w0,n,Pm0);
   end
   
@@ -102,10 +107,13 @@ for n = 1:max-1
   egq(n+1,:) = ...
       RK_egq(Kd,xdd,xddd,xl,eqq(n+1,:),eq(n+1,:));
   rk_egdq = RK_EGDQ(numG,delta(n+1,:),egd(n+1,:),egq(n+1,:));
-  id(n+1,:) = RK_id(delta(n+1,:),Yg,rk_egdq,numG);
-  iq(n+1,:) = RK_iq(delta(n+1,:),Yg,rk_egdq,numG);
-  vd(n+1,:) = RK_vd(delta(n+1,:),Yg,rk_egdq,numG,YprimeEF);
-  vq(n+1,:) = RK_vq(delta(n+1,:),Yg,rk_egdq,numG,YprimeEF);
+  [id_atn1 iq_atn1] = RK_idq(delta(n+1,:),Yg,rk_egdq,numG);
+  [vd_atn1 vq_atn1] = RK_vdq(delta(n+1,:),Yg,rk_egdq,numG,YprimeEF);
+%[vd_atn1 vq_atn1] = RK_vdq(egd(n+1,:),egq(n+1,:),w0,xqqq,xddd,iq_atn1,id_atn1,Rg);
+  id(n+1,:) = id_atn1;
+  iq(n+1,:) = iq_atn1;
+  vd(n+1,:) = vd_atn1;
+  vq(n+1,:) = vq_atn1;
   Pe(n+1,:) = RK_Pe(egd(n+1,:),id(n+1,:),egq(n+1,:),iq(n+1,:),w0,xddd,xqqq,w(n+1,:));
 
 
@@ -143,7 +151,7 @@ delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
 % $$$ 	hold all
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
-%csvwrite('delta_eftime_detail_45_00001.csv',delta_for_plot);
+csvwrite('delta_eftime_detail_4243_00001.csv',delta_for_plot);
 %	csvwrite('w_eftime.csv',w_for_plot);
 %	csvwrite('v_eftime_001.csv',v_for_plot);
 plot(delta_for_plot(:,1),delta_for_plot(:,2),...
@@ -228,33 +236,28 @@ end
 %////////////////////////// differential equation //////////////////////////
 
 
-function [id] = RK_id(delta,Yg,EGDQ,numG)
+function [id,iq] = RK_idq(delta,Yg,EGDQ,numG)
 IGDQ = Yg*EGDQ;
+id = zeros(1,numG);
+iq = zeros(1,numG);
+idq = zeros(1,numG);
 for k = 1:numG
-  id(k) = real((IGDQ(2*k-1)+j*IGDQ(2*k))*exp(j*(pi/2-delta(k))));
+	idq(k) =  (IGDQ(2*k-1)+1i*IGDQ(2*k))*exp(1i*(pi/2-delta(k)));
+	id(k) = real(idq(k));
+	iq(k) = imag(idq(k));
 end
 end
 
-function [iq] = RK_iq(delta,Yg,EGDQ,numG)
+function [vd,vq] = RK_vdq(delta,Yg,EGDQ,numG,YprimeEF)
 IGDQ = Yg*EGDQ;
+VGDQ = YprimeEF\IGDQ;
+vd = zeros(1,numG);
+vq = zeros(1,numG);
+vdq = zeros(1,numG);
 for k = 1:numG
-  iq(k) = imag((IGDQ(2*k-1)+j*IGDQ(2*k))*exp(j*(pi/2-delta(k))));
-end
-end
-
-function [vd] = RK_vd(delta,Yg,EGDQ,numG,YprimeEF)
-IGDQ = Yg*EGDQ;
-VGDQ = inv(YprimeEF)*IGDQ;
-for k = 1:numG
-  vd(k) = real((VGDQ(2*k-1)+j*VGDQ(2*k))*exp(j*(pi/2-delta(k))));
-end
-end
-
-function [vq] = RK_vq(delta,Yg,EGDQ,numG,YprimeEF)
-IGDQ = Yg*EGDQ;
-VGDQ = inv(YprimeEF)*IGDQ;
-for k = 1:numG
-  vq(k) = imag((VGDQ(2*k-1)+j*VGDQ(2*k))*exp(j*(pi/2-delta(k))));
+	vdq(k) = (VGDQ(2*k-1)+1i*VGDQ(2*k))*exp(1i*(pi/2-delta(k)));
+	vd(k) = real(vdq(k));
+	vq(k) = imag(vdq(k));
 end
 end
 
@@ -281,4 +284,9 @@ end
 function [Pe] = RK_Pe(egd,id,egq,iq,w0,xddd,xqqq,w)
 Pe = (egd.*id+egq.*iq-(xddd-xqqq).*id.*iq).*w./w0;
 end
-
+%{
+function [vd,vq] = RK_vdq(egd,egq,w0,xqqq,xddd,iq,id,R)
+	vd = egd + w0 .* xqqq .*iq - R .* id;
+	vq = egq + w0 .* xddd .*id - R .* iq;
+end
+%}

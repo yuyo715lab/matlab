@@ -1,8 +1,8 @@
 clear all
 
 %for EarthFault = 1:9
-dt = 0.01; % sampling time
-endTime = 30;
+dt = 0.00001; % sampling time
+endTime = 15;
 
 max = round(endTime/dt);
 
@@ -62,8 +62,8 @@ end
 Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
-eft_min = 0.39;
-eft_max = 0.51;
+eft_min = 0.42;
+eft_max = 0.43;
 eft_step = 0.01;
 number_of_step = round((eft_max - eft_min)/eft_step)+1;
 delta_for_plot = zeros(max,number_of_step+1);
@@ -90,10 +90,10 @@ for k = eft_min:eft_step:eft_max
 % $$$ 			break
 % $$$ 		end							
 %	EarthFaultTime				
-%step_mail()
+step_mail()
 now_step = now_step + 1;
 end
 %check
 %clear all
 %end
-%finish_mail()
+finish_mail()
