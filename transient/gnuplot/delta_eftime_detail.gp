@@ -1,4 +1,4 @@
-set terminal postscript eps enhanced color
+set terminal postscript eps enhanced color solid
 set output "../../../../Paper/meeting/transient-analysis/figure/delta_eftime_detail.eps"
 set grid
 set xlabel "time [sec]"

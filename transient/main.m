@@ -1,7 +1,10 @@
 clear all
 
 %for EarthFault = 1:9
-max = 3000;
+dt = 0.01; % sampling time
+endTime = 30;
+
+max = round(endTime/dt);
 
 
 %--------- power flow calculation ---------
@@ -59,17 +62,20 @@ end
 Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
-%eft_min = 17;
-%eft_max = 45;
-delta_for_plot = zeros(max,6);
-w_for_plot = zeros(max,6);
-v_for_plot = zeros(max,6);
-for k = 40:50
+eft_min = 0.39;
+eft_max = 0.51;
+eft_step = 0.01;
+number_of_step = round((eft_max - eft_min)/eft_step)+1;
+delta_for_plot = zeros(max,number_of_step+1);
+w_for_plot = zeros(max,number_of_step+1);
+v_for_plot = zeros(max,number_of_step+1);
+now_step = 2;
+for k = eft_min:eft_step:eft_max
 	EarthFaultTime = k;
 	[delta_for_plot,w_for_plot,v_for_plot] =...
-		 Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot);
+		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime);
 % $$$ 	if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 < 0.1 &&...
 % $$$ 			 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 < 0.1
 % $$$ %		check(EarthFaultTime-19,1) = EarthFaultTime;
@@ -84,7 +90,10 @@ for k = 40:50
 % $$$ 			break
 % $$$ 		end							
 %	EarthFaultTime				
+%step_mail()
+now_step = now_step + 1;
 end
 %check
 %clear all
 %end
+%finish_mail()

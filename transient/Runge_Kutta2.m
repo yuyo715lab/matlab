@@ -1,9 +1,8 @@
 function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta2(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq_state,eqq_state,ed_state,edd_state,vd0,vq0,Yg,YprimeEF,...
-		 max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot);
+		 max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt);
 
 	f = 50; % frequency
-	dt = 0.01; % sampling time
 	w0 = 2*pi*f; % angular velocity
 
 	%$$$$$$$$$ initialization $$$$$$$$$
@@ -39,7 +38,7 @@ function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta2(P,numG,Pe,H,D,TG,K
 	%//////////// for loop ///////////////////////
 	for n = 1:max-1
 		%<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
-		if n == EarthFaultTime % earth fault occur at n*dt
+		if n == EarthFaultTime/dt % earth fault occur at n*dt
 			[Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
 			YprimeEF = Yprime;
 		end
@@ -117,37 +116,41 @@ function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta2(P,numG,Pe,H,D,TG,K
 		Pe(n+1,:) = RK_Pe(egd(n+1,:),id(n+1,:),egq(n+1,:),iq(n+1,:),w0,xddd,xqqq,w(n+1,:));
 
 
-		k = EarthFaultTime-38;
+		k = round(EarthFaultTime*100-39);
 		delta_for_plot(n,1) = dt*(n-1);	 
-%		w_for_plot(n,1) = dt*(n-1);
-%		v_for_plot(n,1) = dt*(n-1);
+		%		w_for_plot(n,1) = dt*(n-1);
+		%		v_for_plot(n,1) = dt*(n-1);
 		
-		delta_for_plot(n,k) = (delta(n,2) - delta(n,1))/pi*180;
-%		delta_for_plot(n,2*(k-1)+1) = (delta(n,3) - delta(n,1))/pi*180;
+		delta_for_plot(n,k) = (delta(n,2)-delta(n,1))/pi*180;
+		%		delta_for_plot(n,2*(k-1)+1) = (delta(n,3) - delta(n,1))/pi*180;
 
-%		w_for_plot(n,k) = w(n,1)/2/pi;
-%		w_for_plot(n,3) = w(n,2)/2/pi;
-%		w_for_plot(n,4) = w(n,3)/2/pi;
+		%		w_for_plot(n,k) = w(n,1)/2/pi;
+		%		w_for_plot(n,3) = w(n,2)/2/pi;
+		%		w_for_plot(n,4) = w(n,3)/2/pi;
 
-%		v_for_plot(n,k) = sqrt(vd(n,1)^2+vq(n,1)^2);
-%		v_for_plot(n,3) = sqrt(vd(n,2)^2+vq(n,2)^2);
-%		v_for_plot(n,4) = sqrt(vd(n,3)^2+vq(n,3)^2);
+		%v_for_plot(n,k) = sqrt(vd(n,1)^2+vq(n,1)^2);
+		%		v_for_plot(n,3) = sqrt(vd(n,2)^2+vq(n,2)^2);
+		%		v_for_plot(n,4) = sqrt(vd(n,3)^2+vq(n,3)^2);
 
+		if mod(n,10000) == 0
+			str = ['EFT ',num2str(EarthFaultTime),' n ',num2str(n)];
+			disp(str)
+		end
 	end
 	%//////////////// for loop ////////////////////
 	%/////////////////////////////////////////////
-% $$$ 	if EarthFaultTime == 45
-% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,2))
-% $$$ 		hold all
-% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,3))
-% $$$ 	end
-% $$$ 	hold all
-% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
-% $$$ 	hold all
-% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
-	csvwrite('delta_eftime_detail.csv',delta_for_plot);
-%	csvwrite('w_eftime.csv',w_for_plot);
-%	csvwrite('v_eftime.csv',v_for_plot);
+	% $$$ 	if EarthFaultTime == 45
+	% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,2))
+	% $$$ 		hold all
+	% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,3))
+	% $$$ 	end
+	% $$$ 	hold all
+	% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
+	% $$$ 	hold all
+	% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
+	csvwrite('delta_eftime_detail_45_00001.csv',delta_for_plot);
+	%	csvwrite('w_eftime.csv',w_for_plot);
+	%	csvwrite('v_eftime_001.csv',v_for_plot);
 end
 
 
