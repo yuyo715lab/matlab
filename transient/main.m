@@ -95,7 +95,8 @@ for k = eft_min:eft_step:eft_max
 %step_mail()
 now_step = now_step + 1;
 end
-csvwrite('./csv/test.csv',delta_for_plot);
+dlmwrite('./csv/test.csv',delta_for_plot,' ');
+%csvwrite('./csv/test.csv',delta_for_plot);
 !sudo chmod a+w ./csv/test.csv
 %check
 %clear all

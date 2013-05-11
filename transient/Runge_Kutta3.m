@@ -228,31 +228,19 @@ IGDQ = Yg*EGDQ;
 id = zeros(1,numG);
 iq = zeros(1,numG);
 idq = zeros(numG,1);
-%{
-for k = 1:numG
-  idq(k) =  (IGDQ(2*k-1)+1i*IGDQ(2*k))*exp(1i*(pi/2-delta(k)));
-  id(k) = real(idq(k));
-  iq(k) = imag(idq(k));
-end
-%}
-
 idq = (IGDQ(1:2:end) + 1i.*IGDQ(2:2:end)) .* exp(1i.*(pi/2-delta.'));
 id = real(idq.');
 iq = imag(idq.');
-
 end
 
 function [vd,vq] = RK_vdq(delta,Yg,EGDQ,numG,YprimeEF)
-%IGDQ = Yg*EGDQ;
 VGDQ = YprimeEF\(Yg*EGDQ);
 vd = zeros(1,numG);
 vq = zeros(1,numG);
-vdq = zeros(1,numG);
-for k = 1:numG
-	vdq(k) = (VGDQ(2*k-1)+1i*VGDQ(2*k))*exp(1i*(pi/2-delta(k)));
-	vd(k) = real(vdq(k));
-	vq(k) = imag(vdq(k));
-end
+vdq = zeros(numG,1);
+vdq = (VGDQ(1:2:end) + 1i.*VGDQ(2:2:end)) .* exp(1i*(pi/2-delta.'));
+vd = real(vdq.');
+vq = imag(vdq.');
 end
 
 function [EGDQ] = RK_EGDQ(numG,delta,egd,egq)
@@ -261,10 +249,8 @@ EGD = zeros(numG,1);
 EGQ = zeros(numG,1);
 EGD = egd .* sin(delta) + egq .* cos(delta);
 EGQ = -egd .* cos(delta) + egq .* sin(delta);
-for k = 1:numG
-  EGDQ(2*k-1) = EGD(k);
-  EGDQ(2*k) = EGQ(k);
-end
+EGDQ(1:2:end) = EGD;
+EGDQ(2:2:end) = EGQ;
 end
 
 function [egd] = RK_egd(Kq,xqq,xqqq,xl,edd,ed)
