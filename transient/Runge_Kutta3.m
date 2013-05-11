@@ -151,22 +151,9 @@ delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
 % $$$ 	hold all
 % $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
-csvwrite('delta_eftime_detail_4243_00001.csv',delta_for_plot);
+
 %	csvwrite('w_eftime.csv',w_for_plot);
 %	csvwrite('v_eftime_001.csv',v_for_plot);
-plot(delta_for_plot(:,1),delta_for_plot(:,2),...
-	 delta_for_plot(:,1),delta_for_plot(:,3),...
-	 delta_for_plot(:,1),delta_for_plot(:,4),...
-	 delta_for_plot(:,1),delta_for_plot(:,5),...
-	 delta_for_plot(:,1),delta_for_plot(:,6),...
-	 delta_for_plot(:,1),delta_for_plot(:,7),...
-	 delta_for_plot(:,1),delta_for_plot(:,8),...
-	 delta_for_plot(:,1),delta_for_plot(:,9),...
-	 delta_for_plot(:,1),delta_for_plot(:,10),...
-	 delta_for_plot(:,1),delta_for_plot(:,11),...
-	 delta_for_plot(:,1),delta_for_plot(:,12),...
-	 delta_for_plot(:,1),delta_for_plot(:,13),...
-	 delta_for_plot(:,1),delta_for_plot(:,14))
 end
 
 
@@ -240,17 +227,24 @@ function [id,iq] = RK_idq(delta,Yg,EGDQ,numG)
 IGDQ = Yg*EGDQ;
 id = zeros(1,numG);
 iq = zeros(1,numG);
-idq = zeros(1,numG);
+idq = zeros(numG,1);
+%{
 for k = 1:numG
-	idq(k) =  (IGDQ(2*k-1)+1i*IGDQ(2*k))*exp(1i*(pi/2-delta(k)));
-	id(k) = real(idq(k));
-	iq(k) = imag(idq(k));
+  idq(k) =  (IGDQ(2*k-1)+1i*IGDQ(2*k))*exp(1i*(pi/2-delta(k)));
+  id(k) = real(idq(k));
+  iq(k) = imag(idq(k));
 end
+%}
+
+idq = (IGDQ(1:2:end) + 1i.*IGDQ(2:2:end)) .* exp(1i.*(pi/2-delta.'));
+id = real(idq.');
+iq = imag(idq.');
+
 end
 
 function [vd,vq] = RK_vdq(delta,Yg,EGDQ,numG,YprimeEF)
-IGDQ = Yg*EGDQ;
-VGDQ = YprimeEF\IGDQ;
+%IGDQ = Yg*EGDQ;
+VGDQ = YprimeEF\(Yg*EGDQ);
 vd = zeros(1,numG);
 vq = zeros(1,numG);
 vdq = zeros(1,numG);
