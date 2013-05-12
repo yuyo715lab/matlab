@@ -6,20 +6,20 @@ f = 50; % frequency
 w0 = 2*pi*f; % angular velocity
 
 %$$$$$$$$$ initialization $$$$$$$$$
-w = zeros(max,numG);
-Pm = zeros(max,numG);
+w = zeros(max+1,numG);
+Pm = zeros(max+1,numG);
 Pm0 = zeros(1,numG);
-eq = zeros(max,numG);
-ef = zeros(max,numG);
-eqq = zeros(max,numG);
+eq = zeros(max+1,numG);
+ef = zeros(max+1,numG);
+eqq = zeros(max+1,numG);
 %eqqq = zeros(max,numG);
-ed = zeros(max,numG);
-edd = zeros(max,numG);
+ed = zeros(max+1,numG);
+edd = zeros(max+1,numG);
 %eddd = zeros(max,numG);
-V = zeros(max,numG);
-delta = zeros(max,numG);
-egd = zeros(max,numG);
-egq = zeros(max,numG);
+V = zeros(max+1,numG);
+delta = zeros(max+1,numG);
+egd = zeros(max+1,numG);
+egq = zeros(max+1,numG);
 %$$$$$$$$$ initialization $$$$$$$$$
 
 %((((((((( initial value )))))))))
@@ -39,7 +39,7 @@ end
 
 %/////////////////////////////////////////////
 %//////////// for loop ///////////////////////
-for n = 1:max-1
+for n = 1:max
   %<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
   if n == EarthFaultTime/dt % earth fault occur at n*dt
     [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
@@ -139,11 +139,11 @@ for n = 1:max-1
     toc
     tic
   end
-  if mod(n,100) == 0
+  if mod(n,100000) == 0
     step_mail(n,EarthFaultTime)
   end
 end
-delta_for_plot(:,1) = [0:dt:endTime-dt]';
+delta_for_plot(:,1) = [0:dt:endTime]';
 delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;
 %//////////////// for loop ////////////////////
 %/////////////////////////////////////////////

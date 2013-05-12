@@ -3,12 +3,12 @@ format long;
 startT = clock();
 startCpuT = cputime;
 
-dt = 0.01; % sampling time
-endTime = 2;
+dt = 0.00001; % sampling time
+endTime = 15;
 eft_min = 0.41;
 eft_max = 0.45;
 eft_step = 0.04;
-csvname = './csv/test.csv';
+csvname = './csv/delta_eftime_detail_4145_00001.csv';
 
 max = round(endTime/dt);
 
@@ -72,9 +72,9 @@ Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 number_of_step = (eft_max > eft_min)*...
     (round((eft_max - eft_min)/eft_step)+1) ...
     + (eft_max == eft_min)*1;
-delta_for_plot = zeros(max,number_of_step+1);
-w_for_plot = zeros(max,number_of_step+1);
-v_for_plot = zeros(max,number_of_step+1);
+delta_for_plot = zeros(max+1,number_of_step+1);
+w_for_plot = zeros(max+1,number_of_step+1);
+v_for_plot = zeros(max+1,number_of_step+1);
 now_step = 2;
 for k = eft_min:eft_step:eft_max
   EarthFaultTime = k;
@@ -89,7 +89,7 @@ end
 dlmwrite(csvname,delta_for_plot,' ');
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
-!sudo chmod a+w ./csv/test.csv
+%!sudo chmod a+w ./csv/test.csv
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
