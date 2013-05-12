@@ -1,8 +1,14 @@
 clear all
+format long;
+startT = clock();
+startCpuT = cputime;
 
-%for EarthFault = 1:9
 dt = 0.01; % sampling time
-endTime = 30;
+endTime = 2;
+eft_min = 0.41;
+eft_max = 0.45;
+eft_step = 0.04;
+csvname = './csv/test.csv';
 
 max = round(endTime/dt);
 
@@ -27,7 +33,7 @@ Glabel = find(GorL == 0);
 
 %--------- eqipment constant ---------
 [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,KG,TG,KA,TA,D,H,Kd,Kq] ...
-      = equipment(numG);
+    = equipment(numG);
 %--------- eqipment constant ---------
 
 %--------- state ---------
@@ -62,9 +68,7 @@ end
 Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 %--------- Pe ---------
 
-eft_min = 0.2;
-eft_max = 0.6;
-eft_step = 0.1;
+
 number_of_step = (eft_max > eft_min)*...
     (round((eft_max - eft_min)/eft_step)+1) ...
     + (eft_max == eft_min)*1;
@@ -73,32 +77,29 @@ w_for_plot = zeros(max,number_of_step+1);
 v_for_plot = zeros(max,number_of_step+1);
 now_step = 2;
 for k = eft_min:eft_step:eft_max
-	EarthFaultTime = k;
-	[delta_for_plot,w_for_plot,v_for_plot] =...
-		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
-		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime);
-% $$$ 	if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 < 0.1 &&...
-% $$$ 			 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 < 0.1
-% $$$ %		check(EarthFaultTime-19,1) = EarthFaultTime;
-% $$$ %		check(EarthFaultTime-19,EarthFault+1)= 0;
-% $$$ 	else							
-		%		check(EarthFaultTime-19,1)= EarthFaultTime;
-		%		check(EarthFaultTime-19,EarthFault+1)= 1;
-% $$$ 		if abs((delta(1,2) - delta(1,1)) - (delta(max,2)-delta(max,1)))/pi*180 > 0.1 ||...
-% $$$ 				 abs((delta(1,3) - delta(1,1)) - (delta(max,3)-delta(max,1)))/pi*180 > 0.1
-% $$$ 			EarthFault
-% $$$ 			EarthFaultTime
-% $$$ 			break
-% $$$ 		end							
-%	EarthFaultTime				
-%step_mail()
-now_step = now_step + 1;
+  EarthFaultTime = k;
+  tic
+  [delta_for_plot,w_for_plot,v_for_plot] =...
+      Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+      xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
+      Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime);
+
+    now_step = now_step + 1;
 end
-dlmwrite('./csv/test.csv',delta_for_plot,' ');
-%csvwrite('./csv/test.csv',delta_for_plot);
+dlmwrite(csvname,delta_for_plot,' ');
+%dlmwrite(csvname,w_for_plot,' ');
+%dlmwrite(csvname,v_for_plot,' ');
 !sudo chmod a+w ./csv/test.csv
-%check
-%clear all
-%end
-%finish_mail()
+
+%TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
+ntime=cputime-startCpuT;
+nhour = floor(ntime/60/60);
+nmin = floor((ntime-nhour*3600)/60);
+nsec = ntime-nhour*3600-nmin*60;
+disp(sprintf('%s%s', 'start time：',datestr(startT,31)));
+disp(sprintf('%s%s', 'finish time：',datestr(clock,31)));
+disp(sprintf('%s%d%s%02d%s%04.1f%s', ...
+    'calculation time：',nhour,'h',nmin,'m',nsec,'s'));
+%TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
+
+finish_mail()

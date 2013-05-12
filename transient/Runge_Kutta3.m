@@ -136,24 +136,19 @@ for n = 1:max-1
   if mod(n,10000) == 0
     str = ['EFT ',num2str(EarthFaultTime),' n ',num2str(n)];
     disp(str)
+    toc
+    tic
+  end
+  if mod(n,100) == 0
+    step_mail(n,EarthFaultTime)
   end
 end
 delta_for_plot(:,1) = [0:dt:endTime-dt]';
 delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;
 %//////////////// for loop ////////////////////
 %/////////////////////////////////////////////
-% $$$ 	if EarthFaultTime == 45
-% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,2))
-% $$$ 		hold all
-% $$$ 		plot(delta_for_plot(:,1),delta_for_plot(:,3))
-% $$$ 	end
-% $$$ 	hold all
-% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,3))
-% $$$ 	hold all
-% $$$ 	plot(v_for_plot(:,1),v_for_plot(:,4))
 
-%	csvwrite('w_eftime.csv',w_for_plot);
-%	csvwrite('v_eftime_001.csv',v_for_plot);
+
 end
 
 
