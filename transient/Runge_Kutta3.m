@@ -41,7 +41,7 @@ end
 %//////////// for loop ///////////////////////
 for n = 1:max
   %<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
-  if n == EarthFaultTime/dt % earth fault occur at n*dt
+  if n == round(EarthFaultTime/dt) % earth fault occur at n*dt
     [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
     YprimeEF = Yprime;
   end
@@ -139,9 +139,11 @@ for n = 1:max
     toc
     tic
   end
+  
   if mod(n,100000) == 0
     step_mail(n,EarthFaultTime)
   end
+  
 end
 delta_for_plot(:,1) = [0:dt:endTime]';
 delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;

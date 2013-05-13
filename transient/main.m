@@ -4,11 +4,11 @@ startT = clock();
 startCpuT = cputime;
 
 dt = 0.00001; % sampling time
-endTime = 15;
+endTime = 13;
 eft_min = 0.41;
-eft_max = 0.45;
-eft_step = 0.04;
-csvname = './csv/delta_eftime_detail_4145_00001.csv';
+eft_max = 0.42;
+eft_step = 0.01;
+csvname = './csv/delta_4142_00001.csv';
 
 max = round(endTime/dt);
 
@@ -89,17 +89,17 @@ end
 dlmwrite(csvname,delta_for_plot,' ');
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
-%!sudo chmod a+w ./csv/test.csv
+!sudo chmod a+w ./csv/delta_4142_00001.csv
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
 nhour = floor(ntime/60/60);
 nmin = floor((ntime-nhour*3600)/60);
 nsec = ntime-nhour*3600-nmin*60;
-disp(sprintf('%s%s', 'start time：',datestr(startT,31)));
-disp(sprintf('%s%s', 'finish time：',datestr(clock,31)));
+disp(sprintf('%s%s', 'start time:',datestr(startT,31)));
+disp(sprintf('%s%s', 'finish time:',datestr(clock,31)));
 disp(sprintf('%s%d%s%02d%s%04.1f%s', ...
-    'calculation time：',nhour,'h',nmin,'m',nsec,'s'));
+    'calculation time:',nhour,'h',nmin,'m',nsec,'s'));
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 
 finish_mail()
