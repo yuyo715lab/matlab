@@ -5,10 +5,10 @@ startCpuT = cputime;
 
 dt = 0.00001; % sampling time
 endTime = 13;
-eft_min = 0.41;
-eft_max = 0.42;
+eft_min = 0.43;
+eft_max = 0.43;
 eft_step = 0.01;
-csvname = './csv/delta_4142_00001.csv';
+csvname = './csv/delta_43_00001.csv';
 
 max = round(endTime/dt);
 
@@ -89,7 +89,7 @@ end
 dlmwrite(csvname,delta_for_plot,' ');
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
-!sudo chmod a+w ./csv/delta_4142_00001.csv
+!sudo chmod a+w ./csv/delta_43_00001.csv
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
