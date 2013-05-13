@@ -5,10 +5,11 @@ startCpuT = cputime;
 
 dt = 0.00001; % sampling time
 endTime = 13;
-eft_min = 0.43;
-eft_max = 0.43;
+eft_min = 0.45;
+eft_max = 0.45;
 eft_step = 0.01;
-csvname = './csv/delta_43_00001.csv';
+step_mail_yesno = 1; %1 yes 0 no
+csvname = './csv/delta_45_00001.csv';
 
 max = round(endTime/dt);
 
@@ -33,12 +34,12 @@ Glabel = find(GorL == 0);
 
 %--------- eqipment constant ---------
 [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,KG,TG,KA,TA,D,H,Kd,Kq] ...
-    = equipment(numG);
+	 = equipment(numG);
 %--------- eqipment constant ---------
 
 %--------- state ---------
 [Idq,Vdq,Edq,deltaEq,id,iq,vd0,vq0,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
-    state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
+	 state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
 %--------- state ---------
 
 
@@ -48,8 +49,8 @@ Glabel = find(GorL == 0);
 
 Egdq = zeros(numG*2,1);
 for k = 1:numG
-  Egdq(2*k-1) = Egd(k);
-  Egdq(2*k) = Egq(k);
+	Egdq(2*k-1) = Egd(k);
+	Egdq(2*k) = Egq(k);
 end
 
 Idq = Yg * Egdq;
@@ -57,10 +58,10 @@ Vdq = inv(YprimeEF) * Idq;
 
 %--------- id iq ---------
 for k = 1:numG
-  id(k) = real((Idq(2*k-1)+Idq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
-  iq(k) = imag((Idq(2*k-1)+Idq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
-  vd(k) = real((Vdq(2*k-1)+Vdq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
-  vq(k) = imag((Vdq(2*k-1)+Vdq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
+	id(k) = real((Idq(2*k-1)+Idq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
+	iq(k) = imag((Idq(2*k-1)+Idq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
+	vd(k) = real((Vdq(2*k-1)+Vdq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
+	vq(k) = imag((Vdq(2*k-1)+Vdq(2*k)*i)*exp(i*(pi/2 - deltaEq(k))));
 end
 %--------- id iq ---------
 
@@ -70,26 +71,41 @@ Pe(1,:) = vd .* id + vq .* iq + Rg .* (id.^2 + iq.^2);
 
 
 number_of_step = (eft_max > eft_min)*...
-    (round((eft_max - eft_min)/eft_step)+1) ...
-    + (eft_max == eft_min)*1;
+	 (round((eft_max - eft_min)/eft_step)+1) ...
+	 + (eft_max == eft_min)*1;
 delta_for_plot = zeros(max+1,number_of_step+1);
 w_for_plot = zeros(max+1,number_of_step+1);
 v_for_plot = zeros(max+1,number_of_step+1);
+plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'w' 'k'];
 now_step = 2;
+label = blanks(4);
 for k = eft_min:eft_step:eft_max
-  EarthFaultTime = k;
-  tic
-  [delta_for_plot,w_for_plot,v_for_plot] =...
-      Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
-      xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-      Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime);
-
-    now_step = now_step + 1;
+	EarthFaultTime = k;
+	if mod(EarthFaultTime,0.1) == 0;label = [label;num2str(k),'0'];
+	else label = [label;num2str(k)];end
+			tic
+	[delta_for_plot,w_for_plot,v_for_plot] =...
+		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
+		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
+		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno);
+	plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+	hold on
+	now_step = now_step + 1;
 end
+
+%PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
+xlabel('time[sec]')
+ylabel('phase difference angle[degree]')
+trueLabel = label(2:end,:);
+legend(trueLabel)
+grid on
+hold off
 dlmwrite(csvname,delta_for_plot,' ');
+
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
-!sudo chmod a+w ./csv/delta_43_00001.csv
+%!sudo chmod a+w ./csv/delta_43_00001.csv
+%PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
@@ -99,7 +115,7 @@ nsec = ntime-nhour*3600-nmin*60;
 disp(sprintf('%s%s', 'start time:',datestr(startT,31)));
 disp(sprintf('%s%s', 'finish time:',datestr(clock,31)));
 disp(sprintf('%s%d%s%02d%s%04.1f%s', ...
-    'calculation time:',nhour,'h',nmin,'m',nsec,'s'));
+	 'calculation time:',nhour,'h',nmin,'m',nsec,'s'));
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 
 finish_mail()

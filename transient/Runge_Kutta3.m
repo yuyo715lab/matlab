@@ -1,6 +1,6 @@
 function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
     xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq_state,eqq_state,ed_state,edd_state,vd0,vq0,Yg,YprimeEF,...
-    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime)
+    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno)
 
 f = 50; % frequency
 w0 = 2*pi*f; % angular velocity
@@ -140,7 +140,7 @@ for n = 1:max
     tic
   end
   
-  if mod(n,100000) == 0
+  if step_mail_yesno == 1 && mod(n,100000) == 0
     step_mail(n,EarthFaultTime)
   end
   
