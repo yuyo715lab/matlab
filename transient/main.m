@@ -3,13 +3,15 @@ format long;
 startT = clock();
 startCpuT = cputime;
 
-dt = 0.00001; % sampling time
-endTime = 13;
-eft_min = 0.45;
-eft_max = 0.45;
+%matlabpool 4
+
+dt = 0.001; % sampling time
+endTime = 20;
+eft_min = 0.40;
+eft_max = 0.47;
 eft_step = 0.01;
-step_mail_yesno = 1; %1 yes 0 no
-csvname = './csv/delta_45_00001.csv';
+step_mail_yesno = 0; %1 yes 0 no
+csvname = './csv/test.csv';
 
 max = round(endTime/dt);
 
@@ -88,7 +90,11 @@ for k = eft_min:eft_step:eft_max
 		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
 		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno);
-	plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+	if now_step < 10
+		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+	else
+		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-9),'LineWidth',2)
+	end
 	hold on
 	now_step = now_step + 1;
 end
@@ -118,4 +124,5 @@ disp(sprintf('%s%d%s%02d%s%04.1f%s', ...
 	 'calculation time:',nhour,'h',nmin,'m',nsec,'s'));
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 
-finish_mail()
+%matlabpool close
+%finish_mail()
