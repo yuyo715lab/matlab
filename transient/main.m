@@ -5,11 +5,11 @@ startCpuT = cputime;
 
 %matlabpool 4
 
-dt = 0.001; % sampling time
-endTime = 20;
-eft_min = 0.40;
-eft_max = 0.47;
-eft_step = 0.01;
+dt = 0.01; % sampling time
+endTime = 30;
+eft_min = 0.2;
+eft_max = 0.2;
+eft_step = 0.1;
 step_mail_yesno = 0; %1 yes 0 no
 csvname = './csv/test.csv';
 
@@ -90,15 +90,17 @@ for k = eft_min:eft_step:eft_max
 		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
 		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno);
+	%{
 	if now_step < 10
 		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
 	else
 		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-9),'LineWidth',2)
 	end
 	hold on
+	%}
 	now_step = now_step + 1;
 end
-
+%{
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
 xlabel('time[sec]')
 ylabel('phase difference angle[degree]')
@@ -106,12 +108,14 @@ trueLabel = label(2:end,:);
 legend(trueLabel)
 grid on
 hold off
+%hold on
 dlmwrite(csvname,delta_for_plot,' ');
 
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
 %!sudo chmod a+w ./csv/delta_43_00001.csv
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
+%}
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
