@@ -44,7 +44,7 @@ for n = 1:max
   if n == round(EarthFaultTime/dt) % earth fault occur at n*dt
     [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
     YprimeEF = Yprime;
-  end
+ end
   %<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
   delta_k = zeros(5,numG);
   w_k = zeros(5,numG);

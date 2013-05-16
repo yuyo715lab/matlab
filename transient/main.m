@@ -8,7 +8,7 @@ startCpuT = cputime;
 dt = 0.01; % sampling time
 endTime = 30;
 eft_min = 0.2;
-eft_max = 0.2;
+eft_max = 0.9;
 eft_step = 0.1;
 step_mail_yesno = 0; %1 yes 0 no
 csvname = './csv/test.csv';
@@ -30,6 +30,8 @@ max = round(endTime/dt);
 EarthFault = 5;
 [YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault);
 %--------- YprimeEF ---------
+
+%YprimeEF = Yprime; %non EF
 
 Glabel = zeros(1,numG);
 Glabel = find(GorL == 0);
@@ -78,7 +80,8 @@ number_of_step = (eft_max > eft_min)*...
 delta_for_plot = zeros(max+1,number_of_step+1);
 w_for_plot = zeros(max+1,number_of_step+1);
 v_for_plot = zeros(max+1,number_of_step+1);
-plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'w' 'k'];
+plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'k'];
+plot_col_hasen = ['r:';'g:';'c:';'y:';'m:';'b:';'k:'];
 now_step = 2;
 label = blanks(4);
 for k = eft_min:eft_step:eft_max
@@ -90,17 +93,17 @@ for k = eft_min:eft_step:eft_max
 		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
 		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
 		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno);
-	%{
-	if now_step < 10
+	
+	if now_step < 9
 		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
 	else
-		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-9),'LineWidth',2)
+		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col_hasen(now_step-8,:),'LineWidth',2)
 	end
 	hold on
-	%}
+	
 	now_step = now_step + 1;
 end
-%{
+
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
 xlabel('time[sec]')
 ylabel('phase difference angle[degree]')
@@ -115,7 +118,7 @@ dlmwrite(csvname,delta_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
 %!sudo chmod a+w ./csv/delta_43_00001.csv
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
-%}
+
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;
