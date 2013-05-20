@@ -5,11 +5,11 @@ startCpuT = cputime;
 
 %matlabpool 4
 
-dt = 0.01; % sampling time
+dt = 0.0001; % sampling time
 endTime = 30;
-eft_min = 0.2;
-eft_max = 0.9;
-eft_step = 0.1;
+eft_min = 0.405;
+eft_max = 0.405;
+eft_step = 0.001;
 step_mail_yesno = 0; %1 yes 0 no
 csvname = './csv/test.csv';
 
@@ -83,11 +83,15 @@ v_for_plot = zeros(max+1,number_of_step+1);
 plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'k'];
 plot_col_hasen = ['r:';'g:';'c:';'y:';'m:';'b:';'k:'];
 now_step = 2;
-label = blanks(4);
+label = blanks(5);
 for k = eft_min:eft_step:eft_max
 	EarthFaultTime = k;
-	if mod(EarthFaultTime,0.1) == 0;label = [label;num2str(k),'0'];
-	else label = [label;num2str(k)];end
+	if mod(EarthFaultTime,0.1) == 0 && mod(EarthFaultTime,1) ~= 0;label = [label;num2str(k),'00'];
+	else  
+		if mod(EarthFaultTime,1) == 0;label = [label;num2str(k),'.000'];
+			else
+			label = [label;num2str(k)];end 
+			end
 			tic
 	[delta_for_plot,w_for_plot,v_for_plot] =...
 		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...

@@ -36,7 +36,7 @@ function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,KG,TG,KA,TA,D,H,Kd,Kq] ...
   TG = [2.0 2.0 2.0];
   KG = [20.0 20.0 20.0];
   KA = [25.0 25.0 25.0];
-  TA = [0.05 0.05 0.05];
+  TA = [0.5 0.5 0.5];
   
   Kd = zeros(1,numG);
   Kq = zeros(1,numG);
