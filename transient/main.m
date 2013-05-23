@@ -5,11 +5,16 @@ startCpuT = cputime;
 
 %matlabpool 4
 
-dt = 0.0001; % sampling time
+dt = 0.01; % sampling time
 endTime = 30;
-eft_min = 0.405;
-eft_max = 0.405;
-eft_step = 0.001;
+removeAccidentYesNo = 0;
+eft_min = 0.2;
+eft_max = 0.2;
+eft_step = 0.1;
+EarthFault_from = 5;
+EarthFault_to = 7;
+OpenYesNo = 1;
+OpenTime = 0.07;
 step_mail_yesno = 0; %1 yes 0 no
 csvname = './csv/test.csv';
 
@@ -21,16 +26,17 @@ max = round(endTime/dt);
 %--------- power flow calculation ---------
 
 %--------- Yprime ---------
-[Yprime,numG,numL] = Yprime(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL);
+[YprimeStart,numG,numL] = Yprime(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL);
 %--------- Yprime ---------
 
 
 
 %--------- YprimeEF ---------
-EarthFault = 5;
-[YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault);
+[YprimeEF] = YprimeEF(N,Y,Ps,Qs,PQorPV,P,Q,RHO,GorL,EarthFault_from);
 %--------- YprimeEF ---------
-
+%--------- YprimeOpen ---------
+YprimeOpen = open(EarthFault_from,EarthFault_to,P,Q,RHO,GorL);
+%--------- YprimeOpen ---------
 %YprimeEF = Yprime; %non EF
 
 Glabel = zeros(1,numG);
@@ -43,7 +49,7 @@ Glabel = find(GorL == 0);
 
 %--------- state ---------
 [Idq,Vdq,Edq,deltaEq,id,iq,vd0,vq0,ef0,Pe,eq,eqq,ed,edd,egd,egq,Egd,Egq] = ...
-	 state(N,numG,GorL,RHO,THEATA,Yprime,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
+	 state(N,numG,GorL,RHO,THEATA,YprimeStart,Glabel,xd,xq,Rg,Kd,Kq,xdd,xl,xqq,xqqq,xddd,max);
 %--------- state ---------
 
 
@@ -95,8 +101,9 @@ for k = eft_min:eft_step:eft_max
 			tic
 	[delta_for_plot,w_for_plot,v_for_plot] =...
 		 Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
-		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,Yprime,...
-		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno);
+		 xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq,eqq,ed,edd,vd0,vq0,Yg,YprimeEF,max,YprimeStart,...
+		 Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno,...
+		 YprimeOpen,OpenTime,OpenYesNo,removeAccidentYesNo);
 	
 	if now_step < 9
 		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)

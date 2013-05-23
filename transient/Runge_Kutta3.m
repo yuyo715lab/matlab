@@ -1,6 +1,7 @@
 function [delta_for_plot,w_for_plot,v_for_plot] =Runge_Kutta3(P,numG,Pe,H,D,TG,KG,Td,Tdd,Tq,xd,xdd,xddd,xl,id,Kd,Kq,vd,vq,KA,TA,...
     xq,xqq,xqqq,iq,Tqq,ef0,deltaEq,eq_state,eqq_state,ed_state,edd_state,vd0,vq0,Yg,YprimeEF,...
-    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,step_mail_yesno)
+    max,Yprime,Rg,Glabel,EarthFaultTime,delta_for_plot,w_for_plot,v_for_plot,dt,now_step,endTime,...
+	 step_mail_yesno,YprimeOpen,OpenTime,OpenYesNo,removeAccidentYesNo)
 
 f = 50; % frequency
 w0 = 2*pi*f; % angular velocity
@@ -41,11 +42,17 @@ end
 %//////////// for loop ///////////////////////
 for n = 1:max
   %<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
-  if n == round(EarthFaultTime/dt) % earth fault occur at n*dt
-    [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
-    YprimeEF = Yprime;
- end
+  if n == round(EarthFaultTime/dt) && removeAccidentYesNo == 1% earth fault occur at n*dt
+	  [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,Yprime);
+	  YprimeEF = Yprime;
+  end
   %<<<<<<<<<<<<<< earth fault >>>>>>>>>>>>>>>
+  %<<<<<<<<<<<<<< open >>>>>>>>>>>>>>>
+  if n == round(OpenTime/dt) && OpenYesNo == 1% circuit open
+	  [Yg] = YG(numG,xddd,xqqq,Rg,deltaEq,YprimeOpen);
+	  YprimeEF = YprimeOpen;
+  end
+  %<<<<<<<<<<<<<< open >>>>>>>>>>>>>>>
   delta_k = zeros(5,numG);
   w_k = zeros(5,numG);
   eq_k = zeros(5,numG);
