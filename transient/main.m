@@ -6,15 +6,15 @@ startCpuT = cputime;
 %matlabpool 4
 
 dt = 0.01; % sampling time
-endTime = 30;
+endTime = 2;
 removeAccidentYesNo = 0;
-eft_min = 0.2;
-eft_max = 0.2;
-eft_step = 0.1;
+eft_min = 0.40;
+eft_max = 0.40;
+eft_step = 0.01;
 EarthFault_from = 5;
 EarthFault_to = 7;
-OpenYesNo = 1;
-OpenTime = 0.07;
+OpenYesNo = 0;
+OpenTime = 0.2;
 step_mail_yesno = 0; %1 yes 0 no
 csvname = './csv/test.csv';
 
@@ -89,12 +89,12 @@ v_for_plot = zeros(max+1,number_of_step+1);
 plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'k'];
 plot_col_hasen = ['r:';'g:';'c:';'y:';'m:';'b:';'k:'];
 now_step = 2;
-label = blanks(5);
+label = blanks(4);
 for k = eft_min:eft_step:eft_max
 	EarthFaultTime = k;
-	if mod(EarthFaultTime,0.1) == 0 && mod(EarthFaultTime,1) ~= 0;label = [label;num2str(k),'00'];
+	if mod(EarthFaultTime,0.1) == 0 && mod(EarthFaultTime,1) ~= 0;label = [label;num2str(k),'0'];
 	else  
-		if mod(EarthFaultTime,1) == 0;label = [label;num2str(k),'.000'];
+		if mod(EarthFaultTime,1) == 0;label = [label;num2str(k),'.00'];
 			else
 			label = [label;num2str(k)];end 
 			end
