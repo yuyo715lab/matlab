@@ -6,16 +6,17 @@ startCpuT = cputime;
 %matlabpool 4
 
 dt = 0.01; % sampling time
-endTime = 2;
+endTime = 60;
 removeAccidentYesNo = 0;
-eft_min = 0.40;
-eft_max = 0.40;
+eft_min = 0.5;
+eft_max = 0.5;
 eft_step = 0.01;
 EarthFault_from = 5;
 EarthFault_to = 7;
-OpenYesNo = 0;
-OpenTime = 0.2;
+OpenYesNo = 1;
+OpenTime = 0.5;
 step_mail_yesno = 0; %1 yes 0 no
+delta_w_v = 0; % 0 delta  1 frequency 2 Voltage
 csvname = './csv/test.csv';
 
 max = round(endTime/dt);
@@ -90,6 +91,8 @@ plot_col = ['r' 'g' 'c' 'y' 'm' 'b' 'k'];
 plot_col_hasen = ['r:';'g:';'c:';'y:';'m:';'b:';'k:'];
 now_step = 2;
 label = blanks(4);
+%for k = 1:3
+%	KG = [k*15-10 k*15-10 k*15-10];
 for k = eft_min:eft_step:eft_max
 	EarthFaultTime = k;
 	if mod(EarthFaultTime,0.1) == 0 && mod(EarthFaultTime,1) ~= 0;label = [label;num2str(k),'0'];
@@ -106,30 +109,56 @@ for k = eft_min:eft_step:eft_max
 		 YprimeOpen,OpenTime,OpenYesNo,removeAccidentYesNo);
 	
 	if now_step < 9
-		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+		switch delta_w_v
+			case 0
+				plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+			case 1
+				plot(w_for_plot(:,1),w_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+			case 2
+				plot(v_for_plot(:,1),v_for_plot(:,now_step),plot_col(now_step-1),'LineWidth',2)
+		end
 	else
-		plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col_hasen(now_step-8,:),'LineWidth',2)
+		switch delta_w_v
+			case 0
+				plot(delta_for_plot(:,1),delta_for_plot(:,now_step),plot_col_hasen(now_step-8,:),'LineWidth',2)
+			case 1
+				plot(w_for_plot(:,1),w_for_plot(:,now_step),plot_col_hasen(now_step-8,:),'LineWidth',2)
+			case 2
+				plot(v_for_plot(:,1),v_for_plot(:,now_step),v_col_hasen(now_step-8,:),'LineWidth',2)
+		end
 	end
 	hold on
-	
 	now_step = now_step + 1;
 end
 
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
 xlabel('time[sec]')
-ylabel('phase difference angle[degree]')
+switch delta_w_v
+	case 0 
+		ylabel('Phase Difference Angle[degree]')
+	case 1
+		ylabel('Frequency[Hz]')
+	case 2
+		ylabel('Voltage[p.u.]')
+end
 trueLabel = label(2:end,:);
 legend(trueLabel)
 grid on
-hold off
-%hold on
-dlmwrite(csvname,delta_for_plot,' ');
-
+%hold off
+hold on
+switch delta_w_v
+	case 0
+		dlmwrite(csvname,delta_for_plot,' ');
+	case 1
+		dlmwrite(csvname,w_for_plot,' ');
+	case 2
+		dlmwrite(csvname,v_for_plot,' ');
+end
 %dlmwrite(csvname,w_for_plot,' ');
 %dlmwrite(csvname,v_for_plot,' ');
 %!sudo chmod a+w ./csv/delta_43_00001.csv
 %PPPPPPPPPPPP Plot PPPPPPPPPPPPPPPPPP
-
+%end
 
 %TTTTTTTTTTTTT Cal time TTTTTTTTTTTTTTT
 ntime=cputime-startCpuT;

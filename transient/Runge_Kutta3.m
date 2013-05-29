@@ -156,6 +156,8 @@ delta_for_plot(:,1) = [0:dt:endTime]';
 delta_for_plot(:,now_step) = (delta(:,2)-delta(:,1))/pi*180;
 v_for_plot(:,1) = [0:dt:endTime]';
 v_for_plot(:,now_step) = sqrt(vd(:,1).^2+vq(:,1).^2);
+w_for_plot(:,1) = [0:dt:endTime]';
+w_for_plot(:,now_step) = w(:,1)/2/pi;
 %//////////////// for loop ////////////////////
 %/////////////////////////////////////////////
 

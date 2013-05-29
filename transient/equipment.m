@@ -34,7 +34,7 @@ function [xd,xdd,xddd,xq,xqq,xqqq,xl,Td,Tdd,Tq,Tqq,Rg,KG,TG,KA,TA,D,H,Kd,Kq] ...
   H = [50 9 6];
   D = [2.0 2.0 2.0];
   TG = [2.0 2.0 2.0];
-  KG = [20.0 20.0 20.0];
+  KG = [5.0 5.0 5.0];
   KA = [25.0 25.0 25.0];
   TA = [0.5 0.5 0.5];
   
